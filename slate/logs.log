@@ -1,0 +1,8 @@
+nohup: ignoring input
+== The Middleman is loading
+== Sprockets will render css with ruby sass
+   consider using Sprockets 4.x to render with SassC
+== The Middleman uses a different port "46391" then the configured one "4568" because some other server is listening on that port.
+== View your site at "http://NPNTServer.local:46391", "http://167.71.238.142:46391"
+== Inspect your site configuration at "http://NPNTServer.local:46391/__middleman", "http://167.71.238.142:46391/__middleman"
+== The Middleman is shutting down
