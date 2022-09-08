@@ -463,23 +463,70 @@
             <a href="#addusersurveyrecord" class="toc-h2 toc-link" data-title="addusersurveyrecord">Add user survey</a>
           </li>
           <li>
-            <a href="#downloaduserdurveyrecords" class="toc-h2 toc-link" data-title="downloaduserdurveyrecords">Download survey records</a>
+            <a href="#downloaduserdurveyrecords" class="toc-h2 toc-link" data-title="downloaduserdurveyrecords">Download
+              survey records</a>
           </li>
           <li>
-            <a href="#checkusersurveystatus" class="toc-h2 toc-link" data-title="checkusersurveystatus">Check user survey status</a>
+            <a href="#checkusersurveystatus" class="toc-h2 toc-link" data-title="checkusersurveystatus">Check user
+              survey status</a>
           </li>
           <li>
-            <a href="#adduseranalyticsrecord" class="toc-h2 toc-link" data-title="adduseranalyticsrecord">Add user analytic record</a>
+            <a href="#adduseranalyticsrecord" class="toc-h2 toc-link" data-title="adduseranalyticsrecord">Add user
+              analytic record</a>
           </li>
           <li>
-            <a href="#getuseranalyticsdata" class="toc-h2 toc-link" data-title="getuseranalyticsdata">Get user analytic data</a>
+            <a href="#getuseranalyticsdata" class="toc-h2 toc-link" data-title="getuseranalyticsdata">Get user analytic
+              data</a>
           </li>
           <li>
-            <a href="#getUserAnalyticsPageData" class="toc-h2 toc-link" data-title="getUserAnalyticsPageData">Get user analytic page data</a>
+            <a href="#getUserAnalyticsPageData" class="toc-h2 toc-link" data-title="getUserAnalyticsPageData">Get user
+              analytic page data</a>
           </li>
         </ul>
       </li>
-      
+      <li>
+        <a href="#leasedronemodule" class="toc-h1 toc-link" data-title="leasedronemodule">Lease Drone Module</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#addcustomerrecord" class="toc-h2 toc-link" data-title="addcustomerrecord">Add Customer</a>
+          </li>
+          <li>
+            <a href="#getAllCustomers" class="toc-h2 toc-link" data-title="getAllCustomers">Get All Customers
+              records</a>
+          </li>
+          <li>
+            <a href="#deleteCustomerrecord" class="toc-h2 toc-link" data-title="deleteCustomerrecord">Delete
+              Customer</a>
+          </li>
+          <li>
+            <a href="#addLease" class="toc-h2 toc-link" data-title="addLease">Add Lease</a>
+          </li>
+          <li>
+            <a href="#getCustomerAllLease" class="toc-h2 toc-link" data-title="getCustomerAllLease">Get Customer All
+              Lease</a>
+          </li>
+          <li>
+            <a href="#getAllLease" class="toc-h2 toc-link" data-title="getAllLease">Get All Lease</a>
+          </li>
+          <li>
+            <a href="#getDroneAllLease" class="toc-h2 toc-link" data-title="getDroneAllLease">Get Drone All Lease</a>
+          </li>
+          <li>
+            <a href="#deleteLease" class="toc-h2 toc-link" data-title="deleteLease">Delete Lease</a>
+          </li>
+          <li>
+            <a href="#updateLease" class="toc-h2 toc-link" data-title="updateLease">Update Lease</a>
+          </li>
+          <li>
+            <a href="#checkLease" class="toc-h2 toc-link" data-title="checkLease">Check Lease Status</a>
+          </li>
+          <li>
+            <a href="#change-Drone-lease-status" class="toc-h2 toc-link" data-title="change-Drone-lease-status">Change
+              Drone Lease Status</a>
+          </li>
+        </ul>
+      </li>
+
       <li>
         <a href="#shareasset" class="toc-h1 toc-link" data-title="teams">Share Asset</a>
         <ul class="toc-list-h2">
@@ -521,7 +568,8 @@
         <a href="#task-executer" class="toc-h1 toc-link" data-title="task-executer">Task Executer APIs</a>
         <ul class="toc-list-h2">
           <li>
-            <a href="#get-assigned-task" class="toc-h2 toc-link" data-title="Get picstork task">Get PicSotrk Task Details</a>
+            <a href="#get-assigned-task" class="toc-h2 toc-link" data-title="Get picstork task">Get PicSotrk Task
+              Details</a>
           </li>
           <li>
             <a href="#get-detector-files" class="toc-h2 toc-link" data-title="Get detector files">Get detector files</a>
@@ -535,7 +583,8 @@
         <a href="#picstork-apis" class="toc-h1 toc-link" data-title="picstork-apis">PicStork APIs</a>
         <ul class="toc-list-h2">
           <li>
-            <a href="#export-annotation-zip" class="toc-h2 toc-link" data-title="Export annotation zip">Export annotation zip </a>
+            <a href="#export-annotation-zip" class="toc-h2 toc-link" data-title="Export annotation zip">Export
+              annotation zip </a>
           </li>
         </ul>
       </li>
@@ -4070,12 +4119,874 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
       </tbody>
     </table>
     <!-- -------------------------------------- -->
+    <!------------------------------- drone lease module --------------------------->
+
+    <h1 id='leasedronemodule'>Lease Drone Module</h1>
+
+    <!------------------------------- Add customer record --------------------------->
+    <h2 id='addcustomerrecord'>Add Customer record</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomer"</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+<span class="nt">-X</span> POST
+<span class="nt">-D</span>
+<span class="s2">"body"</span>: 
+  <span class="o">{</span>
+    <span class="s2">"customerName"</span>: <span class="s2">"XYZ"</span>,
+    <span class="s2">"contactNumber"</span>: <span class="s2">"9876543210"</span>,
+    <span class="s2">"customerAddress"</span>: <span class="s2">"Nashik"</span>,
+    <span class="s2">"customerGovIdNo"</span>: <span class="s2">"ABCD1234E"</span>,
+    <span class="s2">"customerEmail"</span>: <span class="s2">"xyz@gmial.com"</span>
+    <span class="s2">"customerPilotLicenseId"</span>: <span class="s2">"1425367889"</span>
+  <span class="o">}</span>
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+    {
+      "message": "Customer Added Successfully."
+    }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to add customer record in the databse.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomer"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <!-- <tr>
+          <td>202</td>
+          <td>User has already taken the survey.</td>
+        </tr> -->
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>{ "message": "Customer Added Successfully." }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+    <!------------------------------- get customers records --------------------------->
+
+    <h2 id='getAllCustomers'>Get All Customers records</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomer"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   <span class="nt">-D</span>
+  
+   </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "usersCustomers": [
+              {
+                  "id": "ad420ccf-7e36-47b1-b56f-784ef9adbb07",
+                  "userid": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                  "customer_name": "aakash g",
+                  "contact_number": "9876543210",
+                  "address": "Nashik",
+                  "email": "aakash@gmail.com",
+                  "register_date": "2022-09-05T05:42:11.045Z",
+                  "government_id": "CEOPB1234D",
+                  "pilot_license_id": null
+              },
+              {
+                  "id": "7f0b408d-258a-4af9-90af-3c7a0fd781b9",
+                  "userid": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                  "customer_name": "Suraj Bhalerao",
+                  "contact_number": "9876543210",
+                  "address": "Nashik",
+                  "email": "surajbhalerao@gmail.com",
+                  "register_date": "2022-09-02T06:55:01.128Z",
+                  "government_id": "CEOPB1234D",
+                  "pilot_license_id": "98765432133"
+              },
+              {
+                  "id": "05e639f1-1445-4cf4-a678-63a1b4e3cdbc",
+                  "userid": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                  "customer_name": "Suraj",
+                  "contact_number": "8793305219",
+                  "address": "Yeola",
+                  "email": "suraj@gmail.com",
+                  "register_date": "2022-08-31T05:05:59.143Z",
+                  "government_id": "CEOPB3474D",
+                  "pilot_license_id": null
+              }
+          ]
+      }
+   </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get customer records of a particular user.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomer</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { Customers data of the particular user. }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+    <!------------------------------- delete customer --------------------------->
+
+    <h2 id='deleteCustomerrecord'>Delete Customer API</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>   curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomer/9c2dac22-6300-446f-bff0-eb9a8b6d4046"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-X</span> DELETE
+    
+    </code>
+  </pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+      {
+          "message": "customer Deleted successfully"
+      }</code></pre>
+    </div>
+    <h3 id='description-27'>Description</h3>
+    <p>This API will be used to delete the customer form database.
+      It will take customerId as input.
+    </p>
+    <h3 id='http-request-27'>HTTP Request</h3>
+    <p>
+      <code>POST ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomer/:customerId</code>
+    </p>
+    <h3 id='http-response-26'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>An internal server error has occured.(Datatable related spcific message)</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing parameters/ Authorization mode must be bearer.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>Successful response</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- -------------------------------------- -->
+
+    <!------------------------------- Add lease --------------------------->
+    <h2 id='addLease'>Add Lease</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomerDroneLease"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> POST
+  <span class="nt">-D</span>
+  <span class="s2">"body"</span>: 
+    <span class="o">{</span>
+      <span class="s2">"customer_id"</span>: <span class="s2">"9c2dac22-6300-446f-bff0-eb9a8b6d4046"</span>,
+      <span class="s2">"droneid"</span>: <span class="s2">"9c2dac22-6300-446f-bff0-eb9a8b45745445"</span>,
+      <span class="s2">"fromDate"</span>: <span class="s2">"2022-09-08"</span>,
+      <span class="s2">"toDate"</span>: <span class="s2">"2022-09-20"</span>,
+    <span class="o">}</span>
+  </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+      {
+        "message": "Lease Added Successfully."
+      }
+  </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to add lease in the databse.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomerDroneLease"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>409</td>
+          <td>Slot already booked .</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>{ "message": "Lease Added Successfully." }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+    <!------------------------------- get all lease--------------------------->
+
+    <h2 id='getAllLease'>Get All Lease</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userDronesLease"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   <span class="nt">-D</span>
+  
+   </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "usersCustomersDroneLease": [
+              {
+                  "id": "d2f4899c-ad5b-4960-afc4-49ae259ff399",
+                  "customer_id": "ad420ccf-7e36-47b1-b56f-784ef9adbb07",
+                  "user_id": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                  "startdate": "2022-09-12T00:00:00.000Z",
+                  "enddate": "2022-09-18T00:00:00.000Z",
+                  "drone_id": "P0000SIM_ANDR_DESKTOP-PDRL",
+                  "customer_name": "aakash g",
+                  "contact_number": "9876543210",
+                  "address": "Nashik",
+                  "email": "aakash@gmail.com",
+                  "government_id": "CEOPB1234D",
+                  "pilot_license_id": null,
+                  "register_date": "2022-09-05T05:42:11.045Z",
+                  "status": "Upcoming"
+              },
+              {
+                  "id": "efef6185-70f2-479d-ac1d-afd8bc452400",
+                  "customer_id": "05e639f1-1445-4cf4-a678-63a1b4e3cdbc",
+                  "user_id": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                  "startdate": "2022-09-06T00:00:00.000Z",
+                  "enddate": "2022-09-16T00:00:00.000Z",
+                  "drone_id": "P0000SIM_ANDR_DESKTOP-G1DVAN2",
+                  "customer_name": "Suraj",
+                  "contact_number": "8793305219",
+                  "address": "Yeola",
+                  "email": "suraj@gmail.com",
+                  "government_id": "CEOPB3474D",
+                  "pilot_license_id": null,
+                  "register_date": "2022-08-31T05:05:59.143Z",
+                  "status": "Active"
+              },
+              {
+                  "id": "dd513087-e267-4006-a051-02c76e7d36e0",
+                  "customer_id": "7f0b408d-258a-4af9-90af-3c7a0fd781b9",
+                  "user_id": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                  "startdate": "2022-09-07T00:00:00.000Z",
+                  "enddate": "2022-09-11T00:00:00.000Z",
+                  "drone_id": "P0000SIM_ANDR_DESKTOP-PDRL",
+                  "customer_name": "Suraj Bhalerao",
+                  "contact_number": "9876543210",
+                  "address": "Nashik",
+                  "email": "surajbhalerao@gmail.com",
+                  "government_id": "CEOPB1234D",
+                  "pilot_license_id": "98765432133",
+                  "register_date": "2022-09-02T06:55:01.128Z",
+                  "status": "Active"
+              }
+          ]
+      }
+   </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get All lease records of a particular user.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userDronesLease</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { lease data of the particular user. }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+    <!------------------------------- get customers all lease--------------------------->
+
+    <h2 id='getCustomerAllLease'>Get Customers All Lease</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomerLease/9c2dac22-6300-446f-bff0-eb9a8b6d4046"</span>
+            <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+            <span class="nt">-X</span> GET
+            <span class="nt">-D</span>
+           
+            </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+                 {
+                   "usersCustomersDroneLease": [
+                       {
+                           "id": "dd513087-e267-4006-a051-02c76e7d36e0",
+                           "customer_id": "7f0b408d-258a-4af9-90af-3c7a0fd781b9",
+                           "user_id": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                           "startdate": "2022-09-07T00:00:00.000Z",
+                           "enddate": "2022-09-11T00:00:00.000Z",
+                           "drone_id": "P0000SIM_ANDR_DESKTOP-PDRL",
+                           "status": "Active"
+                       }
+                   ]
+               }
+            </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get lease records of a particular customer.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomerLease/:userCustomerId</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { lease data of the particular customer. }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+    <!------------------------------- get drone all lease--------------------------->
+
+    <h2 id='getDroneAllLease'>Get drone All Lease</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomerDroneLease/9c2dac22-6300-446f-bff0-eb9a8b6d4046"</span>
+             <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+             <span class="nt">-X</span> GET
+             <span class="nt">-D</span>
+            
+             </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "usersCustomersDroneLease": [
+              {
+                  "id": "d2f4899c-ad5b-4960-afc4-49ae259ff399",
+                  "customer_id": "ad420ccf-7e36-47b1-b56f-784ef9adbb07",
+                  "user_id": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                  "startdate": "2022-09-12T00:00:00.000Z",
+                  "enddate": "2022-09-18T00:00:00.000Z",
+                  "drone_id": "P0000SIM_ANDR_DESKTOP-PDRL",
+                  "customer_name": "aakash g",
+                  "contact_number": "9876543210",
+                  "address": "Nashik",
+                  "email": "aakash@gmail.com",
+                  "government_id": "CEOPB1234D",
+                  "pilot_license_id": null,
+                  "register_date": "2022-09-05T05:42:11.045Z",
+                  "status": "Upcoming"
+              },
+              {
+                  "id": "dd513087-e267-4006-a051-02c76e7d36e0",
+                  "customer_id": "7f0b408d-258a-4af9-90af-3c7a0fd781b9",
+                  "user_id": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                  "startdate": "2022-09-07T00:00:00.000Z",
+                  "enddate": "2022-09-11T00:00:00.000Z",
+                  "drone_id": "P0000SIM_ANDR_DESKTOP-PDRL",
+                  "customer_name": "Suraj Bhalerao",
+                  "contact_number": "9876543210",
+                  "address": "Nashik",
+                  "email": "surajbhalerao@gmail.com",
+                  "government_id": "CEOPB1234D",
+                  "pilot_license_id": "98765432133",
+                  "register_date": "2022-09-02T06:55:01.128Z",
+                  "status": "Active"
+              }
+          ]
+      }
+             </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get lease records of a particular Drone.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomerDroneLease/:droneId</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { lease data of the particular Drone. }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+    <!------------------------------- delete lease --------------------------->
+
+    <h2 id='deleteLease'>Delete Customer API</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>   curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomerDroneLease/9c2dac22-6300-446f-bff0-eb9a8b6d4046"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-X</span> DELETE
+    
+    </code>
+  </pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+      {
+          "message": "Lease Deleted successfully"
+      }</code></pre>
+    </div>
+    <h3 id='description-27'>Description</h3>
+    <p>This API will be used to delete the lease form database.
+      It will take lease Id as input.
+    </p>
+    <h3 id='http-request-27'>HTTP Request</h3>
+    <p>
+      <code>POST ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomerDroneLease/:leaseId</code>
+    </p>
+    <h3 id='http-response-26'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>An internal server error has occured.(Datatable related spcific message)</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing parameters/ Authorization mode must be bearer.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>Successful response</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- -------------------------------------- -->
+
+    <!-- Change Support Email Status API -->
+    <!------------------------------- Update Lease --------------------------->
+    <h2 id='updateLease'>Update Lease</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomerDroneLease</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-X</span> PUT
+    <span class="nt">-D</span>
+    <span class="s2">"body"</span>: 
+      <span class="o">{</span>
+        <span class="s2">"fromDate"</span>: <span class="s2">"2022-09-08"</span>,
+        <span class="s2">"toDate"</span>: <span class="s2">"2022-09-20"</span>,
+        <span class="s2">"leaseId"</span>: <span class="s2">"9c2dac22-6300-446f-bff0-eb9a8b6d4046"</span>,
+        <span class="s2">"droneid"</span>: <span class="s2">"9c2dac22-6300-446f-bff0-eb9a8b45745445"</span>,
+      <span class="o">}</span>
+    </code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">
+    A susccessful response with status code 200 :
+      {
+         message: "Lease Updated Successfully"
+      }
+      </span>
+        </span></code></pre>
+    </div>
+    <h3 id='description-27'>Description</h3>
+    <p>This API will be used to change the lease start ans end date. It will take leaseId, droneid, fromDate, toDate as
+      an input.</p>
+    <h3 id='http-request-27'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomerDroneLease</code></p>
+    <h3 id='http-response-26'>HTTP Response</h3>
+    <p>A susccessful request to the above API returns a successful message with status code 200</p>
+
+    <p><code>
+  {
+    message: "Lease Updated Successfully"
+  }</code></p>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>An internal server error has occured.(Datatable related specific message)</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing parameters</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { message: "Lease Updated Successfully" }</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- --------------------------------------------------------------- -->
+
+    <!------------------------------- check lease Active status--------------------------->
+
+    <h2 id='checkLease'>Check Lease Status</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/checkUserCustomerDroneLease/9c2dac22-6300-446f-bff0-eb9a8b6d4046"</span>
+             <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+             <span class="nt">-X</span> GET
+             <span class="nt">-D</span>
+            
+             </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "leaseExpiry": true,
+          "droneOnLease": "ON"
+      }
+             </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get lease status of a particular drone.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/checkUserCustomerDroneLease/:droneid</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { lease status of the particular Drone. }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+    <!-- Change Support Email Status API -->
+    <!------------------------------- change Drone on Lease status--------------------------->
+    <h2 id='change-Drone-lease-status'>Change Drone On Lease Status API</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/addRemoveDroneLease</span>
+         <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+         <span class="nt">-X</span> PUT
+         <span class="nt">-D</span>
+         <span class="s2">"body"</span>: 
+           <span class="o">{</span>
+             <span class="s2">"droneid"</span>: <span class="s2">"9c2dac22-6300-446f-bff0-eb9a8b6d4046"</span>,
+             <span class="s2">"lease_drone"</span>: <span class="s2">"true/false"</span>,
+           <span class="o">}</span>
+         </code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">
+         A susccessful response with status code 200 :
+           {
+              message: "Drone on Lease ON/OFF"
+           }
+           </span>
+             </span></code></pre>
+    </div>
+    <h3 id='description-27'>Description</h3>
+    <p>This API will be used to change the drone on lease disabled status. It will take drone id as an input. If ON is
+      true it will
+      change to OFF as false and vice-versa.</p>
+    <h3 id='http-request-27'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/AeroGCSEnterprise/addRemoveDroneLease</code></p>
+    <h3 id='http-response-26'>HTTP Response</h3>
+    <p>A susccessful request to the above API returns a successful message with status code 200</p>
+
+    <p><code>
+       {
+         message: "Drone on Lease ON/OFF"
+       }</code></p>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>An internal server error has occured.(Datatable related specific message)</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing parameters</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { message: "Drone on Lease ON/OFF" }</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- --------------------------------------------------------------- -->
 
 
 
     <!------------------------------- User Analytics and Survey Tool --------------------------->
 
-    
+
     <h1 id='analytictool'>User analytic and survey tool</h1>
 
 
@@ -4155,211 +5066,211 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <!------------------------------------------------------------------------------------------>
 
 
-     <!------------------------------- Download User Survey records ---------------------------------->
+    <!------------------------------- Download User Survey records ---------------------------------->
 
-     <h2 id='downloaduserdurveyrecords'>Download user survey records</h2>
-     <div class="highlight">
-       <pre class="highlight python tab-python"><code></code></pre>
-     </div>
-     <div class="highlight">
-       <pre class="highlight javascript tab-javascript"><code></code></pre>
-     </div>
-     <div class="highlight">
-       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/getUserSurveyRecords/:fromDate/:toDate"</span>
+    <h2 id='downloaduserdurveyrecords'>Download user survey records</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/getUserSurveyRecords/:fromDate/:toDate"</span>
  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
  <span class="nt">-X</span> GET
  <span class="nt">-D</span>
 
  </code></pre>
-     </div>
-     <blockquote>
-       <p>A successful call to this API will return a csv file with response code 200.</p>
-     </blockquote>
-     <div class="highlight">
-       <pre class="highlight json tab-json"><code>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return a csv file with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
      {
         CSV file with user survey records.
      }
  </code></pre>
-     </div>
-     <h3 id='description-33'>Description</h3>
- 
-     <p>This API is used to download user survey records in csv file.</p>
- 
-     <h3 id='http-request-33'>HTTP Request</h3>
-     <p><code>GET ${BASE_URL}/AeroMegh/Analytic/getUserSurveyRecords</code></p>
- 
-     <h3 id='http-response-32'>HTTP Response</h3>
- 
-     <p>Response codes explanation:</p>
-     <table>
-       <thead>
-         <tr>
-           <th>Code</th>
-           <th>Details</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td>500</td>
-           <td>Internal server has occured (database error).</td>
-         </tr>
-         <tr>
-           <td>400</td>
-           <td>Request missing some parameter</td>
-         </tr>
-         <tr>
-           <td>200</td>
-           <td>CSV file with user survey records.</td>
-         </tr>
-       </tbody>
-     </table>
-     <!------------------------------------------------------------------------------------------>
+    </div>
+    <h3 id='description-33'>Description</h3>
 
-     <!------------------------------- Check User Survey status --------------------------------->
+    <p>This API is used to download user survey records in csv file.</p>
 
-     <h2 id='checkusersurveystatus'>Check user survey status</h2>
-     <div class="highlight">
-       <pre class="highlight python tab-python"><code></code></pre>
-     </div>
-     <div class="highlight">
-       <pre class="highlight javascript tab-javascript"><code></code></pre>
-     </div>
-     <div class="highlight">
-       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/checkUserSurveyStatus"</span>
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/Analytic/getUserSurveyRecords</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>CSV file with user survey records.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!------------------------------------------------------------------------------------------>
+
+    <!------------------------------- Check User Survey status --------------------------------->
+
+    <h2 id='checkusersurveystatus'>Check user survey status</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/checkUserSurveyStatus"</span>
  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
  <span class="nt">-X</span> GET
  <span class="nt">-D</span>
 
  </code></pre>
-     </div>
-     <blockquote>
-       <p>A successful call to this API will return following response with response code 200.</p>
-     </blockquote>
-     <div class="highlight">
-       <pre class="highlight json tab-json"><code>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
      {
         message : "true/false"
      }
  </code></pre>
-     </div>
-     <h3 id='description-33'>Description</h3>
- 
-     <p>This API is used to check if a user has already taken the survey or not.</p>
- 
-     <h3 id='http-request-33'>HTTP Request</h3>
-     <p><code>GET ${BASE_URL/AeroMegh/Analytic/checkUserSurveyStatus</code></p>
- 
-     <h3 id='http-response-32'>HTTP Response</h3>
- 
-     <p>Response codes explanation:</p>
-     <table>
-       <thead>
-         <tr>
-           <th>Code</th>
-           <th>Details</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td>500</td>
-           <td>Internal server has occured (database error).</td>
-         </tr>
-         <tr>
-           <td>400</td>
-           <td>Request missing some parameter</td>
-         </tr>
-         <tr>
-           <td>200</td>
-           <td> { message : "true/false" }</td>
-         </tr>
-       </tbody>
-     </table>
-     <!------------------------------------------------------------------------------------------>
+    </div>
+    <h3 id='description-33'>Description</h3>
 
-      <!------------------------------- Add User Analytic record -------------------------------->
+    <p>This API is used to check if a user has already taken the survey or not.</p>
 
-      <h2 id='adduseranalyticsrecord'>Add User Analytic record</h2>
-      <div class="highlight">
-        <pre class="highlight python tab-python"><code></code></pre>
-      </div>
-      <div class="highlight">
-        <pre class="highlight javascript tab-javascript"><code></code></pre>
-      </div>
-      <div class="highlight">
-        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/addUserAnalytic/:pageName"</span>
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL/AeroMegh/Analytic/checkUserSurveyStatus</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { message : "true/false" }</td>
+        </tr>
+      </tbody>
+    </table>
+    <!------------------------------------------------------------------------------------------>
+
+    <!------------------------------- Add User Analytic record -------------------------------->
+
+    <h2 id='adduseranalyticsrecord'>Add User Analytic record</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/addUserAnalytic/:pageName"</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
   <span class="nt">-X</span> POST
   <span class="nt">-D</span>
  
   </code></pre>
-      </div>
-      <blockquote>
-        <p>A successful call to this API will return following response with response code 200.</p>
-      </blockquote>
-      <div class="highlight">
-        <pre class="highlight json tab-json"><code>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
       {
          message : "Record added."
       }
   </code></pre>
-      </div>
-      <h3 id='description-33'>Description</h3>
-  
-      <p>This API is used to add user analytic record of a page which the user clicks/opens.</p>
-  
-      <h3 id='http-request-33'>HTTP Request</h3>
-      <p><code>GET ${BASE_URL/AeroMegh/Analytic/addUserAnalytic/:pageName</code></p>
-  
-      <h3 id='http-response-32'>HTTP Response</h3>
-  
-      <p>Response codes explanation:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>500</td>
-            <td>Internal server has occured (database error).</td>
-          </tr>
-          <tr>
-            <td>400</td>
-            <td>Request missing some parameter</td>
-          </tr>
-          <tr>
-            <td>200</td>
-            <td> { message : "Record added." }</td>
-          </tr>
-        </tbody>
-      </table>
-      <!------------------------------------------------------------------------------------------>
+    </div>
+    <h3 id='description-33'>Description</h3>
 
-       <!------------------------------- Get User Analytic record -------------------------------->
+    <p>This API is used to add user analytic record of a page which the user clicks/opens.</p>
 
-       <h2 id='getuseranalyticsdata'>Get User Analytic record</h2>
-       <div class="highlight">
-         <pre class="highlight python tab-python"><code></code></pre>
-       </div>
-       <div class="highlight">
-         <pre class="highlight javascript tab-javascript"><code></code></pre>
-       </div>
-       <div class="highlight">
-         <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/getUserAnalytic/:user_id"</span>
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL/AeroMegh/Analytic/addUserAnalytic/:pageName</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { message : "Record added." }</td>
+        </tr>
+      </tbody>
+    </table>
+    <!------------------------------------------------------------------------------------------>
+
+    <!------------------------------- Get User Analytic record -------------------------------->
+
+    <h2 id='getuseranalyticsdata'>Get User Analytic record</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/getUserAnalytic/:user_id"</span>
    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
    <span class="nt">-X</span> GET
    <span class="nt">-D</span>
   
    </code></pre>
-       </div>
-       <blockquote>
-         <p>A successful call to this API will return following response with response code 200.</p>
-       </blockquote>
-       <div class="highlight">
-         <pre class="highlight json tab-json"><code>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
           {
             "userAnalytics": [
                 {
@@ -4401,65 +5312,65 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
             ]
         }
    </code></pre>
-       </div>
-       <h3 id='description-33'>Description</h3>
-   
-       <p>This API is used to get analytics count per page of a particular user.</p>
-   
-       <h3 id='http-request-33'>HTTP Request</h3>
-       <p><code>GET ${BASE_URL/AeroMegh/Analytic/getUserAnalytic/:user_id</code></p>
-   
-       <h3 id='http-response-32'>HTTP Response</h3>
-   
-       <p>Response codes explanation:</p>
-       <table>
-         <thead>
-           <tr>
-             <th>Code</th>
-             <th>Details</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr>
-             <td>500</td>
-             <td>Internal server has occured (database error).</td>
-           </tr>
-           <tr>
-             <td>400</td>
-             <td>Request missing some parameter</td>
-           </tr>
-           <tr>
-             <td>200</td>
-             <td> { User analytic data of the particular user. }</td>
-           </tr>
-         </tbody>
-       </table>
-       <!------------------------------------------------------------------------------------------>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get analytics count per page of a particular user.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL/AeroMegh/Analytic/getUserAnalytic/:user_id</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { User analytic data of the particular user. }</td>
+        </tr>
+      </tbody>
+    </table>
+    <!------------------------------------------------------------------------------------------>
 
 
 
-       <!------------------------------- Get User Analytic Page record -------------------------------->
+    <!------------------------------- Get User Analytic Page record -------------------------------->
 
-       <h2 id='getuseranalyticsdata'>Get User Analytic Page record</h2>
-       <div class="highlight">
-         <pre class="highlight python tab-python"><code></code></pre>
-       </div>
-       <div class="highlight">
-         <pre class="highlight javascript tab-javascript"><code></code></pre>
-       </div>
-       <div class="highlight">
-         <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/getUserPageAnalytic/:user_id/:page_name</span>
+    <h2 id='getuseranalyticsdata'>Get User Analytic Page record</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/Analytic/getUserPageAnalytic/:user_id/:page_name</span>
    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
    <span class="nt">-X</span> GET
    <span class="nt">-D</span>
   
    </code></pre>
-       </div>
-       <blockquote>
-         <p>A successful call to this API will return following response with response code 200.</p>
-       </blockquote>
-       <div class="highlight">
-         <pre class="highlight json tab-json"><code>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
           {
             "userPageAnalytics": [
                 {
@@ -4470,42 +5381,42 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
             ]
         }
    </code></pre>
-       </div>
-       <h3 id='description-33'>Description</h3>
-   
-       <p>This API is used to add user analytic record of a page which the user clicks/opens.</p>
-   
-       <h3 id='http-request-33'>HTTP Request</h3>
-       <p><code>GET ${BASE_URL/AeroMegh/Analytic/getUserPageAnalytic/:user_id/:page_name</code></p>
-   
-       <h3 id='http-response-32'>HTTP Response</h3>
-   
-       <p>Response codes explanation:</p>
-       <table>
-         <thead>
-           <tr>
-             <th>Code</th>
-             <th>Details</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr>
-             <td>500</td>
-             <td>Internal server has occured (database error).</td>
-           </tr>
-           <tr>
-             <td>400</td>
-             <td>Request missing some parameter</td>
-           </tr>
-           <tr>
-             <td>200</td>
-             <td> { User analytic data of particular page. }</td>
-           </tr>
-         </tbody>
-       </table>
-       <!------------------------------------------------------------------------------------------>
- 
- 
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to add user analytic record of a page which the user clicks/opens.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL/AeroMegh/Analytic/getUserPageAnalytic/:user_id/:page_name</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { User analytic data of particular page. }</td>
+        </tr>
+      </tbody>
+    </table>
+    <!------------------------------------------------------------------------------------------>
+
+
 
     <!------------------------------- User Analytics tool ends here ---------------------------->
 
@@ -4548,7 +5459,8 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     </div>
     <h3 id='description-27'>Description</h3>
     <p>This API will be used to invite the user to access the shared asset. It will take mail_id, collection_id,
-      access_level and project_id as input . The invite mail will be sent to the specified email-id when the API is called.
+      access_level and project_id as input . The invite mail will be sent to the specified email-id when the API is
+      called.
     </p>
     <h3 id='http-request-27'>HTTP Request</h3>
     <p><code>POST ${BASE_URL}/AeroMegh/shareAssets/inviteUser</code></p>
@@ -4764,9 +5676,11 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
   }</code></pre>
     </div>
     <h3 id='description-27'>Description</h3>
-    <p>This API will be used to get the list of shared data under the given project & to the specific user. It will be used when user want to delete the share access of any collection. 
-      When share access to any collection is removed all the other access given under perticular project will also get removed.
-       So to get the overall idea of which accesses are going to remove, this API will be called.
+    <p>This API will be used to get the list of shared data under the given project & to the specific user. It will be
+      used when user want to delete the share access of any collection.
+      When share access to any collection is removed all the other access given under perticular project will also get
+      removed.
+      So to get the overall idea of which accesses are going to remove, this API will be called.
       It will take project_id, shared_id and email to which data is shared as input.
     </p>
     <h3 id='http-request-27'>HTTP Request</h3>
@@ -5796,34 +6710,34 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
 
     <!-- remove access permission end here -->
 
-     <!------------------------------- Task Executer APIs ------------------------------>
-
-    
-     <h1 id='task-executer'>Task Executer APIs</h1>
+    <!------------------------------- Task Executer APIs ------------------------------>
 
 
-     <!------------------------------- Get PicStork task details --------------------------->
- 
- 
-     <h2 id='get-assigned-task'>Get Assigned task details</h2>
-     <div class="highlight">
-       <pre class="highlight python tab-python"><code></code></pre>
-     </div>
-     <div class="highlight">
-       <pre class="highlight javascript tab-javascript"><code></code></pre>
-     </div>
-     <div class="highlight">
-       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/TaskExecuter/tasks/:taskId"</span>
+    <h1 id='task-executer'>Task Executer APIs</h1>
+
+
+    <!------------------------------- Get PicStork task details --------------------------->
+
+
+    <h2 id='get-assigned-task'>Get Assigned task details</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/TaskExecuter/tasks/:taskId"</span>
  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
  <span class="nt">-X</span> GET
  <span class="nt">-D</span>
  </code></pre>
-     </div>
-     <blockquote>
-       <p>A successful call to this API will return following response with response code 200.</p>
-     </blockquote>
-     <div class="highlight">
-       <pre class="highlight json tab-json"><code>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
         
     1. For training task :- 
         
@@ -6021,71 +6935,71 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
               ]
           }
  </code></pre>
-     </div>
-     <h3 id='description-33'>Description</h3>
- 
-     <p>This API is used to get task details on the task executer.
-        Make sure to replace the taskId with the actual task_id of the task which data is to be retrieved.
-        It will return all task specific details depending on the task type. 
-     </p> 
-     <h3 id='http-request-33'>HTTP Request</h3>
-     <p><code>POST ${BASE_URL}/AeroMegh/AeroCapture/TaskExecuter/tasks/:taskId"</code></p>
- 
-     <h3 id='http-response-32'>HTTP Response</h3>
- 
-     <p>Response codes explanation:</p>
-     <table>
-       <thead>
-         <tr>
-           <th>Code</th>
-           <th>Details</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td>500</td>
-           <td>Internal server has occured (database error).</td>
-         </tr>
-         <tr>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get task details on the task executer.
+      Make sure to replace the taskId with the actual task_id of the task which data is to be retrieved.
+      It will return all task specific details depending on the task type.
+    </p>
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/AeroCapture/TaskExecuter/tasks/:taskId"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
           <td>403</td>
           <td>You are not authorized to access this resource</td>
         </tr>
-         <tr>
-           <td>400</td>
-           <td>Request missing some parameter/Invlaid task/Task does not exists.</td>
-         </tr>
-         <tr>
-           <td>200</td>
-           <td>Result shown on the right side.</td>
-         </tr>
-       </tbody>
-     </table>
- 
-     <!------------------------------------------------------------------------------------------>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter/Invlaid task/Task does not exists.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>Result shown on the right side.</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <!------------------------------- Get detector files API ------------------------------>
-  
-  
-      <h2 id='get-detector-files'>Get detector files</h2>
-      <div class="highlight">
-        <pre class="highlight python tab-python"><code></code></pre>
-      </div>
-      <div class="highlight">
-        <pre class="highlight javascript tab-javascript"><code></code></pre>
-      </div>
-      <div class="highlight">
-        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/PicStork/taskExecuter/getDetectorFiles/:taskId"</span>
+    <!------------------------------------------------------------------------------------------>
+
+    <!------------------------------- Get detector files API ------------------------------>
+
+
+    <h2 id='get-detector-files'>Get detector files</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/PicStork/taskExecuter/getDetectorFiles/:taskId"</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
   <span class="nt">-X</span> GET
   <span class="nt">-D</span>
 
   </code></pre>
-      </div>
-      <blockquote>
+    </div>
+    <blockquote>
       <p>A successful call to this API will return a following with response code 200.</p>
     </blockquote>
     <div class="highlight">
-    <pre class="highlight json tab-json"><code>
+      <pre class="highlight json tab-json"><code>
 
 {  
   "files": [
@@ -6141,60 +7055,60 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
   }
          
   </code></pre>
-      </div>
-      <h3 id='description-33'>Description</h3>
-  
-      <p>This API is used to get detector files details which include the direct download links of the detector files.
-        It takes taskId in URL params and returns the direct download links of all the files associated with the 
-        selected detectors for the task.
-      </p> 
-      <h3 id='http-request-33'>HTTP Request</h3>
-      <p><code>POST ${BASE_URL}/PicStork/taskExecuter/getDetectorFiles/:taskId</code></p>
-  
-      <h3 id='http-response-32'>HTTP Response</h3>
-  
-      <p>Response codes explanation:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>500</td>
-            <td>Internal server has occured (database error).</td>
-          </tr>
-          <tr>
-           <td>403</td>
-           <td>Invalid access token</td>
-         </tr>
-          <tr>
-            <td>400</td>
-            <td>Request missing some parameter.</td>
-          </tr>
-          <tr>
-            <td>200</td>
-            <td>Reuslt shown on the right side.</td>
-          </tr>
-        </tbody>
-      </table>
-  
-      <!------------------------------------------------------------------------------------------>
+    </div>
+    <h3 id='description-33'>Description</h3>
 
-       <!------------------------------- Save detector API ------------------------------>
-  
-  
-       <h2 id='save-detector'>Save Detector</h2>
-       <div class="highlight">
-         <pre class="highlight python tab-python"><code></code></pre>
-       </div>
-       <div class="highlight">
-         <pre class="highlight javascript tab-javascript"><code></code></pre>
-       </div>
-       <div class="highlight">
-         <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/taskExecuter/saveDetector"</span>
+    <p>This API is used to get detector files details which include the direct download links of the detector files.
+      It takes taskId in URL params and returns the direct download links of all the files associated with the
+      selected detectors for the task.
+    </p>
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/PicStork/taskExecuter/getDetectorFiles/:taskId</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>Reuslt shown on the right side.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!------------------------------------------------------------------------------------------>
+
+    <!------------------------------- Save detector API ------------------------------>
+
+
+    <h2 id='save-detector'>Save Detector</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/taskExecuter/saveDetector"</span>
    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
    <span class="nt">-X</span> POST
    <span class="nt">-D</span>
@@ -6209,77 +7123,77 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
    <span class="o">}</span>
  
    </code></pre>
-       </div>
-       <blockquote>
-         <p>A successful call to this API will return following with response code 200.</p>
-       </blockquote>
-       <div class="highlight">
-         <pre class="highlight json tab-json"><code>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
           {
             "message": "Detector added."
           }
           
    </code></pre>
-       </div>
-       <h3 id='description-33'>Description</h3>
-   
-       <p>This API is used to save the detector data. Once a training task is completed, this API shall be 
-        called to save the detector data into database under the user.
-       </p> 
-       <h3 id='http-request-33'>HTTP Request</h3>
-       <p><code>POST ${BASE_URL}/AeroMegh/PicStork/taskExecuter/saveDetector</code></p>
-   
-       <h3 id='http-response-32'>HTTP Response</h3>
-   
-       <p>Response codes explanation:</p>
-       <table>
-         <thead>
-           <tr>
-             <th>Code</th>
-             <th>Details</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr>
-             <td>500</td>
-             <td>Internal server has occured (database error).</td>
-           </tr>
-           <tr>
-            <td>403</td>
-            <td>Invalid access token</td>
-          </tr>
-           <tr>
-             <td>400</td>
-             <td>Request missing some parameter.</td>
-           </tr>
-           <tr>
-             <td>202</td>
-             <td>Detector id duplication./A detector with same name already exists under this user.</td>
-           </tr>
-           <tr>
-             <td>200</td>
-             <td>Detector added.</td>
-           </tr>
-         </tbody>
-       </table>
-   
-       <!------------------------------------------------------------------------------------------>
-  
- 
-     
+    </div>
+    <h3 id='description-33'>Description</h3>
 
-      <!------------------------------- Export annotation zip API ------------------------------>
-  
-  
-      <h2 id='export-annotation-zip'>Export Annotation zip</h2>
-      <div class="highlight">
-        <pre class="highlight python tab-python"><code></code></pre>
-      </div>
-      <div class="highlight">
-        <pre class="highlight javascript tab-javascript"><code></code></pre>
-      </div>
-      <div class="highlight">
-        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/exportAnnotationData"</span>
+    <p>This API is used to save the detector data. Once a training task is completed, this API shall be
+      called to save the detector data into database under the user.
+    </p>
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/PicStork/taskExecuter/saveDetector</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>202</td>
+          <td>Detector id duplication./A detector with same name already exists under this user.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>Detector added.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------- Export annotation zip API ------------------------------>
+
+
+    <h2 id='export-annotation-zip'>Export Annotation zip</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/exportAnnotationData"</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
   <span class="nt">-X</span> POST
   <span class="nt">-D</span>
@@ -6291,59 +7205,59 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
   <span class="o">}</span>
 
   </code></pre>
-      </div>
-      <blockquote>
-        <p>A successful call to this API will return a zip file in response with response code 200.</p>
-      </blockquote>
-      <div class="highlight">
-        <pre class="highlight json tab-json"><code>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return a zip file in response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
          
   </code></pre>
-      </div>
-      <h3 id='description-33'>Description</h3>
-  
-      <p>This API is used to get annotation zip file. It will take collection_id , annotation_set_id and 
-        annotation_set_name of which the zip file is to be downloaded.
-      </p> 
-      <h3 id='http-request-33'>HTTP Request</h3>
-      <p><code>POST ${BASE_URL}/AeroMegh/PicStork/exportAnnotationData</code></p>
-  
-      <h3 id='http-response-32'>HTTP Response</h3>
-  
-      <p>Response codes explanation:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>500</td>
-            <td>Internal server has occured (database error)./Error occured while creating zip file.</td>
-          </tr>
-          <tr>
-           <td>403</td>
-           <td>Invalid access token</td>
-         </tr>
-          <tr>
-            <td>400</td>
-            <td>Request missing some parameter.</td>
-          </tr>
-          <tr>
-            <td>202</td>
-            <td>No images have been annotated in this set.</td>
-          </tr>
-          <tr>
-            <td>200</td>
-            <td>Zip file.</td>
-          </tr>
-        </tbody>
-      </table>
-  
-      <!------------------------------------------------------------------------------------------>
- 
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get annotation zip file. It will take collection_id , annotation_set_id and
+      annotation_set_name of which the zip file is to be downloaded.
+    </p>
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/PicStork/exportAnnotationData</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error)./Error occured while creating zip file.</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>202</td>
+          <td>No images have been annotated in this set.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>Zip file.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!------------------------------------------------------------------------------------------>
+
 
 
 
