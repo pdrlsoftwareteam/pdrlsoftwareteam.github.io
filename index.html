@@ -484,6 +484,22 @@
           </li>
         </ul>
       </li>
+
+      <li>
+        <a href="#twoStepVerification" class="toc-h1 toc-link" data-title="twoStepVerification">OEM Two Step
+          Verification</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#loginSendOTP" class="toc-h2 toc-link" data-title="loginSendOTP">Send Login OTP</a>
+          </li>
+          <li>
+            <a href="#loginOTPTimer" class="toc-h2 toc-link" data-title="loginOTPTimer">Login OTP Timer</a>
+          </li>
+          <li>
+            <a href="#loginVerifyOTP" class="toc-h2 toc-link" data-title="loginVerifyOTP">Verify Login OTP</a>
+          </li>
+        </ul>
+      </li>
       <li>
         <a href="#leasedronemodule" class="toc-h1 toc-link" data-title="leasedronemodule">Lease Drone Module</a>
         <ul class="toc-list-h2">
@@ -998,6 +1014,26 @@
           <li>
             <a href="#update-license-count" class="toc-h2 toc-link" data-title="Update license count">Update license
               count for manufacturer.</a>
+          </li>
+        </ul>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#oemUploadFile" class="toc-h2 toc-link" data-title="oemUploadFile">Upload File In OEM</a>
+          </li>
+        </ul>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#OEMgetAllFiles" class="toc-h2 toc-link" data-title="OEMgetAllFiles">Get All Files In OEM</a>
+          </li>
+        </ul>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#deleteFileOEM" class="toc-h2 toc-link" data-title="deleteFileOEM">Delete Files In OEM</a>
+          </li>
+        </ul>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#downloadFileOEM" class="toc-h2 toc-link" data-title="downloadFileOEM">Download Files In OEM</a>
           </li>
         </ul>
         <ul class="toc-list-h2">
@@ -4119,6 +4155,214 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
       </tbody>
     </table>
     <!-- -------------------------------------- -->
+
+
+    <!------------------------------- OEM two step verification module --------------------------->
+
+    <h1 id='twoStepVerification'>OEM Two Step Verification</h1>
+    <!------------------------------- Add customer record --------------------------->
+    <h2 id='loginSendOTP'>Send Login OTP</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/userOTP"</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+<span class="nt">-X</span> POST
+<span class="nt">-D</span>
+<span class="s2">"body"</span>: 
+  <span class="o">{</span>
+    <span class="s2">"username"</span>: <span class="s2">"xyz@gmial.com"</span>
+    <span class="s2">"password</span>: <span class="s2">"1425367889"</span>
+  <span class="o">}</span>
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+    {
+      "message": "OTP Send Successfully."
+    }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to login two step verification.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/userOTP"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <!-- <tr>
+          <td>202</td>
+          <td>User has already taken the survey.</td>
+        </tr> -->
+        <tr>
+          <td>400</td>
+          <td>Invalid user name or password.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>{ "message": "OTP send Successfully." }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+    <!------------------------------- get login otp Time --------------------------->
+
+    <h2 id='loginOTPTimer'>Get Login OTP Timer</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/timerOTP?username=abc@gmail.com"</span>
+       <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+       <span class="nt">-X</span> GET
+       <span class="nt">-D</span>
+      
+       </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+            {
+              "remainTime": 04:30 
+          }
+       </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get time in minutes after sending OTp.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/timerOTP?username=abc@gmail.com"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td> { remainTime: 04:30 }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+
+    <!------------------------------- Add customer record --------------------------->
+    <h2 id='loginVerifyOTP'>Verify Login OTP</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/verifyOTP"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> POST
+  <span class="nt">-D</span>
+  <span class="s2">"body"</span>: 
+    <span class="o">{</span>
+      <span class="s2">"username"</span>: <span class="s2">"xyz@gmial.com"</span>
+      <span class="s2">"password"</span>: <span class="s2">"1425367889"</span>
+      <span class="s2">"otp"</span>: <span class="s2">"142536"</span>
+    <span class="o">}</span>
+  </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+      {
+        "message": "verify and login Successfully."
+      }
+  </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to varify otp for two step verification.</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/verifyOTP"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>Internal server has occured (database error).</td>
+        </tr>
+        <tr>
+          <td>401</td>
+          <td>OTP expired.</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Invalid OTP.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>{ "message": "verify and login Successfully." }</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- -------------------------------------- -->
+
+
     <!------------------------------- drone lease module --------------------------->
 
     <h1 id='leasedronemodule'>Lease Drone Module</h1>
@@ -13867,6 +14111,272 @@ A susccessful response with status code 200 :
       </tbody>
     </table>
     <!-- --------------------------------------------------------------- -->
+
+    <!-- ------------ upload file ------------ -->
+    <h2 id='oemUploadFile'>Upload File IN OEM</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>   curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/NPNT/Manufacturer/firmwares/files/d20f398d-dc62-421e-b1ee-7090c642a91f</span>
+     <span class="nt">-H</span> </span> <span class="s2">"Authorization: Bearer access_token"</span>
+     <span class="nt">-X</span> POST
+   
+     <span class="s2">"body"</span>: 
+   <span class="o">{</span>
+     <span class="s2">file should be uploaded in form-data</span>
+   <span class="o">}</span>
+     </code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">
+         A susccessful response with status code 200 :
+         {
+           "message": "file uploaded Successfully"
+         }
+         </span>
+         </span></code></pre>
+    </div>
+    <h3 id='description-27'>Description</h3>
+    <p>This API will be used to upload file. </p>
+    <h3 id='http-request-27'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/NPNT/Manufacturer/firmwares/files/:user_id</code></p>
+    <h3 id='http-response-26'>HTTP Response</h3>
+    <p>A susccessful request to the above API returns a successful message with status code 200</p>
+
+    <p><code>{
+             "message": "file uploaded Successfully"
+           }</code></p>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>An internal server error has occured.(Datatable related specific message)</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing parameters.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>file uploaded Successfully</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- --------------------------------------------------------------- -->
+
+
+    <!-- ------------ Get All Files In OEM ------------ -->
+    <h2 id='OEMgetAllFiles'>Get All Files In OEM</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>   curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/NPNT/Manufacturer/firmwares/getAllFiles/d20f398d-dc62-421e-b1ee-7090c642a91f</span>
+  <span class="nt">-H</span> </span> <span class="s2">"Authorization: Bearer access_token"</span>
+  <span class="nt">-X</span> GET
+  </code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">
+      A susccessful response with status code 200 :
+      {
+        "files": [
+            {
+                "id": "d20f398d-dc62-421e-b1ee-7090c642a91f",
+                "file_name": "abc.apk",
+                "filesize": 50.50MB,
+                "uploaded_date": 2022-09-11 07:28:34.763+00,
+                "userid": "s478f398d-dc62-421e-b1ee-7090c642a91f",                
+            },
+            {
+              "id": "d20f398d-dc62-421e-b1ee-7090c642a91f",
+              "file_name": "abc.apk",
+              "filesize": 50.50MB,
+              "uploaded_date": 2022-09-11 07:28:34.763+00,
+              "userid": "s478f398d-dc62-421e-b1ee-7090c642a91f",                
+          }
+        ]
+    }
+      </span>
+      </span></code></pre>
+    </div>
+    <h3 id='description-27'>Description</h3>
+    <p>This API will be used to get the list of all files uploaded under uder.
+    </p>
+    <h3 id='http-request-27'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/NPNT/Manufacturer/firmwares/getAllFiles/:user_id</code></p>
+    <h3 id='http-response-26'>HTTP Response</h3>
+    <p>A susccessful request to the above API returns a successful message with status code 200</p>
+
+    <p><code>{
+          Response shown on the right side.
+        }</code></p>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>An internal server error has occured.(Datatable related specific message)</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing parameters</td>
+        </tr>
+        <tr>
+          <td>202</td>
+          <td>No file were found.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>Response shown on the right side.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- --------------------------------------------------------------- -->
+
+
+    <!-- ------------ Delete file ------------ -->
+    <h2 id='deleteFileOEM'>Delete Files In OEM</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>   curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/NPNT/Manufacturer/firmwares/deleteUploadedFile/8b1116fd-f9ab-4601-aa2e-6a04efb2989e/741116fd-f9ab-4601-aa2e-6a04efb2989e</span>
+      <span class="nt">-H</span> </span> <span class="s2">"Authorization: Bearer access_token"</span>
+      <span class="nt">-X</span> DELETE
+      </code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">
+          A susccessful response with status code 200 :
+          {
+            "message": "file deleted successfully !"
+          }
+          </span>
+          </span></code></pre>
+    </div>
+    <h3 id='description-27'>Description</h3>
+    <p>This API will be used to delete an file.</p>
+    <h3 id='http-request-27'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/NPNT/Manufacturer/firmwares/deleteUploadedFile/:file_id/:user_id</code></p>
+    <h3 id='http-response-26'>HTTP Response</h3>
+    <p>A susccessful request to the above API returns a successful message with status code 200</p>
+
+    <p><code>{
+              "message": "file deleted successfully !"
+            }</code></p>
+
+    <p>Response codes explanation:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td>An internal server error has occured.(Datatable related specific message)</td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing parameters</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>file deleted successfully !</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- --------------------------------------------------------------- -->
+
+        <!-- ------------ upload file ------------ -->
+        <h2 id='downloadFileOEM'>Download Files In OEM</h2>
+        <div class="highlight">
+          <pre class="highlight python tab-python"><code></code></pre>
+        </div>
+        <div class="highlight">
+          <pre class="highlight javascript tab-javascript"><code></code></pre>
+        </div>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>   curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/NPNT/Manufacturer/firmwares/downloadfile</span>
+         <span class="nt">-H</span> </span> <span class="s2">"Authorization: Bearer access_token"</span>
+         <span class="nt">-X</span> POST
+       
+         <span class="s2">"body"</span>: 
+       <span class="o">{</span>
+         <span class="s2">"file_name"</span>:<span class="s2">"xyz.apk"</span>
+       <span class="o">}</span>
+         </code></pre>
+        </div>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">
+             A susccessful response with status code 200
+             </span>
+             </span></code></pre>
+        </div>
+        <h3 id='description-27'>Description</h3>
+        <p>This API will be used to downlaod file. </p>
+        <h3 id='http-request-27'>HTTP Request</h3>
+        <p><code>POST ${BASE_URL}/AeroMegh/NPNT/Manufacturer/firmwares/downloadfile</code></p>
+        <h3 id='http-response-26'>HTTP Response</h3>
+        <p>A susccessful request to the above API returns a successful message with status code 200</p>
+    
+        <p><code>{
+                "file starts downloading in browswer"
+               }</code></p>
+    
+        <p>Response codes explanation:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>500</td>
+              <td>An internal server error has occured.(Datatable related specific message)</td>
+            </tr>
+            <tr>
+              <td>400</td>
+              <td>Request missing parameters.</td>
+            </tr>
+            <tr>
+              <td>200</td>
+              <td>file get downloaded Successfully</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- --------------------------------------------------------------- -->
+
 
 
     <!-- ------------ Update license count for manufacturer ------------ -->
