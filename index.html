@@ -7001,58 +7001,49 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <div class="highlight">
       <pre class="highlight json tab-json"><code>
 
-{  
-  "files": [
-      {
-          "testDetector1": [
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/checkpoint?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/frozen_inference_graph.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.data-00000-of-00001?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.index?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.meta?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/pipeline.config?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/saved_model/saved_model.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/LabelMap/labelmap.pbtxt?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D"
-          ]
-      },
-      {
-          "maskrcnn_rooftop": [
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/92b4d7b1-2c7e-4f00-9279-27ce3e222598/Inference_Graph/checkpoint?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/92b4d7b1-2c7e-4f00-9279-27ce3e222598/Inference_Graph/frozen_inference_graph.pb?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/92b4d7b1-2c7e-4f00-9279-27ce3e222598/Inference_Graph/model.ckpt.data-00000-of-00001?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/92b4d7b1-2c7e-4f00-9279-27ce3e222598/Inference_Graph/model.ckpt.index?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/92b4d7b1-2c7e-4f00-9279-27ce3e222598/Inference_Graph/model.ckpt.meta?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/92b4d7b1-2c7e-4f00-9279-27ce3e222598/Inference_Graph/pipeline.config?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/92b4d7b1-2c7e-4f00-9279-27ce3e222598/Inference_Graph/saved_model/saved_model.pb?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/92b4d7b1-2c7e-4f00-9279-27ce3e222598/LabelMap/labelmap.pbtxt?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D"
-          ]
-      },
-      {
-          "maskrcnn_car": [
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/5e293c85-f7b2-4de2-a280-6b4533d89875/Inference_Graph/checkpoint?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/5e293c85-f7b2-4de2-a280-6b4533d89875/Inference_Graph/frozen_inference_graph.pb?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/5e293c85-f7b2-4de2-a280-6b4533d89875/Inference_Graph/model.ckpt.data-00000-of-00001?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/5e293c85-f7b2-4de2-a280-6b4533d89875/Inference_Graph/model.ckpt.index?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/5e293c85-f7b2-4de2-a280-6b4533d89875/Inference_Graph/model.ckpt.meta?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/5e293c85-f7b2-4de2-a280-6b4533d89875/Inference_Graph/pipeline.config?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/5e293c85-f7b2-4de2-a280-6b4533d89875/Inference_Graph/saved_model/saved_model.pb?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D",
-              "https://pdrlimage.blob.core.windows.net/user-2eee55dc-0191-43cf-a8e3-d948237ad55b/publicDetectors/5e293c85-f7b2-4de2-a280-6b4533d89875/LabelMap/labelmap.pbtxt?sv=2020-10-02&st=2022-08-10T12%3A36%3A05Z&se=2090-05-11T12%3A36%3A00Z&sr=c&sp=rl&sig=lRpQBeT0c%2FD3z7dGvHUIOF5OfPrOvX86R4Eui1Wc4%2Bo%3D"
-          ]
-      },
-      {
-          "testDetector2": [
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/749f6371-9cc6-494d-81d0-c3d864299aba/Inference_Graph/checkpoint?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/749f6371-9cc6-494d-81d0-c3d864299aba/Inference_Graph/frozen_inference_graph.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/749f6371-9cc6-494d-81d0-c3d864299aba/Inference_Graph/model.ckpt.data-00000-of-00001?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/749f6371-9cc6-494d-81d0-c3d864299aba/Inference_Graph/model.ckpt.index?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/749f6371-9cc6-494d-81d0-c3d864299aba/Inference_Graph/model.ckpt.meta?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/749f6371-9cc6-494d-81d0-c3d864299aba/Inference_Graph/pipeline.config?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/749f6371-9cc6-494d-81d0-c3d864299aba/Inference_Graph/saved_model/saved_model.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
-              "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/749f6371-9cc6-494d-81d0-c3d864299aba/LabelMap/labelmap.pbtxt?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D"
+        {
+          "detectors": [
+              {
+                  "name": "testDetector1",
+                  "file_urls": [
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/checkpoint?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/frozen_inference_graph.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.data-00000-of-00001?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.index?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.meta?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/pipeline.config?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/saved_model/saved_model.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/LabelMap/labelmap.pbtxt?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D"
+                  ]
+              },
+              {
+                  "name": "maskrcnn_rooftop",
+                  "file_urls": [
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/checkpoint?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/frozen_inference_graph.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.data-00000-of-00001?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.index?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.meta?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/pipeline.config?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/saved_model/saved_model.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/LabelMap/labelmap.pbtxt?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D"
+                  ]
+              },
+              {
+                  "name": "maskrcnn_car",
+                  "file_urls": [
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/checkpoint?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/frozen_inference_graph.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.data-00000-of-00001?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.index?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/model.ckpt.meta?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/pipeline.config?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/Inference_Graph/saved_model/saved_model.pb?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D",
+                      "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/detectors/a55384b8-1148-494b-9e8a-c01c8c3834bb/LabelMap/labelmap.pbtxt?st=2022-03-26T21%3A41%3A05Z&se=2023-03-28T07%3A01%3A05Z&sp=racwdl&sv=2018-03-28&sr=c&sig=DsT6lTa4m%2FzDX6MjWW8hDQHhVyhC0y2xlt0hdqiqZ8k%3D"
+                  ]
+              }
           ]
       }
-    ]
-  }
          
   </code></pre>
     </div>
