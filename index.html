@@ -4488,7 +4488,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
       <pre class="highlight javascript tab-javascript"><code></code></pre>
     </div>
     <div class="highlight">
-      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomer/lease"</span>
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomer/lease/10"</span>
      <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
      <span class="nt">-X</span> GET
      <span class="nt">-D</span>
@@ -4497,7 +4497,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     </div>
 
     <div class="highlight">
-      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomer/green"</span>
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/userCustomer/green/10"</span>
      <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
      <span class="nt">-X</span> GET
      <span class="nt">-D</span>
@@ -4505,7 +4505,8 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
      </code></pre>
     </div>
     <blockquote>
-      <p>A successful call to this API will return following response with response code 200.</p>
+      <p>A successful call to this API will return following response with response code 200. if limit pass 0 its fetch
+        all records.</p>
     </blockquote>
     <div class="highlight">
       <pre class="highlight json tab-json"><code>
@@ -4565,8 +4566,8 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <p>This API is used to get customer records of a particular user.</p>
 
     <h3 id='http-request-33'>HTTP Request</h3>
-    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomer/:lease</code></p>
-    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomer/:green</code></p>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomer/:lease/:limit/code></p>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/userCustomer/:green/:limit</code></p>
 
     <h3 id='http-response-32'>HTTP Response</h3>
 
@@ -5686,6 +5687,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
   <span class="s2">"spray_spacing"</span>: <span class="s2">"3"</span>
   <span class="s2">"spray_area"</span>: <span class="s2">"5000"</span>
   <span class="s2">"flight_time"</span>: <span class="s2">"1:02:00"</span>
+  <span class="s2">"created_datetime"</span>: <span class="s2">"2023-02-11T11:01:41.735Z"</span>
 <span class="o">}</span>
 </code></pre>
     </div>
@@ -5730,6 +5732,10 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
           <td>Request missing some parameter</td>
         </tr>
         <tr>
+          <td>409</td>
+          <td>Report already insertd.</td>
+        </tr>
+        <tr>
           <td>200</td>
           <td>{ "message": "OK" }</td>
         </tr>
@@ -5748,7 +5754,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
       <pre class="highlight javascript tab-javascript"><code></code></pre>
     </div>
     <div class="highlight">
-      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/greenSprayReport"</span>
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroGCSEnterprise/greenSprayReport/:graphUnit/:fromDate/:toDate/:limit"</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
 <span class="nt">-X</span> GET
 <span class="nt">-D</span>
@@ -5820,7 +5826,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <p>This API is used to get spraying reports.</p>
 
     <h3 id='http-request-33'>HTTP Request</h3>
-    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/greenSprayReport</code></p>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroGCSEnterprise/greenSprayReport/:week/:1675555200/:1676159940/:10</code></p>
 
     <h3 id='http-response-32'>HTTP Response</h3>
 
