@@ -6810,11 +6810,11 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     </div>
     <div class="highlight">
       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/teams"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
-  <span class="nt">-X</span> GET
-  <span class="nt">-D</span>
-</code></pre>
+      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+        <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+      <span class="nt">-X</span> GET
+      <span class="nt">-D</span>
+    </code></pre>
     </div>
     <blockquote>
       <p>A successful call to this API will return following response with response code 200.</p>
@@ -6822,8 +6822,21 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <div class="highlight">
       <pre class="highlight json tab-json"><code>
   {
-    "Message": "OK"
-  }
+    "message": "OK",
+    "teams": [
+        {
+            "teamId": "fd442a01-26b7-497a-9539-cb23da8efc99",
+            "teamName": "Drone Naksha",
+            "isOwner": false,
+            "teamOwner": {
+                "userid": "26fecf40-d10b-4084-a050-14d1aecbc227",
+                "username": "dnqa@mailinator.com",
+                "container": "user-26fecf40-d10b-4084-a050-14d1aecbc227",
+                "st": "st=2023-04-03T21%3A38%3A09Z&se=2024-04-04T06%3A58%3A09Z&sp=racwdl&sv=2018-03-28&sr=c&sig=Sqh81Qcy1MH2rbtpTuCOjZvfIQbD959bD7eOLskOjT4%3D"
+            }
+        }
+      ]
+   }
 </code></pre>
     </div>
     <h3 id='description-33'>Description</h3>
@@ -6849,7 +6862,9 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
         <tr>
           <td>error in fetching data</td>
           <td>500</td>
-          <td><code>{message: "An internal server error has occured while getting user teams data"}</code></td>
+          <td><code>{
+            "message": "An internal server error has occured while getting user teams data"
+        }</code></td>
         </tr>
         <tr>
           <td>get user teams </td>
@@ -6889,9 +6904,16 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     </blockquote>
     <div class="highlight">
       <pre class="highlight json tab-json"><code>
-  {
-    "Message": "OK"
-  }
+      {
+          "message": "OK",
+          "projectData": {
+              "id": "06a69b3e-69ce-49db-a12b-90730f806f3c",
+              "project_id": "431ebde1-2e9d-4d21-8d5c-fa82ea443a63",
+              "team_id": "fd442a01-26b7-497a-9539-cb23da8efc99",
+              "role_id": "b55c2106-0afb-44b2-ace4-3b3b7d6e7756",
+              "username": "kkdev@mailinator.com"
+          }
+      }
 </code></pre>
     </div>
     <h3 id='description-33'>Description</h3>
@@ -6920,7 +6942,9 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
         <tr>
           <td>User already has access for the same project</td>
           <td>202</td>
-          <td><code>{message: "User already has access for the same project"}</code></td>
+          <td><code>{
+            "message": "User already has access for the same project"
+        }</code></td>
         </tr>
         <tr>
           <td>get user teams </td>
@@ -6954,8 +6978,38 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <div class="highlight">
       <pre class="highlight json tab-json"><code>
   {
-    "Message": "OK"
-  }
+    "message": "OK",
+    "data": {
+        "hasAccess": [
+            {
+                "userId": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+                "username": "kkdev@mailinator.com",
+                "userFullName": "kkk dev",
+                "role": {
+                    "id": "8de6b034-44e6-46be-b4ab-28f868f370fe",
+                    "name": "OPERATOR"
+                }
+            }
+        ],
+        "noAccess": [
+            {
+                "userId": "26fecf40-d10b-4084-a050-14d1aecbc227",
+                "username": "dnqa@mailinator.com",
+                "userFullName": "Drone Naksha"
+            },
+            {
+                "userId": "c3a0183c-3e6d-41c5-889e-8cf6ca1208d1",
+                "username": "surajdev@mailinator.com",
+                "userFullName": "SBdev dev"
+            },
+            {
+                "userId": "99d4dbb9-d2eb-4d66-befd-6fdb9ca6741c",
+                "username": "krushnalandge15@gmail.com",
+                "userFullName": "Krushna Landge"
+            }
+        ]
+    }
+}
 </code></pre>
     </div>
     <h3 id='description-33'>Description</h3>
@@ -6994,6 +7048,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <!--Get Project Access List end -->
 
     <!-- Delete Project Access -->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <h1 id='teamsnewmodule'>Delete Project Access</h1>
     <h2 id='delete-project-access'>Delete Project Access</h2>
     <div class="highlight">
@@ -7077,9 +7132,13 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     </blockquote>
     <div class="highlight">
       <pre class="highlight json tab-json"><code>
-  {
-    "Message": "OK"
-  }
+        {
+          "message": "OK",
+          "role": {
+              "id": "b55c2106-0afb-44b2-ace4-3b3b7d6e7756",
+              "title": "MANAGER"
+          }
+      }
 </code></pre>
     </div>
     <h3 id='description-33'>Description</h3>
@@ -7113,6 +7172,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <!-- Get Project Role end -->
 
     <!-- Get Roles -->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <h1 id='teamsnewmodule'>Get Roles</h1>
     <h2 id='get-roles'>Get Roles</h2>
     <div class="highlight">
@@ -7134,9 +7194,15 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     </blockquote>
     <div class="highlight">
       <pre class="highlight json tab-json"><code>
-  {
-    "Message": "OK"
-  }
+        {
+          "message": "OK",
+          "roles": [
+              {
+                  "id": "68a2590a-39ce-45b3-87ec-6f2d5589bcd6",
+                  "title": "ADMIN"
+              }
+            ]
+        }
 </code></pre>
     </div>
     <h3 id='description-33'>Description</h3>
@@ -7168,6 +7234,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <!-- Get Roles end -->
 
     <!-- Get Feature Permission -->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <h1 id='teamsnewmodule'>Get Feature Permission</h1>
     <h2 id='get-feature-permissions'>Get Feature Permission</h2>
     <div class="highlight">
@@ -7195,15 +7262,34 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     </blockquote>
     <div class="highlight">
       <pre class="highlight json tab-json"><code>
-  {
-    "Message": "OK"
-  }
+        {
+          "message": "OK",
+          "featuresPermissions": {
+              "DN_REPORTS": {
+                  "DELETE": false,
+                  "CREATE": true,
+                  "EDIT": true,
+                  "READ": true,
+                  "DOWNLOAD": true,
+                  "SHARE": true
+              },
+              "PT_TASKS": {
+                  "DELETE": false,
+                  "CREATE": true,
+                  "EDIT": true,
+                  "READ": true,
+                  "DOWNLOAD": true,
+                  "SHARE": true
+              }
+          }
+      }
 </code></pre>
     </div>
     <h3 id='description-33'>Description</h3>
 
     <p>This API is called when we want features for project, to execute this API there is need to pass teamId, roleId
-      and features in single object as body as body of API , feature attribute is an array which contain feature list. </p>
+      and features in single object as body as body of API , feature attribute is an array which contain feature list.
+    </p>
 
     <h3 id='http-request-33'>HTTP Request</h3>
     <p><code>GET ${BASE_URL}/AeroMegh/teams/roles/features</code></p>
@@ -7229,6 +7315,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <!--Get Feature Permission end -->
 
     <!-- Update Project Access -->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <h1 id='teamsnewmodule'>Update Project Access</h1>
     <h2 id='update-project-access'>Update Project Access</h2>
     <div class="highlight">
@@ -7264,7 +7351,8 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     </div>
     <h3 id='description-33'>Description</h3>
 
-    <p>This API helps you to manage project access, according to user role. For this API execution projectId, roleId, teamId, username are required</p>
+    <p>This API helps you to manage project access, according to user role. For this API execution projectId, roleId,
+      teamId, username are required</p>
 
     <h3 id='http-request-33'>HTTP Request</h3>
     <p><code>GET ${BASE_URL}/AeroMegh/teams/project/access</code></p>
@@ -7287,7 +7375,9 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
         </tr>
       </tbody>
     </table>
+
     <!-- Update Project Access end -->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <!----------------------------------------------- Teams New Module end -------------------------------------------------->
 
     <!-- Teams API -->
