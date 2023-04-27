@@ -457,6 +457,80 @@
         </ul>
       </li>
       <li>
+        <a href="#picstork" class="toc-h1 toc-link" data-title="dronenaksha">PicStork</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#getGraphData" class="toc-h2 toc-link" data-title="Get graph data">Get graph data</a>
+          </li>
+          <li>
+            <a href="#getStatData" class="toc-h2 toc-link" data-title="Get stat data">Get picstork statistics data</a>
+          </li>
+          <li>
+            <a href="#deleteTask" class="toc-h2 toc-link" data-title="Delete Task">Delete Task </a>
+          </li>
+          <li>
+            <a href="#renameProject" class="toc-h2 toc-link" data-title="Rename Project">Rename Project</a>
+          </li>
+          <li>
+            <a href="#getTotalTasks" class="toc-h2 toc-link" data-title="Get total tasks">Get total tasks</a>
+          </li>
+          <li>
+            <a href="#getRecentImageCollections" class="toc-h2 toc-link" data-title="Get recent image collecitons">Get recent image collections</a>
+          </li>
+          <li>
+            <a href="#getAllProjects" class="toc-h2 toc-link" data-title="Get All projects">Get all projects </a>
+          </li>
+          <li>
+            <a href="#getDetectors" class="toc-h2 toc-link" data-title="Get User Detectors">Get User detectors </a>
+          </li>
+          <li>
+            <a href="#deleteDetector" class="toc-h2 toc-link" data-title="Delete detector">Delete detector </a>
+          </li>
+          <li>
+            <a href="#downloadCollectionZip" class="toc-h2 toc-link" data-title="Download Collection zip">Download collection zip</a>
+          </li>
+          <li>
+            <a href="#duplicateCollection" class="toc-h2 toc-link" data-title="Duplication Collection">Duplicate collection </a>
+          </li>
+          <li>
+            <a href="#getAnnotationSetImages" class="toc-h2 toc-link" data-title="Get Annotation set images">Get annotation set images</a>
+          </li>
+          <li>
+            <a href="#updateTaskDetails" class="toc-h2 toc-link" data-title="Update task details">Update task details</a>
+          </li>
+          <li>
+            <a href="#checkUploadStatus" class="toc-h2 toc-link" data-title="Check upload status">Check upload status</a>
+          </li>
+          <li>
+            <a href="#getDetectorsForTask" class="toc-h2 toc-link" data-title="Get detectors for task">Get detectors for task</a>
+          </li>
+          <li>
+            <a href="#imageSetCopy" class="toc-h2 toc-link" data-title="Copy Image set">Copy image set</a>
+          </li>
+          <li>
+            <a href="#addAnnotationReportTask" class="toc-h2 toc-link" data-title="Add annotation report task">Add annotation report task</a>
+          </li>
+          <li>
+            <a href="#updateDNReport" class="toc-h2 toc-link" data-title="Updated report header">Updated report header</a>
+          </li>
+          <li>
+            <a href="#getReportHeader" class="toc-h2 toc-link" data-title="Get report header">Get report header</a>
+          </li>
+          <li>
+            <a href="#addReportHeader" class="toc-h2 toc-link" data-title="Add report header">Add report header</a>
+          </li>
+          <li>
+            <a href="#downloadReportPdf" class="toc-h2 toc-link" data-title="Download report pdf">Download report pdf</a>
+          </li>
+          <li>
+            <a href="#generateDefectPdf" class="toc-h2 toc-link" data-title="Generate defect report pdf">Generate defect report pdf</a>
+          </li>
+          <li>
+            <a href="#generateDetectionPdf" class="toc-h2 toc-link" data-title="Generate detection report pdf">Generate detection report pdf</a>
+          </li>
+        </ul>
+      </li>
+      <li>
         <a href="#analytictool" class="toc-h1 toc-link" data-title="teams">Analytics Tool</a>
         <ul class="toc-list-h2">
           <li>
@@ -4221,6 +4295,2245 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
       </tbody>
     </table>
     <!-- -------------------------------------- -->
+
+
+    <!--------------------------------NEW PICSTORK API UPDATE ------------------------------------>
+
+
+    <h1 id='picstork'>PicStork Main APIs</h1>
+
+
+    <!--Get graph data API  -->
+
+    <h2 id='getGraphData'>Get graph data API</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/getGraphData"</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+<span class="nt">-X</span> GET
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "data": [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ]
+        }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used get line graph data of picstork dashboard.
+      The graph displays day wise object detection count of last month
+      that user has carried out through performing detection tasks.
+    </p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/PicStork/getGraphData</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td><code>{Response shown on the right.}</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- GET GRAPH DATA API ENDS HERE -->
+
+    <!-- GET STATISTICS DATA API -->
+
+    <h2 id='getStatData'>Get picstork statistics data API</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/getStatData</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+<span class="nt">-X</span> GET
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "images": "6296",
+          "tasks": "530",
+          "objects": 8492,
+          "storage": "8.96 GB",
+          "detectors": "15",
+          "taskAnalysis": {
+              "completed": 84,
+              "failed": 43,
+              "pending": 2,
+              "inProgress": 0,
+              "creating": 400
+          }
+      }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used get statistics data of picstork dashboard.
+      The data includes various stats about user's usage of picstork service.
+    </p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/PicStork/getStatData</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td><code>{Response shown on the right.}</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- GET STAT DATA API ENDS HERE -->
+
+    <!-- DELETE TASK API -->
+
+    <h2 id='deleteTask'>Delete Task API</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/detection/tasks/:taskId?teamId</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> DELETE
+   </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+          {
+            "message": "Task and its related data deleted successfully"
+          }
+   </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to delete task. Pass the taskid which is to be deleted in url params
+      and teamid in query params
+    </p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>DELETE ${BASE_URL}/AeroMegh/AeroCapture/detection/tasks/:taskId?teamId</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td><code>{Response shown on the right.}</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--DELETE TASK API ENDS HERE -->
+
+    <!--RENAME PROJECT API -->
+
+    <h2 id='renameProject'>Rename Project API</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/project/rename/:project_id/:New_name
+  </span>
+ <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+ <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+ <span class="nt">-X</span> PUT
+ </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "message":"Project name updated successfully"
+        }
+ </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to rename projcet. Pass the projectId which is to be rename and new name of project in url
+      params
+    </p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>PUT ${BASE_URL}/AeroMegh/project/rename/:project_id/:New_name</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td><code>{Response shown on the right.}</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- RENAME PROJECT API ENDS HERE -->
+
+
+    <!--GET TOTAL TASKS API -->
+
+    <h2 id='getTotalTasks'>Get total tasks </h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/project/getTotalTasks/:searchString/:startIndex/:pageSize
+  </span>
+ <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+ <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+ <span class="nt">-X</span> GET
+ </code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+     {
+          "count": "1",
+          "tasks": [
+              {
+                  "task_id": "e90b7406-9f2c-404a-8e86-828e0bd91a06",
+                  "status": "Creating",
+                  "date_created": "2023-04-25T05:26:07.354Z",
+                  "type": [],
+                  "video_task": false,
+                  "video_id": null,
+                  "task_name": "dsfsdf",
+                  "image_collection_id": "cc5f21a6-658f-4916-bca6-d8bbba041885",
+                  "tasktype": 1,
+                  "plan_name": "PICSTORK_PLAN",
+                  "plan_id": "c4f5870b-adf2-4c00-904f-217ed175e536",
+                  "project_id": "72784742-71a7-4b15-8e78-f45a071f07ab",
+                  "project_name": "TEST",
+                  "collection_name": "dsfsdf_25042023105607",
+                  "sharedData": {
+                      "isShared": false,
+                      "sharedBy": null,
+                      "access_level": null
+                  },
+                  "file": {
+                      "id": "b10e704a-3520-4a5c-a565-098d375a313c",
+                      "file_name": "orthomosaic__2_.tif",
+                      "created_on": "2023-04-25T05:26:17.024Z"
+                  },
+                  "images_count": "1"
+              },
+          ]
+      }
+ </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to get all tasks of user. Pass URL parameters as follows 
+     <p> searchString : if needed i.e, user searches for a Task </p>
+      <p> startIndex : from which user has requested the records </p>
+      <p> pageSize : no of tasks to be displayed on the page </p>
+    </p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroCapture/project/getTotalTasks/:searchString/:startIndex/:pageSize</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td><code>{Response shown on the right.}</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- GET TOTAL TASKS API ENDS HERE -->
+
+
+  <!--GET RECENT IMAGE COLLECTIONS API -->
+
+  <h2 id='getRecentImageCollections'>Get recent image collections </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/Aeromegh/getRecentImageCollections/:type/:type_id/:pageSize?pageNo=0&teamId=358bcd95-8320-436f-9b42-c080adb38
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "imageCollections": [
+                {
+                    "id": "cc5f21a6-658f-4916-bca6-d8bbba041885",
+                    "collection_name": "dsfsdf_25042023105607",
+                    "created_on": "2023-04-25T05:26:10.009Z",
+                    "plan_name": "PICSTORK_PLAN",
+                    "plan_id": "c4f5870b-adf2-4c00-904f-217ed175e536",
+                    "project_id": "72784742-71a7-4b15-8e78-f45a071f07ab",
+                    "project_name": "New_project_name",
+                    "images_count": "1",
+                    "file": {
+                        "id": "b10e704a-3520-4a5c-a565-098d375a313c",
+                        "file_name": "orthomosaic__2_.tif",
+                        "created_on": "2023-04-25T05:26:17.024Z"
+                    },
+                    "sharedData": {
+                        "isShared": false,
+                        "sharedBy": null,
+                        "access_level": null
+                    }
+                }
+            ],
+            "count": 1
+        }
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to get recent image collections from project or plan of user. Pass URL parameters as follows 
+       <p> type : From where the image collections are to be fetched i.e., Project, plan, etc</p>
+        <p> type_id : project or plan id from where the image collections are to be feched</p>
+        <p> pageSize : no of tasks to be displayed on the page </p>
+        <p> pageNo : on which page </p>
+        <p> teamId : team id of current team </p>
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/Aeromegh/getRecentImageCollections/:type/:type_id/:pageSize?pageNo=0&teamId=358bcd95-8320-436f-9b42-c080adb38</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- GET RECENT IMAGE COLLECTIONS API ENDS HERE -->
+
+  <!--GET ALL PROJECTS API -->
+
+  <h2 id='getAllProjects'>Get all projects </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/projects/:searchString/:startIndex/:pageSize/:teamId
+
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "projects": [
+                {
+                    "id": "72784742-71a7-4b15-8e78-f45a071f07ab",
+                    "project_name": "New_project_name",
+                    "plan_name": null,
+                    "created_date": "2023-04-25T05:26:02.146Z",
+                    "user_id": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+                    "pilot_id": "st=2023-04-24T19%3A48%3A19Z&se=2024-04-25T05%3A08%3A19Z&sp=racwdl&sv=2018-03-28&sr=c&sig=CbrKFAsP6xb6vTjshJHvQVvoo5Qm%2Fg95ghgFICESQmc%3D",
+                    "plan_count": "0",
+                    "tasks": "1",
+                    "sharedData": {
+                        "isShared": false,
+                        "sharedBy": null,
+                        "access_level": null
+                    },
+                    "images": 0,
+                    "image": "orthomosaic__2_.tif",
+                    "collection_id": "cc5f21a6-658f-4916-bca6-d8bbba041885"
+                },
+            ],
+            "count": 1
+        }
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to get projects of user. Pass URL parameters as follows 
+        <p> searchString : search string passed by user</p>
+        <p> pageSize : no of projects to be displayed on the page </p>
+        <p> startIndex : start of the projects result </p>
+        <p> teamId : team id of current team </p>
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/AeroMegh/AeroCapture/projects/:searchString/:startIndex/:pageSize/:teamId</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- GET ALL PROJECTS API ENDS HERE -->
+
+       <!--GET USER DETECTORS API -->
+
+  <h2 id='getDetectors'>Get user detectors </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/detectors/user/:searchString/:startIndex/:pageSize
+
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "detectors": [
+                {
+                    "id": "473d0dad-c7dd-458e-a47d-96a7e5f2945e",
+                    "name": "faster_473d0dad-c7dd-458e-a47d-96a7e5f2945e",
+                    "usable": true,
+                    "objects": [
+                        "arrow",
+                        "map"
+                    ],
+                    "display_name": "testTraining Detector",
+                    "user_id": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+                    "date_created": "2023-01-25T12:53:04.937Z",
+                    "source_task": "6c3dcfc8-fc1f-4022-b6e1-50dbb0596728",
+                    "task_name": "testTraining",
+                    "images": 1,
+                    "accuracy": null
+                },
+            ],
+            "count": 1
+        }
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to get detectors of user. Pass URL parameters as follows 
+        <p> searchString : search string passed by user</p>
+        <p> pageSize : no of detectors to be displayed on the page </p>
+        <p> startIndex : start of the detectors result </p>
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/AeroMegh/PicStork/detectors/user/:searchString/:startIndex/:pageSize</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- GET USER DETECTORS API ENDS HERE -->
+
+  <!--DELETE USER DETECTORS API -->
+
+  <h2 id='deleteDetector'>Delete detector </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/detectors/user/:searchString/:startIndex/:pageSize
+
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "detectors": [
+                {
+                    "id": "473d0dad-c7dd-458e-a47d-96a7e5f2945e",
+                    "name": "faster_473d0dad-c7dd-458e-a47d-96a7e5f2945e",
+                    "usable": true,
+                    "objects": [
+                        "arrow",
+                        "map"
+                    ],
+                    "display_name": "testTraining Detector",
+                    "user_id": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+                    "date_created": "2023-01-25T12:53:04.937Z",
+                    "source_task": "6c3dcfc8-fc1f-4022-b6e1-50dbb0596728",
+                    "task_name": "testTraining",
+                    "images": 1,
+                    "accuracy": null
+                },
+            ],
+            "count": 1
+        }
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to get detectors of user. Pass URL parameters as follows 
+        <p> searchString : search string passed by user</p>
+        <p> pageSize : no of detectors to be displayed on the page </p>
+        <p> startIndex : start of the detectors result </p>
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/AeroMegh/PicStork/detectors/user/:searchString/:startIndex/:pageSize</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- GET USER DETECTORS API ENDS HERE -->
+
+      <!--DOWNLOAD COLLECTION ZIP API -->
+
+  <h2 id='downloadCollectionZip'>Download collection zip </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/imageset/download/:collection_id?teamId=358bcd95-8320-436f-9b42-c080adb381b9
+
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          Zip file of all images of image collection
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to download zip of image collection. Pass URL parameters as follows 
+        <p> collection_id : Collection id of collection whose zip is to be downloaded</p>
+        <p> teamId : team id of active team </p>
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/AeroMegh/imageset/download/:collection_id?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+ <!-- DOWNLOAD COLLECTION ZIP ENDS HERE -->
+
+  <!--DUPLICATE COLLECTION API -->
+
+  <h2 id='duplicateCollection'>Duplicate Collection </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/copyCollectionteamId=358bcd95-8320-436f-9b42-c080adb381b9
+
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> POST
+
+   <span class="o">{</span>
+    <span class="s2">"destCol"</span>: <span class="s2">"1a302c40-e1a3-43af-b55e-85c302761d27",</span>
+    <span class="s2">"destCont</span>: <span class="s2">"user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",</span>
+    <span class="s2">"srcCol"</span>: <span class="s2">"cc5f21a6-658f-4916-bca6-d8bbba041885",</span>
+    <span class="s2">"srcCont</span>: <span class="s2">"user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf"</span>
+  <span class="o">}</span>
+   </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "message": "Image set copied successfully."
+          }
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to duplicate image collection. Pass body parameters as follows 
+        <p> destCol : Collection id of collection which is to be duplicated</p>
+        <p> destCont : blob container of source collection </p>
+        <p> srcCol : Collection id of new collection</p>
+        <p> srcCont : blob container of destination collection </p>
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/copyCollection?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- DUPLICATE COLLECTION ENDS HERE -->
+
+       <!--GET ANNOTATION SET IMAGES API -->
+
+  <h2 id='getAnnotationSetImages'>Get Annotation set images </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/annotationSet/images/:collection_id/:annotationsetId/:startIndex/:pageSize0?teamId=358bcd95-8320-436f-9b42-c080adb381b9
+
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "sasToken": "st=2023-04-25T00%3A01%3A56Z&se=2023-05-03T09%3A21%3A56Z&sp=rdl&sv=2018-03-28&sr=c&sig=Xr58%2FweWTdK8thuFDvCFA3sJgdMis7GMjS5cVr2uwLM%3D",
+            "images": [
+                {
+                    "id": "c3e6870f-01bc-446b-9ea7-652e4b1f1ffc",
+                    "collection_id": "f0b2161d-8985-4b41-b593-654bb3e48fa1",
+                    "file_name": "orthomosaic__2_.tif",
+                    "created_on": "2023-04-26T00:00:00.000Z",
+                    "resolution": "0.00",
+                    "file_size": "4.35",
+                    "latitude": null,
+                    "longitude": null,
+                    "height": null,
+                    "width": null,
+                    "altitude": null,
+                    "annotation_status": false
+                }
+            ],
+            "totalCount": "1",
+            "annotatedCount": 0,
+            "unannotatedCount": 1
+        }
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to get annotation set images and counts
+        <p>URL Parameters - </p>
+        <p> collection_id : Collection id</p>
+        <p> annotation_set_id : Annotation set id whose images are to be fetched </p>
+        <p> startIndex : start index of images</p>
+        <p> pageSize : No of images to be fetched accoding to pagination </p>
+        <p> teamId : Team id of current team</p>
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/AeroCapture/annotationSet/images/:collection_id/:annotationsetId/:startIndex/:pageSize0?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- GET ANNOTATION SET IMAGES ENDS HERE -->
+
+         <!-- UPDATE TASK DETAILS API --> 
+
+  <h2 id='updateTaskDetails'>Update task details </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/updateTaskDetails/:task_id?teamId=358bcd95-8320-436f-9b42-c080adb381b9
+
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> PUT
+
+   <span class="o">{</span>
+    <span class="s2">"state"</span>: <span class="s2">"3",</span>
+    <span class="s2">"status</span>: <span class="s2">"Creating"</span>
+  <span class="o">}</span>
+   </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "message": "Task updated successfully.",
+            "task": {
+                "user_id": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+                "task_id": "dcf0c580-556b-4cae-8f4c-6bcec69783d8",
+                "date_created": "2023-04-26T09:31:23.267Z",
+                "pid": null,
+                "images": 22,
+                "task_name": "dsvsdvsdv",
+                "status": "Creating",
+                "plan_id": "610fc533-44dc-4588-9375-24c78428884e",
+                "project_id": "568a78fc-cf0f-4cf5-9907-c67c0854cb6e",
+                "type": [
+                    "insulator",
+                    "rusted_bolt",
+                    "loose_bolt",
+                    "no_bolt",
+                    "corrosion",
+                    "corona_ring_present",
+                    "corona_ring_missing",
+                    "arcing_horns",
+                    "damper",
+                    "bird_gard_present",
+                    "bird_gard_missing"
+                ],
+                "image_collection_id": "18499b91-fe1b-4623-acb0-29bae5c5c6ae",
+                "assigned_vm": "6e9f02c0-192e-4e81-812f-b05e9d7a5b48",
+                "status_update_timestamp": "2023-04-26T09:32:41.461Z",
+                "video_task": false,
+                "video_id": null,
+                "fps": null,
+                "tasktype": 2,
+                "accuracy": null,
+                "task_parameters": null,
+                "detectors": null,
+                "linked_map": null,
+                "task_purpose": "Counting",
+                "state": 3,
+                "classes": [
+                    {
+                        "name": "insulator",
+                        "color": "#BFB86A"
+                    },
+                    {
+                        "name": "rusted_bolt",
+                        "color": "#B85A84"
+                    },
+                    {
+                        "name": "loose_bolt",
+                        "color": "#EF0BA8"
+                    },
+                    {
+                        "name": "no_bolt",
+                        "color": "#C94BA8"
+                    },
+                    {
+                        "name": "corrosion",
+                        "color": "#D1EDB3"
+                    },
+                    {
+                        "name": "corona_ring_present",
+                        "color": "#FD0102"
+                    },
+                    {
+                        "name": "corona_ring_missing",
+                        "color": "#31C328"
+                    },
+                    {
+                        "name": "arcing_horns",
+                        "color": "#9DA6D4"
+                    },
+                    {
+                        "name": "damper",
+                        "color": "#B16C43"
+                    },
+                    {
+                        "name": "bird_gard_present",
+                        "color": "#FB038C"
+                    },
+                    {
+                        "name": "bird_gard_missing",
+                        "color": "#AC955F"
+                    }
+                ],
+                "models": [
+                    {
+                        "name": "faster_rcnn_inception_v2_pets_transmissiontower",
+                        "objects": [
+                            "insulator",
+                            "rusted_bolt",
+                            "loose_bolt",
+                            "no_bolt",
+                            "corrosion",
+                            "corona_ring_present",
+                            "corona_ring_missing",
+                            "arcing_horns",
+                            "damper",
+                            "bird_gard_present",
+                            "bird_gard_missing"
+                        ],
+                        "display_name": "Tower"
+                    }
+                ],
+                "collection_name": "dsvsdvsdv_26042023150123_$PDRL",
+                "imageset_created_on": "2023-04-26T09:32:15.542Z"
+            }
+        }
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to update details of task
+        <p>Body Parameters - Fields that are to updated of the task, ex.  </p>
+      <p>
+        {
+          "state": 3,
+          "status": "Creating"
+        }
+      </p>
+        <p>URL Parameters - </p>
+        <p> task_id : task_id of source task</p>
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/AeroCapture/annotationSet/images/:collection_id/:annotationsetId/:startIndex/:pageSize0?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- GET ANNOTATION SET IMAGES ENDS HERE -->
+
+      <!--CHECK UPLOAD STATUS API -->
+
+  <h2 id='checkUploadStatus'>Check upload status </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/image/uploadStatus?teamId=358bcd95-8320-436f-9b42-c080adb381b9
+
+</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> POST
+
+   <span class="o">{</span>
+      "collection_id": "be444139-f39b-4076-b572-742ec27b2228",
+      "file_names": [
+          "1001.jpg",
+          "1004.jpg",
+          "1010.jpg",
+          "1007.jpg",
+          "1013.jpg",
+          "1016.jpg",
+          "1022.jpg",
+          "1019.jpg"
+      ]
+  <span class="o">}</span>
+   </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "uploaded": [
+                "1001.jpg",
+                "1004.jpg",
+                "1010.jpg",
+                "1007.jpg",
+                "1013.jpg",
+                "1016.jpg",
+                "1022.jpg",
+                "1019.jpg"
+            ]
+        }
+   </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to check status of images that are selected by user,
+        i.e., which images are uploaded and which are not. 
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/AeroCapture/image/uploadStatus?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- CHECK UPLOAD STATUS ENDS HERE -->
+
+    <!--GET DETECTORS OF TASK API -->
+
+    <h2 id='getDetectorsForTask'>Get detector list for task </h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/detection/detectors?teamId=358bcd95-8320-436f-9b42-c080adb381b9
+  
+  </span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+     <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+     <span class="nt">-X</span> GET
+     </code></pre>
+  </code></pre>
+        </div>
+        <blockquote>
+          <p>A successful call to this API will return following response with response code 200.</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code>
+            {
+              "data": [
+                  {
+                      "id": "a50fa6e0-d0a0-4272-ad8f-8ef6f5152bdd",
+                      "name": "sadcfs",
+                      "usable": true,
+                      "objects": [
+                          "dvdsv"
+                      ],
+                      "display_name": "sdvdsv",
+                      "user_id": null,
+                      "date_created": "2022-10-01T13:59:46.198Z",
+                      "source_task": null,
+                      "task_name": null,
+                      "images": null,
+                      "accuracy": null
+                  },
+                  {
+                      "id": "5582538a-e897-4c63-a797-a11ad31ab68f",
+                      "name": "maskrcnn_car",
+                      "usable": true,
+                      "objects": [
+                          "vehicle",
+                          "space_available"
+                      ],
+                      "display_name": "Vehicle Parking Detector",
+                      "user_id": null,
+                      "date_created": "2022-10-20T11:51:51.267Z",
+                      "source_task": null,
+                      "task_name": null,
+                      "images": null,
+                      "accuracy": null
+                  }
+                ]
+            }
+     </code></pre>
+        </div>
+        <h3 id='description-33'>Description</h3>
+    
+        <p>This API is used to get detectors list for starting detection task
+          <p>URL Parameters - </p>
+          <p> teamId : Team id of current team</p>
+        </p>
+    
+        <h3 id='http-request-33'>HTTP Request</h3>
+        <p><code>GET ${BASE_URL}AeroMegh/AeroCapture/detection/detectors?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+    
+        <h3 id='http-response-32'>HTTP Response</h3>
+    
+        <table>
+          <thead>
+            <tr>
+              <th>Response Status Code</th>
+              <th>Response Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>500</td>
+              <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+            </tr>
+            <tr>
+              <td>400</td>
+              <td>Request missing some parameter.</td>
+            </tr>
+            <tr>
+              <td>403</td>
+              <td>Invalid access token.</td>
+            </tr>
+            <tr>
+              <td>200</td>
+              <td><code>{Response shown on the right.}</code></td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <!-- GET DETECTOR LIST FOR TASK ENDS HERE -->
+
+<!--COPY IMAGESET FOR TASK API -->
+
+<h2 id='imageSetCopy'>Copy imageset for task</h2>
+<div class="highlight">
+  <pre class="highlight python tab-python"><code></code></pre>
+</div>
+<div class="highlight">
+  <pre class="highlight javascript tab-javascript"><code></code></pre>
+</div>
+<div class="highlight">
+  <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/imageset/copy/collection_id/task_id?teamId=358bcd95-8320-436f-9b42-c080adb381b9
+
+</span>
+ <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+ <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+ <span class="nt">-X</span> POST
+
+
+ </code></pre>
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "message": "Imageset copied for task",
+          "collection": {
+              "id": "912b5d2e-aad9-42ec-b4d4-b59479475605",
+              "project_id": "903aa67d-4fff-4187-abc5-6b83de70f037",
+              "plan_id": "fab0f05f-aaef-4389-9d51-75b34c943d09",
+              "user_id": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+              "collection_name": "wefwefwef_26042023162228_$PDRL",
+              "created_on": "2023-04-26T11:19:40.224Z",
+              "tags": null,
+              "display_flag": false
+          }
+      }
+ </code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is used to create a copy of collection when a task is triggered, 
+      <p>URL Parameters - </p>
+      <p> collection_id : collection id of old collection</p>
+      <p> task_id : task id of source task </p>
+      <p> teamId : Team id of current team</p>
+    </p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/AeroMegh/imageset/copy/collection_id/task_id?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>Request missing some parameter.</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>Invalid access token.</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td><code>{Response shown on the right.}</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- COPY IMAGESET FOR TASK ENDS HERE -->
+
+    <!--START ANNOTATION REPORT TASK API -->
+
+      <h2 id='addAnnotationReportTask'>Add annotation report task </h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/addTask/AnnotationReport?teamId=358bcd95-8320-436f-9b42-c080adb381b9
+    
+    </span>
+       <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+       <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+       <span class="nt">-X</span> POST
+    
+       <span class="o">{</span>
+          "plan_id": "8350173a-0838-4bab-882b-051f5b670ca3",
+          "plan_name": "PICSTORK_PLAN",
+          "project_id": "2c446c8d-70cd-476a-a2a0-6c5f216269ee",
+          "project_name": "ascascasc",
+          "state": 2,
+          "status": "Creating",
+          "taskType": "training",
+          "task_name": "wewevwev",
+          "type": []
+      <span class="o">}</span>
+       </code></pre>
+    </code></pre>
+          </div>
+          <blockquote>
+            <p>A successful call to this API will return following response with response code 200.</p>
+          </blockquote>
+          <div class="highlight">
+            <pre class="highlight json tab-json"><code>
+              {
+                "message": "Task created successfully.",
+                "task": {
+                    "user_id": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+                    "task_id": "a5c4d695-3403-4042-8ea2-8c3353129d11",
+                    "date_created": "2023-04-26T13:14:51.720Z",
+                    "pid": null,
+                    "images": 0,
+                    "task_name": "wewevwev",
+                    "status": "Creating",
+                    "plan_id": "8350173a-0838-4bab-882b-051f5b670ca3",
+                    "project_id": "2c446c8d-70cd-476a-a2a0-6c5f216269ee",
+                    "type": null,
+                    "image_collection_id": null,
+                    "assigned_vm": null,
+                    "status_update_timestamp": "2023-04-26T13:14:51.720Z",
+                    "video_task": false,
+                    "video_id": null,
+                    "fps": null,
+                    "tasktype": 4,
+                    "accuracy": null,
+                    "task_parameters": null,
+                    "detectors": null,
+                    "linked_map": null,
+                    "task_purpose": "Defect",
+                    "state": 2,
+                    "classes": null
+                }
+            }
+       </code></pre>
+          </div>
+          <h3 id='description-33'>Description</h3>
+      
+          <p>This API is used to add annotation report task,
+            Pass body parameters as showed on the right
+          </p>
+      
+          <h3 id='http-request-33'>HTTP Request</h3>
+          <p><code>POST ${BASE_URL}/AeroMegh/PicStork/addTask/AnnotationReport?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+      
+          <h3 id='http-response-32'>HTTP Response</h3>
+      
+          <table>
+            <thead>
+              <tr>
+                <th>Response Status Code</th>
+                <th>Response Body</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>500</td>
+                <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+              </tr>
+              <tr>
+                <td>400</td>
+                <td>Request missing some parameter.</td>
+              </tr>
+              <tr>
+                <td>403</td>
+                <td>Invalid access token.</td>
+              </tr>
+              <tr>
+                <td>200</td>
+                <td><code>{Response shown on the right.}</code></td>
+              </tr>
+            </tbody>
+          </table>
+      
+          <!-- START ANNOTATION REPORT ENDS HERE -->
+
+  <!-- UPDATE DN REPORT HEADER API -->
+
+  <h2 id='updateDNReport'>Update report header </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/updateDNReportHeader/task_id?teamId=a1514112-db56-4964-bf9e-ad0b88a381f5
+
+</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> PUT
+
+    <span class="o">{</span>
+        "name": "kkk test",
+        "subtitle": "TestProject",
+        "title": "dsvsdbsddbscsac"
+  <span class="o">}</span>
+    </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "message": "Report header updated successfully"
+          }
+    </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to update report headers,
+        Pass body parameters as showed on the right
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>PUT ${BASE_URL}/AeroMegh/AeroFarm/updateDNReportHeader/task_id?teamId=a1514112-db56-4964-bf9e-ad0b88a381f5</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+    <!-- UPDATE REPORT HEADER END HERE -->
+
+  <!-- GET REPORT HEADER API -->
+
+  <h2 id='getReportHeader'>Get report Header </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/getDNReportHeader/task_id/report_type?teamId=a1514112-db56-4964-bf9e-ad0b88a381f5
+
+</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> GET
+    </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "data": {
+                "id": "eb7a4c14-d1b3-4ec5-a04e-f69d76849650",
+                "report_type": "Defect",
+                "task_id": "e38c7f40-39f0-47de-a860-27c4b3928033",
+                "name": "kkk test",
+                "title": "dsvsdbsddbscsac",
+                "subtitle": "TestProject",
+                "company_logo": null,
+                "generated_date": "2023-04-26T13:25:38.745Z",
+                "modified_date": null,
+                "generate_request": null
+            }
+        }
+    </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to fetch report headers
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/updateDNReportHeader/task_id?teamId=a1514112-db56-4964-bf9e-ad0b88a381f5</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+    <!-- GET REPORT HEADER END HERE -->
+
+  <!-- ADD REPORT HEADER API -->
+
+  <h2 id='addReportHeader'>Add report Header </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/addDNReportHeader?teamId=a1514112-db56-4964-bf9e-ad0b88a381f5
+
+</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> POST
+
+    <span class="o">{</span>
+        "task_id": "84a7063e-cd62-41b6-bdcc-6355d363943b",
+        "report_type": "Defect",
+        "title": "ergregerg",
+        "company_logo": null,
+        "subtitle": "Tree"
+<span class="o">}</span>
+    </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "message": "Report header added successfully"
+          }
+    </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to add report headers
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/addDNReportHeader?teamId=a1514112-db56-4964-bf9e-ad0b88a381f5</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+    <!-- Add REPORT HEADER END HERE -->
+
+    <!-- DOWNLOAD REPORT PDF API -->
+
+  <h2 id='downloadReportPdf'>Download report PDF </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/downloadPdf/task_id/report_type/collection_id/task_type?teamId=a1514112-db56-4964-bf9e-ad0b88a381f5
+
+</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> POST
+    </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          PDF File of the report
+    </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to download report PDF
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/PicStork/downloadPdf/task_id/report_type/collection_id/task_type?teamId=a1514112-db56-4964-bf9e-ad0b88a381f5</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+        <!-- DOWNLOAD REPORT PDF ENDS HERE -->
+
+         <!-- GENERATE DEFECT PDF API -->
+
+  <h2 id='generateDefectPdf'>Generate defect PDF </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/generateDefectPdf?teamId=358bcd95-8320-436f-9b42-c080adb381b9
+
+</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> POST
+    {
+        "group": {
+            "groupType": "collection",
+            "id": "0599a1e7-c674-4b5e-a46b-8dd2965fcf7b"
+        },
+        "result": {
+            "objects": [
+                "sddssbd"
+            ],
+            "detections": {
+                "sddssbd": {
+                    "data": [
+                        {
+                            "percentage": "100",
+                            "poly": [
+                                0.13678762594458438,
+                                0.22288255667506296,
+                                0.30681281486146095,
+                                0.47225283375314864
+                            ]
+                        },
+                    ],
+                    "count": 1
+                }
+            },
+            "elevationData": []
+        },
+        "_id": "644a12c0d70246bec42749b6",
+        "image": "1034.jpg",
+        "task": "550f8990-bb68-4651-bffb-f40c8614ff94",
+        "__v": 0,
+        "isPolygon": false,
+        "linked_map": null,
+        "userId": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+        "imgData": {
+            "id": "4c623e28-0e3b-456b-a302-14580e8b394b",
+            "collection_id": "0599a1e7-c674-4b5e-a46b-8dd2965fcf7b",
+            "file_name": "1034.jpg",
+            "created_on": "2023-04-27T00:00:00.000Z",
+            "resolution": "9.00",
+            "file_size": "1.08",
+            "latitude": null,
+            "longitude": null,
+            "height": "3000",
+            "width": "3000",
+            "altitude": null
+        },
+        "regions": [
+            {
+                "y": 0.13678762594458438,
+                "x": 0.22288255667506296,
+                "h": 0.17002518891687657,
+                "w": 0.24937027707808568,
+                "data": {
+                    "datatype": "sddssbd",
+                    "percentage": "100",
+                    "id": 1
+                },
+                "id": "c727c2b3-2aa4-4344-aea8-a6a8668b4ecc",
+                "type": "box",
+                "color": "#ff0000",
+                "index": 1,
+                "className": "sddssbd"
+            },
+        ],
+        "cropRegions": [
+            {
+                "outerRegion": {
+                    "y": 211,
+                    "x": 588,
+                    "h": 908,
+                    "w": 908
+                },
+                "annotationRegion": {
+                    "y": 410,
+                    "x": 668,
+                    "h": 510,
+                    "w": 748
+                },
+                "innerRegion": {
+                    "y": 0.13678762594458438,
+                    "x": 0.22288255667506296,
+                    "h": 0.17002518891687657,
+                    "w": 0.24937027707808568,
+                    "data": {
+                        "datatype": "sddssbd",
+                        "percentage": "100",
+                        "id": 1
+                    },
+                    "id": "c727c2b3-2aa4-4344-aea8-a6a8668b4ecc",
+                    "type": "box",
+                    "color": "#ff0000",
+                    "index": 1,
+                    "className": "sddssbd"
+                },
+                "index": 1
+            },
+        ],
+        "objectsDetected": 1,
+        "loading": true,
+        "imageSrc": "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/FlightImages/collection-0599a1e7-c674-4b5e-a46b-8dd2965fcf7b/1034.jpg?st=2023-04-25T20%3A49%3A58Z&se=2024-04-26T06%3A09%3A58Z&sp=racwdl&sv=2018-03-28&sr=c&sig=FRr03h%2BmUm4zc4TQwq55Z2IquptrF0TdxxmSHW7X3Bs%3D"
+    }
+    </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "message":"Done."
+          }
+    </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to generate and upload updated defect report PDF
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/PicStork/generateDefectPdf?teamId=358bcd95-8320-436f-9b42-c080adb381b9</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+        <!-- GENERATE DEFECT REPORT PDF ENDS HERE -->
+
+
+  <!-- GENERATE DETECTION REPORT PDF API -->
+
+  <h2 id='generateDetectionPdf'>Generate detection PDF </h2>
+  <div class="highlight">
+    <pre class="highlight python tab-python"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight javascript tab-javascript"><code></code></pre>
+  </div>
+  <div class="highlight">
+    <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/PicStork/generateDetectionPdf
+
+</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> POST
+    {
+      "viewData": {
+          "detailedAnalysis": {
+              "title": "Detailed Analysis",
+              "visibleInReport": true,
+              "reportView": "List Small"
+          },
+          "severity1": {
+              "details": {
+                  "title": "Severity-1 Detections",
+                  "visibleInReport": true,
+                  "reportView": "List Small"
+              },
+              "severity1Data": []
+          },
+          "severity2": {
+              "details": {
+                  "title": "Severity-2 Detections",
+                  "visibleInReport": true,
+                  "reportView": "List Small"
+              },
+              "severity2Data": []
+          },
+          "severity3": {
+              "details": {
+                  "title": "Severity-3 Detections",
+                  "visibleInReport": true,
+                  "reportView": "List Small"
+              },
+              "severity3Data": []
+          },
+          "severity4": {
+              "details": {
+                  "title": "Severity-4 Detections",
+                  "visibleInReport": true,
+                  "reportView": "List Small"
+              },
+              "severity4Data": []
+          },
+          "severity5": {
+              "details": {
+                  "title": "Severity-5 Detections",
+                  "visibleInReport": true,
+                  "reportView": "List Small"
+              },
+              "severity5Data": []
+          }
+      },
+      "pdfData": {
+          "planName": "dettest",
+          "taskName": "det1",
+          "imageSetName": "det1",
+          "taskId": "7fe4bbf8-9bc9-4212-88d9-d9b6d13a3b93",
+          "collectionId": "2ebe72d2-0bd5-413e-94e9-33e63bb55e60",
+          "totalImages": 10,
+          "pixels": "184.06",
+          "total_size": "74.49",
+          "objectDetected": 860,
+          "avgDetections": 86,
+          "avatar_url": "https://pdrlimage.blob.core.windows.net/user-34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf/profileImage/34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf.jpeg",
+          "username": "kkk dev"
+      },
+      "pieData": [
+          [
+              "rooftop",
+              860
+          ]
+      ],
+      "colors": {
+          "0": {
+              "color": "#CEB976"
+          },
+          "1": {
+              "color": "#72810E"
+          }
+      },
+      "imgData": [
+          {
+              "group": {
+                  "groupType": "collection",
+                  "id": "2ebe72d2-0bd5-413e-94e9-33e63bb55e60"
+              },
+              "result": {
+                  "objects": [
+                      "rooftop"
+                  ],
+                  "detections": {
+                      "rooftop": {
+                          "data": [
+                              {
+                                  "poly": [
+                                      [
+                                          0.6704358552631579,
+                                          0.649671052631579
+                                      ],
+                                      [
+                                          0.6689967105263158,
+                                          0.5989583333333334
+                                      ],
+                                      [
+                                          0.7162828947368421,
+                                          0.5975877192982456
+                                      ],
+                                      [
+                                          0.7152549342105263,
+                                          0.649671052631579
+                                      ]
+                                  ],
+                                  "percentage": 99.93
+                              }
+                          ],
+                          "count": 80
+                      }
+                  },
+                  "elevationData": []
+              },
+              "_id": "63771d973b5ac995b86905ed",
+              "image": "1258.JPG",
+              "task": "7fe4bbf8-9bc9-4212-88d9-d9b6d13a3b93",
+              "__v": 0,
+              "isPolygon": true,
+              "userId": "34ff5307-5437-4a7e-84fb-5bdc4bc5bcdf",
+              "objectsDetected": 80,
+              "file_size": "7.08",
+              "objects": " rooftop"
+          }
+      ]
+  }
+    </code></pre>
+</code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "message":"Done."
+          }
+    </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is used to generate and upload updated detection report PDF
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/PicStork/generateDetectionPdf</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured(Database specific error.)"}</code></td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>Request missing some parameter.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Invalid access token.</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><code>{Response shown on the right.}</code></td>
+          </tr>
+        </tbody>
+      </table>
+  
+        <!-- GENERATE DETECTION REPORT PDF ENDS HERE -->
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--- ---------------------------------------------------------------------------------------------->
+
 
 
     <!------------------------------- OEM two step verification module --------------------------->
