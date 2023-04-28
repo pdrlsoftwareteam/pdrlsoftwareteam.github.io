@@ -2373,8 +2373,86 @@
       <!-- Aeromegh API starts -->
 
       <h1 id='aeromegh'>AeroMegh</h1>
-
-      <!--Get project data -->
+      <!-- Get Recent ImageCollection -->
+      <h2 id='get-projects-data'>Get Recent ImageCollection</h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/Aeromegh/getRecentImageCollections/"type"
+          /"userId"/"limit"?pageNo="pageNo"&teamId="teamId"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> GET
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "imageCollections": [
+                {
+                    "id": "6cb1ccf7-fbcb-427e-8a59-5a537cca36aa",
+                    "collection_name": "newtask2_24apr_24042023113105Copy",
+                    "created_on": "2023-04-27T07:22:25.053Z",
+                    "plan_name": "PICSTORK_PLAN",
+                    "plan_id": "bbf3433c-e210-41c7-9cd4-3513b5798969",
+                    "project_id": "8f46de36-0dd8-449c-9b9c-45b68b53a32f",
+                    "project_name": "newproj24apr",
+                    "images_count": "2",
+                    "file": {
+                        "id": "046b259b-f6d9-422e-bed7-e16d135682be",
+                        "file_name": "DN_MAP_8c6bfb3b-7cc9-4961-9f4a-c1a629664597.tif",
+                        "created_on": "2023-04-27T00:00:00.000Z"
+                    },
+                    "sharedData": {
+                        "isShared": false,
+                        "sharedBy": null,
+                        "access_level": null
+                    }
+                },
+                ],
+            "count": 437
+        }
+      </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+      
+      <p>This API is used to get recent image collections by specifying the limit and page no.</p>
+        
+        <h3 id='http-request-33'>HTTP Request</h3>
+        <p><code>GET ${BASE_URL}/Aeromegh/getRecentImageCollections/"type"/"userId"/"limit"?pageNo="pageNo"&teamId="teamId"</code></p>
+        
+        <h3 id='http-response-32'>HTTP Response</h3>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>get project data successfull</td>
+            <td>200</td>
+            <td><code>output given right side</code></td>
+          </tr>
+        </tr>
+      </tbody>
+    </table>
+    <!--Get project data -->
       <h2 id='get-projects-data'>Get Projects Data</h2>
       <div class="highlight">
         <pre class="highlight python tab-python"><code></code></pre>
@@ -2803,8 +2881,2969 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
 
     <!-- Send new service request EMail API stop -->
 
-    <!-- upload orthomosaic image API starts -->
     <h1 id='aerofarm'>DroneNaksha</h1>
+      <!-- Download GCP CSV starts -->
+     <!-- <h2 id='uploadOrthoImage'>Download GCP CSV </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/downloadGCPCSV/"collection_id"?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        Name,Latitude,Longitude,Altitude
+        gcp1,21.33776458,78.01385205,5.5
+        gcp2,21.34166722,78.01574763,3.2
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to download GCP CSV of GCP Points using collectionId and teamId
+     </p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/downloadGCPCSV/"collection_id"?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>download GCP CSV successfull</td>
+           <td>200</td>
+           <td><code> 
+            Name,Latitude,Longitude,Altitude
+            gcp1,21.33776458,78.01385205,5.5<br/>
+            gcp2,21.34166722,78.01574763,3.2
+        </code></td>
+         </tr>
+        
+       </tbody>
+     </table> -->
+  
+     <!-- Download GCP CSV API stop  -->
+     <!--  Download GCP CSV starts -->
+     <h2 id='uploadOrthoImage'>Download GCP CSV </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/downloadGCPCSV/"collection_id"?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        Name,Latitude,Longitude,Altitude
+        gcp1,21.33776458,78.01385205,5.5
+        gcp2,21.34166722,78.01574763,3.2
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to download GCP CSV of GCP Points using collectionId and teamId
+     </p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/downloadGCPCSV/"collection_id"?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>download GCP CSV successfull</td>
+           <td>200</td>
+           <td><code> 
+            Name,Latitude,Longitude,Altitude
+            gcp1,21.33776458,78.01385205,5.5<br/>
+            gcp2,21.34166722,78.01574763,3.2
+        </code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+  
+     <!-- Download GCP CSV API stop --> 
+     <!--  Download CSV Template starts -->
+     <h2 id='uploadOrthoImage'>Download CSV Template </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/getCSVTemplate?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+   
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        File Downloaded As Response
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to download csv template of GCP Points
+     </p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/getCSVTemplate?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>download csv template successfull</td>
+           <td>200</td>
+           <td><code> 
+            File Downloaded As Response
+        </code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+  
+     <!-- Download CSV Template API stop --> 
+      <!--  Export Images To New Collection starts -->
+      <h2 id='uploadOrthoImage'>Export Images To New Collection </h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/exportImagesWithGCPData</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> POST
+    <span class="s2">"body"</span>: <span class="o">
+      {
+        "new_collection_id": "40c9bd17-6a20-4336-9015-88d9b742b58a",
+        "images": [
+            {
+                "id": "c4fb4fb5-1582-4818-ac9f-19b9fd55da0b",
+                "collection_id": "1ba8e7c9-4665-4831-b725-aefa7ab6bc08",
+                "file_name": "DSC00010.JPG",
+                "created_on": "2023-04-18T00:00:00.000Z",
+                "resolution": "19.82",
+                "file_size": "6.54",
+                "latitude": "27.104785505555558",
+                "longitude": "81.23294528333334",
+                "height": "3632",
+                "width": "5456",
+                "altitude": "203.31",
+                "thumbURL": "https://pdrlimage.blob.core.windows.net/user-26fecf40-d10b-4084-a050-14d1aecbc227/FlightImages/collection-1ba8e7c9-4665-4831-b725-aefa7ab6bc08/thumb-DSC00010.JPG?st=2023-04-26T20%3A42%3A16Z&se=2024-04-27T06%3A02%3A16Z&sp=racwdl&sv=2018-03-28&sr=c&sig=pocDtePTk6GldQu1QHZBhwgwsaFJZ0uVrk5uH%2B8iBVs%3D",
+                "checked": false
+            },
+        ],
+        "gcpData": []
+    }
+  </span>
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "message": "Images successfully copied"
+        }
+  </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is called when we want to export the images to new collection
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/exportImagesWithGCPData</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>export images to new collection successfull</td>
+            <td>200</td>
+            <td><code> 
+              {
+                "message": "Images successfully copied"
+            }
+         </code></td>
+          </tr>
+         
+        </tbody>
+      </table>
+   
+      <!-- Export Images To New Collection API stop --> 
+     <!--  Edit Plan starts -->
+     <h2 id='uploadOrthoImage'>Edit Plan </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/Aeromegh/remoteMission/editPlan?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> POST
+   <span class="s2">"body"</span>: <span class="o">
+    {
+      "planConfiguration": {
+          "projectDetails": [
+              {
+                  "clientName": "asd",
+                  "dateTime": "2023-04-28T05:38:29.088Z",
+                  "flightCompletedCount": 0,
+                  "projectName": "tejas",
+                  "planName": "test",
+                  "planCompletedStatus": 0,
+                  "softwareVerison": "1.1",
+                  "linkedMap": null
+              }
+          ]
+      },
+      "planAddress": {},
+      "missionStatistics": {
+          "missionStatistics": [
+              {
+                  "ROIwaypointlatitude": 0,
+                  "ROIwaypointlongitude": 0,
+                  "landAltLatitue": 0,
+                  "landAltLongitude": 0,
+                  "landAltitude": 0,
+                  "landLatitue": 0,
+                  "landLongitude": 0,
+                  "missionDefaultAltitude": 0,
+                  "missionDefaultSpeed": 19,
+                  "missionHomeAltitude": 0,
+                  "missionHomeLatitude": 19.992990247019502,
+                  "missionHomeLongitude": 73.79126071929933,
+                  "missionType": 0,
+                  "planeMaxSpeed": 19,
+                  "planeMinSpeed": 19,
+                  "surveyCoordCount": 0,
+                  "takeOffAltitude": 0,
+                  "takeOffLatitue": 0,
+                  "takeOffLongitude": 0,
+                  "totalPlanDistance": 0,
+                  "vehicleType": "QuadCopter",
+                  "verticalMission": 0,
+                  "verticalRularScaleMaxValue": 0,
+                  "wpRadius": 0
+              }
+          ]
+      },
+      "DGCAfence": {
+          "geofence": [
+              {
+                  "lat": 19.992055,
+                  "lon": 73.790409,
+                  "alt": 0
+              },
+              {
+                  "lat": 19.992055,
+                  "lon": 73.792091,
+                  "alt": 0
+              },
+              {
+                  "lat": 19.993926,
+                  "lon": 73.792091,
+                  "alt": 0
+              },
+              {
+                  "lat": 19.993926,
+                  "lon": 73.790409,
+                  "alt": 0
+              },
+              {
+                  "lat": 19.992055,
+                  "lon": 73.790409,
+                  "alt": 0
+              }
+          ]
+      },
+      "RallyPointData": [],
+      "corridor": [],
+      "Mission": {
+          "waypoints": [
+              {
+                  "speed": "19",
+                  "alt": "120",
+                  "camera": 0,
+                  "cameraAction": 0,
+                  "delaySeconds": 0,
+                  "delayStatus": false,
+                  "gimbalPitch": 0,
+                  "gimbalRoll": 0,
+                  "gimbalStatus": false,
+                  "gimbalYaw": 0,
+                  "lat": 19.992990247019502,
+                  "lon": 73.79126071929933
+              },
+          ]
+      },
+      "Geofence": {
+          "geofence": [
+              {
+                  "lat": 19.992055,
+                  "lon": 73.790409,
+                  "alt": 0
+              },
+              {
+                  "lat": 19.992055,
+                  "lon": 73.792091,
+                  "alt": 0
+              },
+              {
+                  "lat": 19.993926,
+                  "lon": 73.792091,
+                  "alt": 0
+              },
+              {
+                  "lat": 19.993926,
+                  "lon": 73.790409,
+                  "alt": 0
+              },
+              {
+                  "lat": 19.992055,
+                  "lon": 73.790409,
+                  "alt": 0
+              }
+          ]
+      },
+      "Assets": {
+          "planMap.png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAASJXXZHvGaYMrjijhqdarsgkwDQhUeJ8AUwI8KlD1mu3t7tjm5qbHjIYRAAAgAElEQVRNjE3YtavXlaQgxVya
+      },
+      "teamId": "fd442a01-26b7-497a-9539-cb23da8efc99"
+  }
+ </span>
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "message": "OK"
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to edit the plan in aerogcs by specifying the following:<br/>
+      teamId<br/>
+     </p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>POST ${BASE_URL}/Aeromegh/remoteMission/editPlan?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>edit plan successfull</td>
+           <td>201</td>
+           <td><code> 
+            {
+              "message": "OK"
+          }
+        </code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+  
+     <!-- Edit Plan API stop --> 
+     <!--  Get Plant Health Index Of Point  starts -->
+     <h2 id='uploadOrthoImage'> Get Plant Health Index Of Point   </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/getPlantHealthIndex/"taskId"/"algorithm"/"lat"/"lng"?startRange="min"&endRange="max"sas="sasToken"&blobContainer="blobContainer"&teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "index": 0.33424780502172924
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to get plant health index of a single point on map by specifying the following:<br/>
+      taskId<br/>
+      algorithm<br/>
+      lat<br/>
+      lng<br/>
+      sasToken<br/>
+      blobContainer<br/>
+      max<br/>
+      min<br/>
+      teamId<br/>
+     </p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>GET ${BASE_URL}/tilesApi/getPlantHealthIndex/"taskId"/"algorithm"/"lat"/"lng"?startRange="min"&endRange="max"sas="sasToken"&blobContainer="blobContainer"&teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>get plant health index of point successfull</td>
+           <td>200</td>
+           <td><code> 
+            {
+              "index": 0.33424780502172924
+          }
+        </code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+  
+     <!-- Get Plant Health Index Of Point API stop --> 
+     <!-- Get Elevation Of Point  starts -->
+     <h2 id='uploadOrthoImage'>Get Elevation Of Point  </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/getElevation/"taskId"/"lat"/"lng"?sas="sasToken"&blobContainer="blobContainer"&viewDefault="viewDefault"&teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "x": null,
+          "y": null,
+          "areaNumber": null,
+          "areaCode": null,
+          "elevation": "NA"
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to get elevation of a single point on map by specifying the following:<br/>
+      taskId<br/>
+      lat<br/>
+      lng<br/>
+      sasToken<br/>
+      blobContainer<br/>
+      viewDefault<br/>
+      teamId<br/>
+     </p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>GET ${BASE_URL}/tilesApi/getElevation/"taskId"/"lat"/"lng"?sas="sasToken"&blobContainer="blobContainer"&viewDefault="viewDefault"&teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>get elevation of point successfull</td>
+           <td>200</td>
+           <td><code> 
+           Output given right side.
+        </code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+  
+     <!-- Get Elevation Of Point API stop --> 
+    <!-- Get Line Statistics starts -->
+    <h2 id='uploadOrthoImage'>Get Line Statistics </h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/getPolylineStats?teamId="teamId"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> POST
+  <span class="s2">"body"</span>: <span class="o">
+    {
+      "taskId": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+      "sas": "st=2023-04-26T00%3A01%3A56Z&se=2024-04-26T09%3A21%3A56Z&sp=racwdl&sv=2018-03-28&sr=c&sig=nSxCqdoOGkcF8HhcLU%2BgcvHJwXnxW3CJpsrZsgXcb5E%3D",
+      "blobContainer": "user-26fecf40-d10b-4084-a050-14d1aecbc227",
+      "latLngs": [
+          {
+              "lat": 46.656344017654135,
+              "lng": 6.538410186767578,
+              "x": 311662.94831593276,
+              "y": 5169919.173299666,
+              "elevation": 656.5900268554688,
+              "areaCode": "T",
+              "areaNumber": 32
+          },
+          {
+              "lat": 46.652927023033016,
+              "lng": 6.537680625915528,
+              "x": 311595.2579493204,
+              "y": 5169541.243307335,
+              "elevation": 604.2899780273438,
+              "areaCode": "T",
+              "areaNumber": 32
+          }
+      ]
+  }
+ </span>
+
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "polylinePoints": [
+              {
+                  "x": 311662.94831593276,
+                  "y": 5169919.173299666,
+                  "areaNumber": 32,
+                  "areaCode": "T",
+                  "elevation": 656.5900268554688,
+                  "lat": 46.656344017654135,
+                  "lng": 6.538410186767578
+              },
+              {
+                  "x": 311595.2579493204,
+                  "y": 5169541.243307335,
+                  "areaNumber": 32,
+                  "areaCode": "T",
+                  "elevation": 604.2899780273438,
+                  "lat": 46.652927023033016,
+                  "lng": 6.537680625915528
+              }
+          ],
+          "slopes": [
+              7.780595346993109
+          ],
+          "minElevation": 604.2899780273438,
+          "maxElevation": 656.5900268554688,
+          "elevationDifference": 52.300048828125,
+          "startingElevation": 656.5900268554688,
+          "endingElevation": 604.2899780273438,
+          "avgElevation": 630.4400024414062,
+          "slope": 7.780595346993109
+      }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is called when we want to get statistics about the polyline measurement by specifying teamid
+    </p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/tilesApi/getPolylineStats?teamId="teamId"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Internal server error</td>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured"}</code></td>
+        </tr>
+        <tr>
+          <td>get line statistics successfull</td>
+          <td>200</td>
+          <td><code> 
+          Output given right side.
+       </code></td>
+        </tr>
+       
+      </tbody>
+    </table>
+ 
+    <!-- Get Line Statistics API stop --> 
+     <!-- Upload Company Logo starts -->
+     <h2 id='uploadOrthoImage'>Upload Company Logo </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/uploadDNReportHeaderLogo/"reportId"?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> POST
+   <span class="nt">body: Uploaded Company Logo</span>
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "message": "Report header updated successfully"
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to upload report profile picture by specifying reportid and teamid
+     </p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>POST ${BASE_URL}/AeroMegh/AeroFarm/uploadDNReportHeaderLogo/"reportId"?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>upload company logo successfull</td>
+           <td>200</td>
+           <td><code> {
+            "message": "Report header updated successfully"
+        }</code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+  
+     <!-- Upload Company Logo API stop --> 
+    <!-- Get TileBoundsAPI starts -->
+      <h2 id='uploadOrthoImage'>Get TileBounds </h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/getTilesBounds/"taskId"/orthomosaic?sas="sasToken"&blobContainer="blobContainer"&teamId="teamId"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> GET
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "minZoom": 11,
+            "maxZoom": 24,
+            "tilesBounds": {
+                "12": [
+                    [
+                        2122,
+                        2122
+                    ],
+                    [
+                        1446,
+                        1446
+                    ]
+                ],
+                "13": [
+                    [
+                        4244,
+                        4244
+                    ],
+                    [
+                        2892,
+                        2892
+                    ]
+                ],
+            },
+            "bounds": [
+                6.527357916109866,
+                46.650335646603295,
+                6.546800732782933,
+                46.65995551774468
+            ],
+            "extent": [
+                310828.5377158664,
+                5169277.0471079275,
+                312285.50762873545,
+                5170301.41912455
+            ],
+            "band_descriptions": [
+                [
+                    "1",
+                    "red"
+                ],
+                [
+                    "2",
+                    "green"
+                ],
+                [
+                    "3",
+                    "blue"
+                ],
+                [
+                    "4",
+                    ""
+                ]
+            ]
+        }
+  </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is called when we want to get tile bounds by specifying following params<br/>
+        sasToken<br/>
+        blobContainer<br/>  
+        teamId<br/>  
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/tilesApi/getTilesBounds/"taskId"/orthomosaic?sas="sasToken"&blobContainer="blobContainer"&teamId="teamId"</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>get tilebounds successfull</td>
+            <td>200</td>
+            <td><code>Output given right side</code></td>
+          </tr>
+         
+        </tbody>
+      </table>
+   
+      <!-- Get TileBounds API stop -->
+       <!-- Get Histogram API starts -->
+       <h2 id='uploadOrthoImage'>Get Histogram </h2>
+       <div class="highlight">
+         <pre class="highlight python tab-python"><code></code></pre>
+       </div>
+       <div class="highlight">
+         <pre class="highlight javascript tab-javascript"><code></code></pre>
+       </div>
+       <div class="highlight">
+         <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2"> /tilesApi/getMetadata/"taskId"/orthomosaic?sas="sasToken"&blobContainer="blobContainer"&algorithm="algorithm"&filterType="filterType"&teamId="teamId"</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+     <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+     <span class="nt">-X</span> GET
+   </code></pre>
+       </div>
+       <blockquote>
+         <p>A successful call to this API will return following response with response code 200.</p>
+       </blockquote>
+       <div class="highlight">
+         <pre class="highlight json tab-json"><code>
+          {
+            "bounds": [
+                6.527357916109866,
+                46.650335646603295,
+                6.546800732782933,
+                46.65995551774468
+            ],
+            "minzoom": 14,
+            "maxzoom": 21,
+            "band_metadata": [
+                [
+                    "1",
+                    {}
+                ],
+                [
+                    "2",
+                    {}
+                ],
+                [
+                    "3",
+                    {}
+                ],
+                [
+                    "4",
+                    {}
+                ]
+            ],
+            "band_descriptions": [
+                [
+                    "1",
+                    "red"
+                ],
+                [
+                    "2",
+                    "green"
+                ],
+                [
+                    "3",
+                    "blue"
+                ],
+                [
+                    "4",
+                    ""
+                ]
+            ],
+            "dtype": "uint8",
+            "nodata_type": "Alpha",
+            "colorinterp": [
+                "red",
+                "green",
+                "blue",
+                "alpha"
+            ],
+            "scale": null,
+            "offset": null,
+            "colormap": null,
+            "statistics": {
+                "1": {
+                    "percentiles": [
+                        0.3058086139227635,
+                        0.3760142905329764
+                    ],
+                    "min": 0.0,
+                    "max": 1.7976931348623157e+308,
+                    "std": 0.0,
+                    "histogram": [
+                        [
+                            463153.0,
+                        ],
+                        [
+                            0.0,
+                            7.049776999460062e+305,
+                            1.4099553998920125e+306
+                        ]
+                    ],
+                    "valid_percent": 62.81982421875
+                }
+            },
+            "count": 4,
+            "overviews": [
+                2,
+                4,
+                8,
+                16,
+                32,
+                64,
+                128,
+                257
+            ],
+            "width": 33097,
+            "driver": "GTiff",
+            "height": 23270,
+            "color_maps": [
+                "rdylgn",
+                "spectral",
+                "rdylgn_r",
+                "spectral_r",
+                "rplumbo",
+                "discrete_ndvi",
+                "better_discrete_ndvi"
+            ],
+            "algorithms": [
+                {
+                    "id": "vNDVI",
+                    "filters": [
+                        "RGB"
+                    ],
+                    "expr": "0.5268*((R ** -0.1294) * (G ** 0.3389) * (B ** -0.3118))",
+                    "help": "Visible NDVI is an un-normalized index for RGB sensors using constants derived from citrus, grape, and sugarcane crop data."
+                },
+            ],
+            "tilesBounds": {
+                "11": [
+                    [
+                        1061,
+                        1061
+                    ],
+                    [
+                        723,
+                        723
+                    ]
+                ],
+                "12": [
+                    [
+                        2122,
+                        2122
+                    ],
+                    [
+                        1446,
+                        1446
+                    ]
+                ],
+            }
+        }
+   </code></pre>
+       </div>
+       <h3 id='description-33'>Description</h3>
+   
+       <p>This API is called when we want to get histogram data by specifying following params<br/>
+         algorithm <br/>
+         filterType<br/>
+         sasToken<br/>
+         blobContainer<br/>  
+         teamId<br/>  
+       </p>
+   
+       <h3 id='http-request-33'>HTTP Request</h3>
+       <p><code>GET ${BASE_URL} /tilesApi/getMetadata/"taskId"/orthomosaic?sas="sasToken"&blobContainer="blobContainer"&algorithm="algorithm"&filterType="filterType"&teamId="teamId"</code></p>
+   
+       <h3 id='http-response-32'>HTTP Response</h3>
+   
+       <table>
+         <thead>
+           <tr>
+             <th>Case</th>
+             <th>Response Status Code</th>
+             <th>Response Body</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>Internal server error</td>
+             <td>500</td>
+             <td><code>{message: "An internal error has occured"}</code></td>
+           </tr>
+           <tr>
+             <td>get histogram successfull</td>
+             <td>200</td>
+             <td><code>Output given right side</code></td>
+           </tr>
+          
+         </tbody>
+       </table>
+    
+       <!-- Get Histogram API stop -->
+       <!-- download NDVI Image API starts -->
+      <h2 id='uploadOrthoImage'>Download NDVI Image </h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/getPng/"taskId"/plantHealth?algorithm="algorithmType"&filterType="filterType"&min="min"&max="max"&sas="sasToken"&blobContainer="blobContainer"&teamId="teamId"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> GET
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+         Output Will Be An NDVI Image
+  </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is called when we want to download NDVI Image by specifying following params<br/>
+        algorithm <br/>
+        filterType<br/>
+        min<br/>
+        max<br/>
+        sasToken<br/>
+        blobContainer<br/>  
+      </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/tilesApi/getPng/"taskId"/plantHealth?algorithm="algorithmType"&filterType="filterType"&min="min"&max="max"&sas="sasToken"&blobContainer="blobContainer"&teamId="teamId"</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>download NDVI Image successfull</td>
+            <td>200</td>
+            <td><code> Output Will Be An NDVI Image</code></td>
+          </tr>
+         
+        </tbody>
+      </table>
+   
+      <!-- download NDVI Image API stop -->
+      <!-- get yield analysis API starts -->
+      <h2 id='uploadOrthoImage'>Get Yield Analysis </h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/getYieldAnalysis</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> POST
+    <span class="s2">"body"</span>: <span class="o">
+      {
+        "geoJSON": {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            6.5303635597229,
+                            46.656992044001406
+                        ],
+                        [
+                            6.530964374542237,
+                            46.65627037780509
+                        ],
+                        [
+                            6.530063152313233,
+                            46.656064185694326
+                        ],
+                        [
+                            6.529440879821778,
+                            46.656506024969005
+                        ]
+                    ]
+                ]
+            }
+        },
+        "taskId": "404e3f1c-90cb-477b-945e-63ed31c0e28a"
+    }
+   </span>
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "stats": [
+                [
+                    "-1.0 to 0.00",
+                    "Dead or Inanimate",
+                    70.56
+                ],
+                [
+                    "0.00 to 0.33",
+                    "Unhealthy",
+                    27.31
+                ],
+                [
+                    "0.33 to 0.66",
+                    "Moderately Healthy",
+                    1.63
+                ],
+                [
+                    "0.66 to 1.00",
+                    "Very Healthy",
+                    0.5
+                ]
+            ],
+            "error": 0
+        }
+  </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is called when we want to get yield analysis </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/tilesApi/getYieldAnalysis</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>get yield analysis successfull</td>
+            <td>200</td>
+            <td><code>Output given right side </code></td>
+          </tr>
+         
+        </tbody>
+      </table>
+      <!-- get yield analysis API stop -->
+
+ <!-- save yield analysis API starts -->
+ <h2 id='uploadOrthoImage'>Save Yield Analysis </h2>
+ <div class="highlight">
+   <pre class="highlight python tab-python"><code></code></pre>
+ </div>
+ <div class="highlight">
+   <pre class="highlight javascript tab-javascript"><code></code></pre>
+ </div>
+ <div class="highlight">
+   <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/saveYieldAnalysis</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+<span class="nt">-X</span> POST
+<span class="s2">"body"</span>: <span class="o">
+  {
+    "stats": [
+        [
+            "-1.0 to 0.00",
+            "Dead or Inanimate",
+            75.2
+        ],
+        [
+            "0.00 to 0.33",
+            "Unhealthy",
+            24.78
+        ],
+        [
+            "0.33 to 0.66",
+            "Moderately Healthy",
+            0.02
+        ],
+        [
+            "0.66 to 1.00",
+            "Very Healthy",
+            0
+        ]
+    ],
+    "measurement_id": "097d5cc6-c468-4202-9a07-401d7c9229d0"
+}
+</span>
+</code></pre>
+ </div>
+ <blockquote>
+   <p>A successful call to this API will return following response with response code 200.</p>
+ </blockquote>
+ <div class="highlight">
+   <pre class="highlight json tab-json"><code>
+    {
+      "yieldAnalysis": {
+          "id": "7efc8d7d-fede-4a0c-8096-51dd8bcea181",
+          "stats": [
+              [
+                  "-1.0 to 0.00",
+                  "Dead or Inanimate",
+                  "75.2"
+              ],
+              [
+                  "0.00 to 0.33",
+                  "Unhealthy",
+                  "24.78"
+              ],
+              [
+                  "0.33 to 0.66",
+                  "Moderately Healthy",
+                  "0.02"
+              ],
+              [
+                  "0.66 to 1.00",
+                  "Very Healthy",
+                  "0"
+              ]
+          ],
+          "measurement_id": "097d5cc6-c468-4202-9a07-401d7c9229d0"
+      },
+      "message": "Yield statistics saved successfully"
+  }
+</code></pre>
+ </div>
+ <h3 id='description-33'>Description</h3>
+
+ <p>This API is called when we want to save yield analysis </p>
+
+ <h3 id='http-request-33'>HTTP Request</h3>
+ <p><code>POST ${BASE_URL}/tilesApi/saveYieldAnalysis</code></p>
+
+ <h3 id='http-response-32'>HTTP Response</h3>
+
+ <table>
+   <thead>
+     <tr>
+       <th>Case</th>
+       <th>Response Status Code</th>
+       <th>Response Body</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>Internal server error</td>
+       <td>500</td>
+       <td><code>{message: "An internal error has occured"}</code></td>
+     </tr>
+     <tr>
+       <td>save yield analysis successfull</td>
+       <td>201</td>
+       <td><code>Output given right side </code></td>
+     </tr>
+    
+   </tbody>
+ </table>
+ <!-- save yield analysis API stop -->
+
+          <!-- delete measurement API starts -->
+
+          <h2 id='uploadOrthoImage'>Delete Measurement </h2>
+          <div class="highlight">
+            <pre class="highlight python tab-python"><code></code></pre>
+          </div>
+          <div class="highlight">
+            <pre class="highlight javascript tab-javascript"><code></code></pre>
+          </div>
+          <div class="highlight">
+            <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/deleteMeasurement/"taskId"?teamId="teamId"</span>
+        <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+        <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+        <span class="nt">-X</span> DELETE
+      </code></pre>
+          </div>
+          <blockquote>
+            <p>A successful call to this API will return following response with response code 200.</p>
+          </blockquote>
+          <div class="highlight">
+            <pre class="highlight json tab-json"><code>
+              {
+                "message": "measurement deleted"
+            }
+      </code></pre>
+          </div>
+          <h3 id='description-33'>Description</h3>
+      
+          <p>This API is called when we want to delete the measurement </p>
+      
+          <h3 id='http-request-33'>HTTP Request</h3>
+          <p><code>DELETE ${BASE_URL}/AeroMegh/AeroFarm/deleteMeasurement/"taskId"?teamId="teamId"</code></p>
+      
+          <h3 id='http-response-32'>HTTP Response</h3>
+      
+          <table>
+            <thead>
+              <tr>
+                <th>Case</th>
+                <th>Response Status Code</th>
+                <th>Response Body</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Internal server error</td>
+                <td>500</td>
+                <td><code>{message: "An internal error has occured"}</code></td>
+              </tr>
+              <tr>
+                <td>delete measurement successfull</td>
+                <td>200</td>
+                <td><code> {
+                  "message": "measurement deleted"
+              }</code></td>
+              </tr>
+             
+            </tbody>
+          </table>
+      
+          <!-- delete measurement API stop -->
+      <!-- save measurement API starts -->
+
+      <h2 id='uploadOrthoImage'>Save Measurement </h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/saveMeasurement?teamId="teamId"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> POST
+    <span class="s2">"body"</span>: <span class="o">
+      {
+        "name": "Polyline",
+        "type": "Polyline",
+        "coordinates": [
+            {
+                "lat": 46.655754896053956,
+                "lng": 6.540191173553468,
+                "x": 311797.1624029058,
+                "y": 5169849.455259587,
+                "elevation": 597.9199829101562,
+                "areaCode": "T",
+                "areaNumber": 32
+            },
+            {
+                "lat": 46.6537665632697,
+                "lng": 6.538753509521485,
+                "x": 311680.26283648587,
+                "y": 5169631.961323314,
+                "elevation": 506.8999938964844,
+                "areaCode": "T",
+                "areaNumber": 32
+            }
+        ],
+        "description": null,
+        "taskId": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+        "color": "red"
+    }
+   </span>
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "measurements": [
+                {
+                    "id": "07191d76-8402-4ba5-9326-ab4b4df629b2",
+                    "name": "Polygon",
+                    "description": null,
+                    "type": "Polygon",
+                    "coordinates": [
+                        {
+                            "lat": 46.657006771782676,
+                            "lng": 6.532573699951173,
+                            "x": 311218.72025665455,
+                            "y": 5170006.791538759,
+                            "elevation": 605.989990234375,
+                            "areaCode": "T",
+                            "areaNumber": 32
+                        },
+                        {
+                            "lat": 46.65738969268787,
+                            "lng": 6.535749435424805,
+                            "x": 311463.01698528836,
+                            "y": 5170041.730071773,
+                            "elevation": 623.8900146484375,
+                            "areaCode": "T",
+                            "areaNumber": 32
+                        },
+                    ],
+                    "task_id": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+                    "date_created": "2023-04-24T06:34:53.783Z",
+                    "color": "red",
+                    "volume": null,
+                    "cut_volume": null,
+                    "fill_volume": null,
+                    "calc_method": null,
+                    "stats": null,
+                    "show": true,
+                    "altitude": 0,
+                    "measurements": [
+                        {
+                            "2D Area": "84745.92 sq.m"
+                        },
+                        {
+                            "3D Area": "loading"
+                        },
+                        {
+                            "2D Perimeter": "973.94  m"
+                        },
+                        {
+                            "3D Perimeter": "loading"
+                        }
+                    ],
+                    "is3d": false
+                }
+            ],
+            "areaCode": "T",
+            "areaNumber": 32
+        }
+  </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is called when we want to save the measurement </p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/AeroMegh/AeroFarm/saveMeasurement?teamId="teamId"</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>save measurement successfull</td>
+            <td>200</td>
+            <td><code>output given right side</code></td>
+          </tr>
+         
+        </tbody>
+      </table>
+  
+      <!-- save measurement API stop -->
+      <!-- get measurement in 3D API starts -->
+
+      <h2 id='uploadOrthoImage'>Get Measurement In 3D</h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/get3dMeasurements?teamId="teamId"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> POST
+    <span class="s2">"body"</span>: <span class="o">
+      {
+        "measurements": [
+            {
+                "id": "07191d76-8402-4ba5-9326-ab4b4df629b2",
+                "name": "Polygon",
+                "description": null,
+                "type": "Polygon",
+                "coordinates": [
+                    {
+                        "lat": 46.657006771782676,
+                        "lng": 6.532573699951173
+                    },
+                    {
+                        "lat": 46.65738969268787,
+                        "lng": 6.535749435424805
+                    },
+                    {
+                        "lat": 46.653869663803725,
+                        "lng": 6.536822319030763
+                    },
+                    {
+                        "lat": 46.65488592997867,
+                        "lng": 6.532788276672364
+                    }
+                ],
+                "task_id": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+                "date_created": "2023-04-24T06:34:53.783Z",
+                "color": "red",
+                "volume": null,
+                "cut_volume": null,
+                "fill_volume": null,
+                "calc_method": null,
+                "stats": null,
+                "show": true,
+                "altitude": 0,
+                "measurements": [
+                    {
+                        "2D Area": "84745.92 sq.m"
+                    },
+                    {
+                        "3D Area": "loading"
+                    },
+                    {
+                        "2D Perimeter": "973.94  m"
+                    },
+                    {
+                        "3D Perimeter": "loading"
+                    }
+                ],
+                "is3d": false
+            }
+        ],
+        "blobContainer": "user-26fecf40-d10b-4084-a050-14d1aecbc227",
+        "sasToken": "st=2023-04-25T22%3A37%3A19Z&se=2024-04-26T07%3A57%3A19Z&sp=racwdl&sv=2018-03-28&sr=c&sig=noFte9YDTRT7P7WtrDw3S1HkeNOf4zbqVK1%2FS0CHAjY%3D",
+        "taskId": "404e3f1c-90cb-477b-945e-63ed31c0e28a"
+    }
+   </span>
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "measurements": [
+                {
+                    "id": "07191d76-8402-4ba5-9326-ab4b4df629b2",
+                    "name": "Polygon",
+                    "description": null,
+                    "type": "Polygon",
+                    "coordinates": [
+                        {
+                            "lat": 46.657006771782676,
+                            "lng": 6.532573699951173,
+                            "x": 311218.72025665455,
+                            "y": 5170006.791538759,
+                            "elevation": 605.989990234375,
+                            "areaCode": "T",
+                            "areaNumber": 32
+                        },
+                        {
+                            "lat": 46.65738969268787,
+                            "lng": 6.535749435424805,
+                            "x": 311463.01698528836,
+                            "y": 5170041.730071773,
+                            "elevation": 623.8900146484375,
+                            "areaCode": "T",
+                            "areaNumber": 32
+                        },
+                    ],
+                    "task_id": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+                    "date_created": "2023-04-24T06:34:53.783Z",
+                    "color": "red",
+                    "volume": null,
+                    "cut_volume": null,
+                    "fill_volume": null,
+                    "calc_method": null,
+                    "stats": null,
+                    "show": true,
+                    "altitude": 0,
+                    "measurements": [
+                        {
+                            "2D Area": "84745.92 sq.m"
+                        },
+                        {
+                            "3D Area": "loading"
+                        },
+                        {
+                            "2D Perimeter": "973.94  m"
+                        },
+                        {
+                            "3D Perimeter": "loading"
+                        }
+                    ],
+                    "is3d": false
+                }
+            ],
+            "areaCode": "T",
+            "areaNumber": 32
+        }
+  </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is called when we want to get the measurement in 3D</p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>POST ${BASE_URL}/tilesApi/get3dMeasurements?teamId="teamId"</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>get measurement in 3D successfull</td>
+            <td>200</td>
+            <td><code>output given right side</code></td>
+          </tr>
+         
+        </tbody>
+      </table>
+  
+      <!-- get measurement in 3D API stop -->
+    <!-- get measurement API starts -->
+
+      <h2 id='uploadOrthoImage'>Get Measurement</h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/getMeasurements/"taskId"?teamId="teamId"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> GET
+  
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "measurements": [
+                {
+                    "id": "bbba61e9-9720-4f4c-98fd-60b79eed6e87",
+                    "name": "Polyline",
+                    "description": null,
+                    "type": "Polyline",
+                    "coordinates": [
+                        {
+                            "lat": 46.655695983540966,
+                            "lng": 6.5416932106018075,
+                            "x": 311911.87661744235,
+                            "y": 5169839.320176996,
+                            "elevation": 584.5399780273438,
+                            "areaCode": "T",
+                            "areaNumber": 32
+                        },
+                        {
+                            "lat": 46.6538843924354,
+                            "lng": 6.540598869323731,
+                            "x": 311821.8626549347,
+                            "y": 5169640.642032879,
+                            "elevation": 521.989990234375,
+                            "areaCode": "T",
+                            "areaNumber": 32
+                        }
+                    ],
+                    "task_id": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+                    "date_created": "2023-04-27T08:26:40.682Z",
+                    "color": "red",
+                    "volume": null,
+                    "cut_volume": null,
+                    "fill_volume": null,
+                    "calc_method": null,
+                    "stats": null
+                },
+                ]
+          }
+  </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is called when we want to get the measurement</p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/getMeasurements/"taskId"?teamId="teamId"</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>get measurement successfull</td>
+            <td>200</td>
+            <td><code>output given right side</code></td>
+          </tr>
+         
+        </tbody>
+      </table>
+  
+      <!-- get measurement API stop -->
+    <!-- update measurement API starts -->
+
+    <h2 id='uploadOrthoImage'>Update Measurement</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/updateMeasurement?teamId="teamId"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> PUT
+  <span class="s2">"body"</span>: <span class="o">
+    {
+      "id": "07191d76-8402-4ba5-9326-ab4b4df629b2",
+      "name": "Polygon",
+      "description": null,
+      "type": "Polygon",
+      "coordinates": [
+          {
+              "lat": 46.657006771782676,
+              "lng": 6.532573699951173,
+              "x": 311218.72025665455,
+              "y": 5170006.791538759,
+              "elevation": 605.989990234375,
+              "areaCode": "T",
+              "areaNumber": 32
+          },
+      ],
+      "task_id": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+      "date_created": "2023-04-24T06:34:53.783Z",
+      "color": "red",
+      "volume": null,
+      "cut_volume": null,
+      "fill_volume": null,
+      "calc_method": null,
+      "stats": null,
+      "show": true,
+      "altitude": 0,
+      "measurements": [
+          {
+              "2D Area": "75369.63 sq.m"
+          },
+          {
+              "3D Area": "loading"
+          },
+          {
+              "2D Perimeter": "877.58  m"
+          },
+          {
+              "3D Perimeter": "loading"
+          }
+      ],
+      "is3d": false
+  } 
+ </span>
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "message": "measurement updated",
+          "measurement": {
+              "id": "07191d76-8402-4ba5-9326-ab4b4df629b2",
+              "name": "Polygon",
+              "description": null,
+              "type": "Polygon",
+              "coordinates": [
+                  {
+                      "lat": 46.657006771782676,
+                      "lng": 6.532573699951173,
+                      "x": 311218.72025665455,
+                      "y": 5170006.791538759,
+                      "elevation": 605.989990234375,
+                      "areaCode": "T",
+                      "areaNumber": 32
+                  },
+              ],
+              "task_id": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+              "date_created": "2023-04-24T06:34:53.783Z",
+              "color": "red",
+              "volume": null,
+              "cut_volume": null,
+              "fill_volume": null,
+              "calc_method": null
+          }
+      }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is called when we want to update the measurement</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>PUT ${BASE_URL}/AeroMegh/AeroFarm/updateMeasurement?teamId="teamId"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Internal server error</td>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured"}</code></td>
+        </tr>
+        <tr>
+          <td>update measurement successfull</td>
+          <td>200</td>
+          <td><code>output given right side</code></td>
+        </tr>
+       
+      </tbody>
+    </table>
+
+    <!-- update measurement API stop -->
+
+     <!-- get volume API starts -->
+     <h2 id='uploadOrthoImage'>Get Volume </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/getVolume?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> POST
+   <span class="s2">"body"</span>: <span class="o">
+    {
+      "blobContainer": "user-26fecf40-d10b-4084-a050-14d1aecbc227",
+      "sasToken": "st=2023-04-25T22%3A37%3A19Z&se=2024-04-26T07%3A57%3A19Z&sp=racwdl&sv=2018-03-28&sr=c&sig=noFte9YDTRT7P7WtrDw3S1HkeNOf4zbqVK1%2FS0CHAjY%3D",
+      "taskId": "404e3f1c-90cb-477b-945e-63ed31c0e28a",
+      "polygon": [
+          [
+              6.532573699951173,
+              46.657006771782676
+          ],
+          [
+              6.535749435424805,
+              46.65738969268787
+          ],
+          [
+              6.535363197326661,
+              46.65506266997264
+          ],
+          [
+              6.532788276672364,
+              46.65488592997867
+          ]
+      ],
+      "calculationMethod": "dod"
+  }  
+  </span>
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "cutVolume": -1380025.625,
+          "fillVolume": 16780.88671875,
+          "volume": -1363244.75
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to get volume of the measurement</p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>POST ${BASE_URL}/tilesApi/getVolume?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>get volume successfull</td>
+           <td>200</td>
+           <td><code>output given right side</code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+ 
+     <!-- get volume API stop -->
+     <!-- get elevation profile data API starts -->
+     <h2 id='uploadOrthoImage'>Get Elevation Profile Data </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/tilesApi/getElevationProfile?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> POST
+   <span class="s2">"body"</span>: <span class="o">
+    {"taskId":"404e3f1c-90cb-477b-945e-63ed31c0e28a","blobContainer":"user-26fecf40-d10b-4084-a050-14d1aecbc227","sas":"st=2023-04-25T22%3A37%3A19Z&se=2024-04-26T07%3A57%3A19Z&sp=racwdl&sv=2018-03-28&sr=c&sig=noFte9YDTRT7P7WtrDw3S1HkeNOf4zbqVK1%2FS0CHAjY%3D","latLngs":[{"lat":46.656344017654135,"lng":6.538410186767578,"x":311662.94831593276,"y":5169919.173299666,"elevation":656.5900268554688,"areaCode":"T","areaNumber":32},{"lat":46.654208421317364,"lng":6.5380239486694345,"x":311625.97832878423,"y":5169682.802943544,"elevation":507.8399963378906,"areaCode":"T","areaNumber":32}]}
+   </span>
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "elevationProfile": [
+              {
+                  "x": 311662.94831593276,
+                  "y": 5169919.173299666,
+                  "areaNumber": 32,
+                  "areaCode": "T",
+                  "elevation": 656.5900268554688,
+                  "lat": 46.656344017654135,
+                  "lng": 6.538410186767578
+              },
+              ]
+        }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to get elevation profile related data</p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>POST ${BASE_URL}/tilesApi/getElevationProfile?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>get elevation profile data successfull</td>
+           <td>200</td>
+           <td><code>output given right side</code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+ 
+     <!-- get elevation profile data API stop -->
+     <!-- user task log update API starts -->
+     <h2 id='uploadOrthoImage'>User TaskLog Update </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/getUserTaskLog/"task_id"?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+  
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "tasks": [
+              {
+                  "display": false,
+                  "type": "status",
+                  "details": {
+                      "event_details": "Found GCP points",
+                      "log_timestamp": "2023-04-27T14:07:04.964Z"
+                  }
+              },
+          ],
+          "count": 5
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to get the user task log</p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/getUserTaskLog/"task_id"?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>get user task log successfull</td>
+           <td>200</td>
+           <td><code>output given right side</code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+ 
+     <!-- user task log update API stop -->
+     <!-- update task API starts -->
+     <h2 id='uploadOrthoImage'>Update Task </h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/Aeromegh/AeroFarm/updateTask/"taskId"/"status"/"service"?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> PUT
+   <span class="s2">"body"</span>: <span class="o">
+    {
+      "task_parameters": {
+          "orthomosaic": "low"
+      },
+      "accuracy": "low"
+  }
+   </span>
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "message": "task updated successfully"
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to update a task by specifying taskid,status of task,task is in which service and team id</p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>PUT ${BASE_URL}/Aeromegh/AeroFarm/updateTask/"taskId"/"status"/"service"?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>Update task successfull</td>
+           <td>200</td>
+           <td><code>{
+            "message": "task updated successfully"
+        }</code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+ 
+     <!-- update task API stop -->
+    <!-- check images for processing API starts -->
+    <h2 id='uploadOrthoImage'>Check Images For Processing </h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/processPreCheck/"image_id"?teamId="teamId"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> GET
+
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "usable_images": null,
+          "invalid_images": "3"
+      }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is called when we want to check images before processing</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/processPreCheck/"image_id"?teamId="teamId"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Internal server error</td>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured"}</code></td>
+        </tr>
+        <tr>
+          <td>Check images for Processing successfull</td>
+          <td>200</td>
+          <td><code>{
+            "usable_images": null,
+            "invalid_images": "3"
+        }</code></td>
+        </tr>
+       
+      </tbody>
+    </table>
+
+    <!-- check images for processing API stop -->
+    <!-- get task details API starts -->
+    <h2 id='uploadOrthoImage'>Get Task Details</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/Aeromegh/AeroFarm/getTask/"collection_id"?type="tasktype"&teamId="teamId"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> GET
+  
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "tasks": [
+              {
+                  "user_id": "26fecf40-d10b-4084-a050-14d1aecbc227",
+                  "task_id": "d082113d-f9a2-4340-8e43-a1029fd42353",
+                  "date_created": "2023-04-27T01:33:08.761Z",
+                  "pid": null,
+                  "images": 23,
+                  "task_name": "oiioioipCopyCopyCopyCopyCopy",
+                  "status": "Pending",
+                  "plan_id": "e68beb04-f982-409d-a98a-192ff9e501a0",
+                  "project_id": "bb571188-8b30-4288-90ae-a4fbb325dad5",
+                  "type": [],
+                  "image_collection_id": "040d51b1-45c0-43d4-9ada-d29ad3385f64",
+                  "assigned_vm": null,
+                  "status_update_timestamp": "2023-04-27T09:59:45.004Z",
+                  "video_task": false,
+                  "video_id": null,
+                  "fps": null,
+                  "tasktype": 3,
+                  "accuracy": "low",
+                  "task_parameters": {
+                      "orthomosaic": "low",
+                      "elevation": "moderate",
+                      "3dmodel": "moderate"
+                  },
+                  "detectors": null,
+                  "linked_map": null,
+                  "task_purpose": null,
+                  "state": 1,
+                  "classes": null
+              }
+          ]
+      }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is called when we want to get details of a task by specifying collection_id and type of task</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/Aeromegh/AeroFarm/getTask/"collection_id"?type="tasktype"&teamId="teamId"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Internal server error</td>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured"}</code></td>
+        </tr>
+        <tr>
+          <td>Get Task Details successfull</td>
+          <td>200</td>
+          <td><code>Response shown on the right side.</code></td>
+        </tr>
+       
+      </tbody>
+    </table>
+
+    <!-- get task details API stop -->
+    <!-- rename imageset API starts -->
+    <h2 id='uploadOrthoImage'>Rename Imageset</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/Aeromegh/AeroFarm/renameComponent?teamId="teamId"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> POST
+  <span class="s2">"body"</span>: <span class="o">
+    {
+      "componentId": "6cb1ccf7-fbcb-427e-8a59-5a537cca36aa",
+      "newName": "newtask2_24apr_24042023113105Copy",
+      "type": "ImageCollection"
+  }
+   </span>
+
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "message": {
+              "message": "component renamed Successfully"
+          }
+      }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is called when we want to rename an imageset</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>POST ${BASE_URL}/Aeromegh/AeroFarm/renameComponent?teamId="teamId"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Internal server error</td>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured"}</code></td>
+        </tr>
+        <tr>
+          <td>Imageset Rename successfull</td>
+          <td>200</td>
+          <td><code>{
+            "message": {
+                "message": "component renamed Successfully"
+            }
+        }</code></td>
+        </tr>
+        <tr>
+          <td>Imageset Rename unsuccessfull</td>
+          <td>409</td>
+          <td><code>{
+            "message": {
+                "message": "image set with this name already exist"
+            }
+        }</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- rename imageset API stop -->
+     <!-- duplicate imageset API starts -->
+     <h2 id='uploadOrthoImage'>Duplicate Imageset</h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/copyCollection?teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> POST
+   <span class="s2">"body"</span>: <span class="o">
+    {
+      "srcCont": "user-26fecf40-d10b-4084-a050-14d1aecbc227",
+      "destCont": "user-26fecf40-d10b-4084-a050-14d1aecbc227",
+      "srcCol": "cab0ed00-1074-4420-9e84-4abee130b200",
+      "destCol": "6cb1ccf7-fbcb-427e-8a59-5a537cca36aa"
+  }
+   </span>
+ 
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "message": "Image set copied successfully."
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to duplicate an imageset</p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>POST ${BASE_URL}/AeroMegh/copyCollection?teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>Imageset duplication successfull</td>
+           <td>200</td>
+           <td><code>{
+            "message": "Image set copied successfully."
+        }</code></td>
+         </tr>
+        
+       </tbody>
+     </table>
+ 
+     <!-- duplicate imageset API stop -->
+    <!-- check project API starts -->
+    <h2 id='uploadOrthoImage'>Check Project</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/Aeromegh/remoteMission/checkProjectExists/"projectName"?teamId="teamId"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> GET
+ 
+
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "message": "Project does not exist"
+      }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is called when we want to check if a given project already exists or not by specifying the project name</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/Aeromegh/remoteMission/checkProjectExists/"projectName"?teamId="teamId"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Internal server error</td>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured"}</code></td>
+        </tr>
+        <tr>
+          <td>Project Doesnt Exists</td>
+          <td>200</td>
+          <td><code>{
+            "message": "Project does not exist"
+        }</code></td>
+        </tr><tr>
+          <td>Project Exists</td>
+          <td>404</td>
+          <td><code>{ "message": "Project exists" }</code></td>
+        </tr>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- check project API stop -->
+     <!-- delete Aerocapture ImageCollection API starts -->
+     <h2 id='uploadOrthoImage'>Delete Aerocapture ImageCollection</h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroCapture/imageCollections/"collection_id"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> DELETE
+  
+ 
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "message": "Deleted successfully"
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to delete a imagecollection by specifying the collection id of the image collection</p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>DELETE ${BASE_URL}/AeroMegh/AeroCapture/imageCollections/"collection_id"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>delete imagecollection successfull</td>
+           <td>200</td>
+           <td><code>{
+            "message": "Deleted successfully"
+        }</code></td>
+         </tr>
+         </tr>
+       </tbody>
+     </table>
+ 
+     <!-- delete Aerocapture ImageCollection API stop -->
+      <!-- delete Aerocapture Plan API starts -->
+      <h2 id='uploadOrthoImage'>Delete Aerocapture Plan</h2>
+      <div class="highlight">
+        <pre class="highlight python tab-python"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight javascript tab-javascript"><code></code></pre>
+      </div>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/deleteProjectData?teamId="teamId"</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+    <span class="nt">-X</span> DELETE
+   
+    <span class="s2">"body"</span>: <span class="o">{
+      "type": "orthomosaicData",
+      "data": [
+          {
+              "id": "4550fcb2-6049-4e78-a317-8757567e0fde",
+              "collection_id": "659b4254-83c5-46e0-84cd-df2c2f70459b",
+              "task_id": "5cecfc17-fe6e-4c90-b40b-c780c1feb480"
+          },
+          {
+              "id": "9edc5146-2471-4b8f-9903-15f8f9e9d969",
+              "collection_id": "659b4254-83c5-46e0-84cd-df2c2f70459b",
+              "task_id": "5cecfc17-fe6e-4c90-b40b-c780c1feb480"
+          },
+          {
+              "id": "7a6bfca8-2311-4d60-a612-c1dccd821ba3",
+              "collection_id": "659b4254-83c5-46e0-84cd-df2c2f70459b",
+              "task_id": "5cecfc17-fe6e-4c90-b40b-c780c1feb480"
+          }
+      ]
+  }</span>
+  </code></pre>
+      </div>
+      <blockquote>
+        <p>A successful call to this API will return following response with response code 200.</p>
+      </blockquote>
+      <div class="highlight">
+        <pre class="highlight json tab-json"><code>
+          {
+            "message": "orthoImages deleted successfully"
+        }
+  </code></pre>
+      </div>
+      <h3 id='description-33'>Description</h3>
+  
+      <p>This API is called when we want to delete a plan</p>
+  
+      <h3 id='http-request-33'>HTTP Request</h3>
+      <p><code>DELETE ${BASE_URL}/AeroMegh/deleteProjectData?teamId="teamId"</code></p>
+  
+      <h3 id='http-response-32'>HTTP Response</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Response Status Code</th>
+            <th>Response Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal server error</td>
+            <td>500</td>
+            <td><code>{message: "An internal error has occured"}</code></td>
+          </tr>
+          <tr>
+            <td>delete plan successfull</td>
+            <td>200</td>
+            <td><code>{
+              "message": "orthoImages deleted successfully"
+          }</code></td>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- delete Aerocapture Plan API stop -->
+     <!-- get recents maps API starts -->
+    <h2 id='uploadOrthoImage'>Get Recent Maps</h2>
+    <div class="highlight">
+      <pre class="highlight python tab-python"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight javascript tab-javascript"><code></code></pre>
+    </div>
+    <div class="highlight">
+      <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/getRecentOrthoImages/"type"/"userId"/"limit"?teamId="teamId"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-X</span> GET
+ 
+ 
+</code></pre>
+    </div>
+    <blockquote>
+      <p>A successful call to this API will return following response with response code 200.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre class="highlight json tab-json"><code>
+        {
+          "data": [
+              {
+                  "ortho_id": "928be515-e8f7-4a0e-8173-b6c753127dcd",
+                  "images_used": "259",
+                  "gsd": "1.524 cm",
+                  "area": "93541.747 sq.meter",
+                  "img_size": "874.44",
+                  "plan_id": "dd3aa802-6f34-468f-a542-b34e4c26f923",
+                  "plan_name": "5_spet",
+                  "project_id": "23bf93e3-7d8f-4654-ae22-27d261880d1c",
+                  "project_name": "multi",
+                  "processing_date": "2023-02-28T05:28:21.652Z",
+                  "id": "1169aa00-f6bf-4d8d-9281-b024e4336146",
+                  "collection_name": "neagativeDSM",
+                  "sharedData": {
+                      "isShared": false,
+                      "sharedBy": null,
+                      "access_level": null
+                  },
+                  "task_id": "ac39905c-fe85-452b-9ad8-ae857f503b0e"
+              },
+          ],
+          "count": 0
+      }
+</code></pre>
+    </div>
+    <h3 id='description-33'>Description</h3>
+
+    <p>This API is called when we want to get recent maps by specifying the limit(No. of Maps).</p>
+
+    <h3 id='http-request-33'>HTTP Request</h3>
+    <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/getRecentOrthoImages/"type"/"userId"/"limit"?teamId="teamId"</code></p>
+
+    <h3 id='http-response-32'>HTTP Response</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Response Status Code</th>
+          <th>Response Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Internal server error</td>
+          <td>500</td>
+          <td><code>{message: "An internal error has occured"}</code></td>
+        </tr>
+        <tr>
+          <td>Get Recent Maps successfull</td>
+          <td>200</td>
+          <td><code>output given right side</code></td>
+        </tr>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- get recents maps API stop -->
+     <!-- get all maps API starts -->
+     <h2 id='uploadOrthoImage'>Get All Maps</h2>
+     <div class="highlight">
+       <pre class="highlight python tab-python"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight javascript tab-javascript"><code></code></pre>
+     </div>
+     <div class="highlight">
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/getAllOrthoImages/%"searchString"/"start"/"pageSize"?type="type"&id="userId"&teamId="teamId"</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+   <span class="nt">-X</span> GET
+ 
+ </code></pre>
+     </div>
+     <blockquote>
+       <p>A successful call to this API will return following response with response code 200.</p>
+     </blockquote>
+     <div class="highlight">
+       <pre class="highlight json tab-json"><code>
+        {
+          "data": [
+              {
+                  "ortho_id": "928be515-e8f7-4a0e-8173-b6c753127dcd",
+                  "images_used": "259",
+                  "gsd": "1.524 cm",
+                  "area": "93541.747 sq.meter",
+                  "img_size": "874.44",
+                  "plan_id": "dd3aa802-6f34-468f-a542-b34e4c26f923",
+                  "plan_name": "5_spet",
+                  "project_id": "23bf93e3-7d8f-4654-ae22-27d261880d1c",
+                  "project_name": "multi",
+                  "processing_date": "2023-02-28T05:28:21.652Z",
+                  "id": "1169aa00-f6bf-4d8d-9281-b024e4336146",
+                  "collection_name": "neagativeDSM",
+                  "sharedData": {
+                      "isShared": false,
+                      "sharedBy": null,
+                      "access_level": null
+                  },
+                  "task_id": "ac39905c-fe85-452b-9ad8-ae857f503b0e"
+              },
+          ],
+          "count": 39
+      }
+ </code></pre>
+     </div>
+     <h3 id='description-33'>Description</h3>
+ 
+     <p>This API is called when we want to get all maps by specifying following:-
+      <br/>  searchingString:-the string used for searching String <br/>
+      start:-the starting point of page<br/>
+      pageSize:-the no. of maps on each Page<br/>
+      type:-type of User<br/>
+      id:-user id<br/>
+      teamId<br/>
+    </p>
+ 
+     <h3 id='http-request-33'>HTTP Request</h3>
+     <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/getAllOrthoImages/%"searchString"/"start"/"pageSize"?type="type"&id="userId"&teamId="teamId"</code></p>
+ 
+     <h3 id='http-response-32'>HTTP Response</h3>
+ 
+     <table>
+       <thead>
+         <tr>
+           <th>Case</th>
+           <th>Response Status Code</th>
+           <th>Response Body</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Internal server error</td>
+           <td>500</td>
+           <td><code>{message: "An internal error has occured"}</code></td>
+         </tr>
+         <tr>
+           <td>get all maps succesfull</td>
+           <td>200</td>
+           <td><code>output given right side</code></td>
+         </tr>
+         </tr>
+       </tbody>
+     </table>
+ 
+     <!-- get all maps API stop -->
+    <!-- upload orthomosaic image API starts -->
     <h2 id='uploadOrthoImage'>Upload orthomosaic image</h2>
     <div class="highlight">
       <pre class="highlight python tab-python"><code></code></pre>
