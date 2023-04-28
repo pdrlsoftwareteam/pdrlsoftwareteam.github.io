@@ -2973,8 +2973,8 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
     <!-- Send new service request EMail API stop -->
 
     <h1 id='aerofarm'>DroneNaksha</h1>
-      <!-- Download GCP CSV starts -->
-     <!-- <h2 id='uploadOrthoImage'>Download GCP CSV </h2>
+      <!-- Get GCP Error starts -->
+     <h2 id='uploadOrthoImage'>Get GCP Error</h2>
      <div class="highlight">
        <pre class="highlight python tab-python"><code></code></pre>
      </div>
@@ -2982,7 +2982,7 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
        <pre class="highlight javascript tab-javascript"><code></code></pre>
      </div>
      <div class="highlight">
-       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/AeroMegh/AeroFarm/downloadGCPCSV/"collection_id"?teamId="teamId"</span>
+       <pre class="highlight shell tab-shell"><code>  curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2"> /Aeromegh/AeroFarm/getGCPErrors/"taskId"</span>
    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer access_token"</span>
    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
    <span class="nt">-X</span> GET
@@ -2994,18 +2994,19 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
      </blockquote>
      <div class="highlight">
        <pre class="highlight json tab-json"><code>
-        Name,Latitude,Longitude,Altitude
-        gcp1,21.33776458,78.01385205,5.5
-        gcp2,21.34166722,78.01574763,3.2
+        {
+          "gcp_rms_errors": [],
+          "gcp_errors": []
+      }
  </code></pre>
      </div>
      <h3 id='description-33'>Description</h3>
  
-     <p>This API is called when we want to download GCP CSV of GCP Points using collectionId and teamId
+     <p>This API is called when we want to check for gcp error
      </p>
  
      <h3 id='http-request-33'>HTTP Request</h3>
-     <p><code>GET ${BASE_URL}/AeroMegh/AeroFarm/downloadGCPCSV/"collection_id"?teamId="teamId"</code></p>
+     <p><code>GET ${BASE_URL}/Aeromegh/AeroFarm/getGCPErrors/"taskId"</code></p>
  
      <h3 id='http-response-32'>HTTP Response</h3>
  
@@ -3024,19 +3025,20 @@ curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL
            <td><code>{message: "An internal error has occured"}</code></td>
          </tr>
          <tr>
-           <td>download GCP CSV successfull</td>
+           <td>get gcp error successfull</td>
            <td>200</td>
            <td><code> 
-            Name,Latitude,Longitude,Altitude
-            gcp1,21.33776458,78.01385205,5.5<br/>
-            gcp2,21.34166722,78.01574763,3.2
+            {
+              "gcp_rms_errors": [],
+              "gcp_errors": []
+          }
         </code></td>
          </tr>
         
        </tbody>
-     </table> -->
+     </table> 
   
-     <!-- Download GCP CSV API stop  -->
+     <!-- Get GCP Error API stop  -->
      <!--  Download GCP CSV starts -->
      <h2 id='uploadOrthoImage'>Download GCP CSV </h2>
      <div class="highlight">
