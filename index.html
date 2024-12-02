@@ -1865,6 +1865,9 @@
       <li>
         <a href="#bhumeet" class="toc-h1 toc-link" data-title="Base URLs">Bhumeet</a>
       </li>
+      <li>
+        <a href="#bhumeet-public-api" class="toc-h1 toc-link" data-title="Base URLs">Bhumeet Public API's</a>
+      </li>
     </ul>
   </div>
   <div class="page-wrapper">
@@ -28726,6 +28729,95 @@ none
         <li>is_editable: Indicates if the request is editable.</li>
         <li>type: The type of the request.</li>
       </ul>
+
+
+      <h1 id="bhumeet-public-api">Bhumeet Public API's</h1>
+      <h2>Get DSP active locations</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/dsp_public_apis/locations"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: A1bC2dE3fG4hI5jK'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          <h3>Response Example: </h3>
+          {
+            "locations": [
+                {
+                    "id": "9b2d07c6-a99e-4b62-85e5-5987167c9bc0",
+                    "name": "Vallam, Tamil Nadu, India",
+                    "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f"
+                },
+                {
+                    "id": "7c321d75-78b2-4b85-bd7e-3117e4d4f726",
+                    "name": "Taiwan",
+                    "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f"
+                },
+                {
+                    "id": "483911d3-7dcc-4b93-a470-efbd951f66b2",
+                    "name": "Jamaica",
+                    "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f"
+                },
+            ]
+         }       
+          </pre>
+      </div>
+
+      <p>This endpoint retrieves a list of locations.</p>
+      <h3>Request</h3>
+      <ul>
+        <li>Method: GET</li>
+        <li> URL: ${BASE_URL}/dsp_public_apis/locations</li>
+      </ul>
+
+      <h3>Request Headers</h3>
+      <p><code> api-key : A1bC2dE3fG4hI5jK</code> ( Must )</p>
+
+      <h3> Response</h3>
+      <p> The response will be a JSON object with a locations array containing objects with the following properties:
+      </p>
+      <ul>
+        <li>id (string): The ID of the location.</li>
+        <li>name (string): The name of the location.</li>
+        <li>dsp_id (string): The ID of the DSP associated with the location.</li>
+      </ul>
+
+      <h2>Get Spraying service request parameters</h2>
+      <p> This endpoint retrieves the parameters required for a spraying service request based on the specified location
+        ID.</p>
+      <h3> Request</h3>
+      <ul>
+        <li> Method: GET</li>
+        <li>URL: ${BASE_URL}/dsp_public_apis/sprayingServiceRequest/parameters</li>
+        <li>Query Parameters:
+          <ul>
+            <li>locationId: 419280ae-90ca-49f2-a152-2066f8cc03c6 (UUID)</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3> Request Headers</h3>
+      <p><code>api-key : A1bC2dE3fG4hI5jK</p></code></p>
+
+      <h3>Query Params</h3>
+      <p><code>locationId : 419280ae-90ca-49f2-a152-2066f8cc03c6</code></p>
+
+      <h3>Response</h3>
+      <p>The response for this request is a JSON object with the following schema:</p>
+      <ul>
+        <li> dsp_id (string): The ID of the spraying service provider.</li>
+        <li>pesticides (array): An array of pesticide objects with ID, chemical name, and subsidy information.</li>
+        <li>drone_capacities (array): An array of available drone capacities.</li>
+        <li> min_request_acreage (string): The minimum acreage required for the service request.</li>
+        <li>crop_stages (array): An array of crop stages.</li>
+        <li>location_crops_cost_list (array): An array of objects containing crop ID, name, and cost information for the
+          specified location.</li>
+      </ul>
+
+
+
 
 
 
