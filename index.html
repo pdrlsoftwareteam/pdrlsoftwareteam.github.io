@@ -28784,7 +28784,69 @@ none
         <li>dsp_id (string): The ID of the DSP associated with the location.</li>
       </ul>
 
+      <!-- Get Spraying service request parameters  -->
       <h2>Get Spraying service request parameters</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/dsp_public_apis/sprayingServiceRequest/parameters?locationId=419280ae-90ca-49f2-a152-2066f8cc03c6'"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: A1bC2dE3fG4hI5jK'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          <h3>Response Example: </h3>
+          {
+            "parameters": {
+                "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f",
+                "pesticides": [
+                    {
+                        "id": "abbec657-c306-4f5d-a042-79541c261af8",
+                        "chemical_name": "chemical",
+                        "subsidy": 100
+                    },
+                    {
+                        "id": "5082506f-7ab7-4bd4-8bf7-1d75c9e6f1a3",
+                        "chemical_name": "agro",
+                        "subsidy": null
+                    }
+                ],
+                "drone_capacities": [
+                    "5 ltr",
+                    "6 ltr",
+                    "10 ltr"
+                ],
+                "min_request_acreage": "1",
+                "crop_stages": [
+                    "Germination",
+                    "Flowering.Reproduction",
+                    "Harvesting"
+                ],
+                "location_crops_cost_list": [
+                    {
+                        "id": "fd4933ed-e13b-4877-8699-c1e607231bad",
+                        "crop_id": "cdecfd3f-18b9-4a67-8223-3f26d15bb9e9",
+                        "crop_name": "Cotton",
+                        "cost": "1000"
+                    },
+                    {
+                        "id": "9bb95f32-d289-48e3-bcb0-a509ae749a78",
+                        "crop_id": "8d0d32ca-dc1d-47f8-92cc-698017620db7",
+                        "crop_name": "Rice",
+                        "cost": "101"
+                    },
+                    {
+                        "id": "6c923fe2-be91-4e61-814d-17d1b3692266",
+                        "crop_id": "887cd3e5-8efe-4e76-be2c-1e1b3330eaa8",
+                        "crop_name": "Sunflower",
+                        "cost": "2000"
+                    }
+                ]
+            }
+          }       
+          </pre>
+      </div>
+
       <p> This endpoint retrieves the parameters required for a spraying service request based on the specified location
         ID.</p>
       <h3> Request</h3>
@@ -28816,11 +28878,93 @@ none
           specified location.</li>
       </ul>
 
+      <!-- Create spraying service request -->
+      <h1>Create spraying service request</h1>
 
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/dsp_public_apis/sprayingServiceRequest"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: A1bC2dE3fG4hI5jK'</span>
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "request": {
+                  "crop_name": "Cotton",
+                  "field_lat": 19.993742,
+                  "field_lng": 73.751426,
+                  "field_address": "Trambakeshwar Road, Parijat Nagar, Nashik, Maharashtra, India",
+                  "field_area": 2, 
+                  "field_name": "Parijat Nagar",
+                  "location_id": "419280ae-90ca-49f2-a152-2066f8cc03c6",
+                  "pesticides": "Karate",
+                  "price_by": "tank", 
+                  "time": "2024-12-02T13:30:00Z"
+              },
+              "mobile_number": 7719002728, 
+              "name": "Aakash" 
+          }'
+            </span>         
+          </code>
+          <h3>Response Example: </h3>
+          {
+            "message": "Request created successfully.",
+            "createdRequest": {
+                "id": "abb24487-4999-45b8-98f3-0664c11c53a1",
+                "time": "2024-12-02T13:30:00.000Z",
+                "req_number": "3243344070",
+                "user_id": "9b356e4a-2f8c-40fa-9acd-63fcd75aa7aa",
+                "field_name": "Parijat Nagar",
+                "crop_name": "Cotton",
+                "pesticides": "Karate",
+                "status": "Placed",
+                "location_id": "419280ae-90ca-49f2-a152-2066f8cc03c6",
+                "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f",
+                "date_created": "2024-12-03T05:00:52.155Z",
+                "field_area": "2",
+                "field_address": "Trambakeshwar Road, Parijat Nagar, Nashik, Maharashtra, India",
+                "field_lat": "19.993742",
+                "field_lng": "73.751426",
+                "price_by": "tank"
+            }
+          } 
+          </pre>
+      </div>
 
+      <p>This endpoint allows you to submit a request for spraying services. The request should be sent as an HTTP POST
+        to
+        the specified URL. The request body should include the details of the spraying service request such as crop
+        name,
+        field location, area, pesticides, price calculation method, and time. Additionally, the customer's mobile number
+        and name should be provided in the request body.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li> crop_name (string): The name of the crop.</li>
+        <li>field_lat (number): The latitude of the field location.</li>
+        <li>field_lng (number): The longitude of the field location.</li>
+        <li>field_address (string): The address of the field location.</li>
+        <li>field_area (number): The area of the field in square kilometers if the price is calculated by acre, or the
+          number</li>
+        <li>of tanks if the price is calculated by tank.</li>
+        <li>field_name (string): The name of the field.</li>
+        <li>location_id (string): The ID of the location.</li>
+        <li>pesticides (string): The type of pesticides to be used.</li>
+        <li>price_by (string): The method of price calculation, which can be 'tank' or 'acre'.</li>
+        <li>time (string): The date and time of the spraying service.</li>
+        <li>mobile_number (number): Customer's mobile number.</li>
+        <li>name (string): Customer's name.</li>
+      </ul>
 
+      <h3> Request Headers</h3>
+      <p><code>api-key : A1bC2dE3fG4hI5jK</code></p>
 
-
+      <h3>Response</h3>
+      <ul>
+        <li>message (string): A message related to the request.</li>
+        <li>createdRequest (object): An object containing details of the created request, including ID, time, request
+          number,user ID, field details, crop name, pesticides, status, location ID, DSP ID, date created, field area,
+          field address, field latitude, field longitude, and price calculation method. </li>
+      </ul>
 
   </div>
   <div class="dark-box">
