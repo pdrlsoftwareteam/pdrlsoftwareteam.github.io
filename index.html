@@ -1862,6 +1862,12 @@
       <li>
         <a href="#base-urls" class="toc-h1 toc-link" data-title="Base URLs">Base URLs</a>
       </li>
+      <li>
+        <a href="#bhumeet" class="toc-h1 toc-link" data-title="Base URLs">Bhumeet</a>
+      </li>
+      <li>
+        <a href="#bhumeet-public-api" class="toc-h1 toc-link" data-title="Base URLs">Bhumeet Public API's</a>
+      </li>
     </ul>
   </div>
   <div class="page-wrapper">
@@ -27519,6 +27525,1446 @@ none
           </tr>
         </tbody>
       </table>
+
+
+      <!-- Bhumeet -->
+      <h1 id='bhumeet'>Bhumeet User Login API's</h1>
+      <h2>Login</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/sendOTP/v2?="</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+                "mobile_number" : 9021808707
+              }'</span>
+          </code>
+        </pre>
+      </div>
+      <p> This endpoint allows you to send a one-time password (OTP) to the user's mobile number for verification.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li>mobile_number (text): The mobile number to which the OTP will be sent.</li>
+      </ul>
+
+      <h3>Response</h3>
+      <ul>
+        <li>message: A message indicating the status of the OTP sending process.</li>
+      </ul>
+
+      <h2>User Login With OTP V2</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/login/v2"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+                "mobile_number":"9021808707",
+                "enteredOTP" : 451923,
+                "deviceId" : "egQJit2uRXW_MHa9t4pbmc:APA91bEngQ-GJIIaXXz2-8bGIZwitozRWbQet95ejTaYV-cVkcaRzsxPAUuhDksLBEbvW6ipoBoWVADpQnu79boVwiehxsbUYjAzCWJUqyNYNO5fXNX5tto",
+                "lat" : 19.121212, 
+                "lng" : 19.121212, 
+                "name" : "Aakash", 
+                "language_preference":"English",
+                "bhumeet_enabled_store_code" : "LNFOCMGR"
+            }'</span>
+          </code>
+        </pre>
+      </div>
+      <p> This endpoint allows the user to log in with the provided mobile number and OTP. If the user has no account
+        (status code 204), additional information such as name, latitude, and longitude are required for registration.
+      </p>
+      <h3>Request Body</h3>
+      <ul>
+        <li> mobile_number (number) - User's mobile number</li>
+        <li> enteredOTP (number) - OTP entered by the user</li>
+        <li>deviceId (string) - Firebase token key</li>
+        <li>lat (number) - Latitude (send only when you get 204 status code)</li>
+        <li>lng (number) - Longitude (send only when you get 204 status code)</li>
+        <li>name (string) - User's name (send only when you get 204 status code)</li>
+        <li>bhumeet_enabled_store_code (string) - Store code (send only when you get 204 status code)</li>
+      </ul>
+
+      <!-- SignUp Bhumeet User -->
+      <h1>Bhumeet User Sign-Up</h1>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/login/v2"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+                "mobile_number":"9021808707",
+                "enteredOTP" : 451923,
+                "deviceId" : "egQJit2uRXW_MHa9t4pbmc:APA91bEngQ-GJIIaXXz2-8bGIZwitozRWbQet95ejTaYV-cVkcaRzsxPAUuhDksLBEbvW6ipoBoWVADpQnu79boVwiehxsbUYjAzCWJUqyNYNO5fXNX5tto",
+                "lat" : 19.121212, 
+                "lng" : 19.121212, 
+                "name" : "Aakash", 
+                "language_preference":"English",
+                "bhumeet_enabled_store_code" : "LNFOCMGR"
+            }'</span>
+          </code>
+        </pre>
+      </div>
+      <p> This endpoint allows the user to log in with the provided mobile number and OTP. If the user has no account
+        (status code 204), additional information such as name, latitude, and longitude are required for registration.
+      </p>
+      <h3>Request Body</h3>
+      <ul>
+        <li> mobile_number (number) - User's mobile number</li>
+        <li> enteredOTP (number) - OTP entered by the user</li>
+        <li>deviceId (string) - Firebase token key</li>
+        <li>lat (number) - Latitude (send only when you get 204 status code)</li>
+        <li>lng (number) - Longitude (send only when you get 204 status code)</li>
+        <li>name (string) - User's name (send only when you get 204 status code)</li>
+        <li>bhumeet_enabled_store_code (string) - Store code (send only when you get 204 status code)</li>
+      </ul>
+
+      <!-- Bhumeet User Account Delete API's -->
+      <h1 id='bhumeet'>Bhumeet User Account Delete API's</h1>
+      <h2>Send OTP for Delete User</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/sendOTPForDeleteUser"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer 4dfce171-5f38-4397-9019-9d96be456704'</span>
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">''</span>
+          </code>
+        </pre>
+      </div>
+      <p>This endpoint is used to send a one-time password (OTP) for the purpose of deleting a user account.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li>user_id (text, required): The ID of the user for whom the OTP is being sent.</li>
+        <li>mobile_number (text, required): The mobile number of the user.</li>
+      </ul>
+
+      <h3>Response</h3>
+      <p>Upon successful request, the response will contain the following fields:</p>
+      <ul>
+        <li>user_id: The ID of the user for whom the OTP was sent.</li>
+        <li> name: The name of the user.</li>
+        <li> mobile_number: The mobile number of the user.</li>
+        <li> email: The email address of the user.</li>
+        <li> dsp_id: The ID of the user's DSP (Digital Service Provider).</li>
+        <li> date_created: The date when the user account was created.</li>
+        <li> address: The address of the user.</li>
+        <li> date_of_birth: The date of birth of the user.</li>
+        <li> occupation: The occupation of the user.</li>
+      </ul>
+
+      <!-- Delete bhumeet user -->
+      <h1>Delete Bhumeet User</h1>
+      <h2>Delete User</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/{otp}"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer 4dfce171-5f38-4397-9019-9d96be456704'</span>
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> DELETE
+            <span class="nt">--data </span> <span class="s1">''</span>
+          </code>
+        </pre>
+      </div>
+      <p>This endpoint is used to delete a specific user by their ID.</p>
+      <h3> Request</h3>
+      <ul>
+        <li>Method: DELETE</li>
+        <li>Endpoint: http://dev.aeromegh.in:3000/user/767580</li>
+      </ul>
+      <h3> Response</h3>
+      <p>The response will be a JSON object with the following schema:</p>
+
+
+      <!-- Bhumeet Create Spraying Service Request -->
+      <h1>Create Spraying Service Request</h1>
+      <p>This endpoint allows the user to create a spraying service request for a specific field.</p>
+      <h3>Request Body</h3>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/sprayingServiceRequest"</span>
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "request": {
+                  "bhumeet_enabled_store_code" : "LNFOCMGR", 
+                  "time": "2024-12-14T11:00:26.184Z",
+                  "field_id": null, 
+                  "field_name": null, 
+                  "crop_name": "Test", 
+                  "crop_stage": "", 
+                  "pesticides": "Test", 
+                  "location_id": "12c89d34-7723-4678-a66f-af2d735904a4",
+                  "field_area": 0.00809372,
+                  "field_address": "Nashik",
+                  "service_amount": 700,
+                  "cgst": 0, 
+                  "sgst": 0, 
+                  
+                  "total_amount": 700,
+                  "field_lat": 20.0039723,
+                  "field_lng": 73.7768355,
+                  "price_by" : "acre" 
+              }
+            }'</span>
+          </code>
+        </pre>
+      </div>
+      <ul>
+        <li>bhumeet_enabled_store_code (string) - Pass the Bhumeet store code if the request is created using store QR
+          code. </li>
+        <li> time (string) - The timestamp for the request.</li>
+        <li> field_id (string, optional) - The ID of the field (optional).</li>
+        <li> field_name (string, optional) - The name of the field (optional).</li>
+        <li> crop_name (string, optional) - The name of the crop (optional).</li>
+        <li> crop_stage (string, optional) - The stage of the crop (optional).</li>
+        <li> pesticides (string) - The type of pesticides to be used.</li>
+        <li> location_id (string) - The ID of the location.</li>
+        <li> field_area (number) - The area of the field.</li>
+        <li> field_address (string) - The address of the field.</li>
+        <li> service_amount (number) - The amount for the service.</li>
+        <li> cgst (number) - The CGST in percentage.</li>
+        <li> sgst (number) - The SGST in percentage.</li>
+        <li> total_amount (number) - The total amount.</li>
+        <li> field_lat (number) - The latitude of the field.</li>
+        <li> field_lng (number) - The longitude of the field.</li>
+        <li> price_by (string) - The unit for pricing, can be "tank" or "acre".</li>
+      </ul>
+      <h3> Response Body</h3>
+      <p>Upon successful creation, the response will include the following fields:</p>
+      <ul>
+        <li>message (string) - A message indicating the status of the request.</li>
+        </li>createdRequest (object) - Details of the created request including ID, time, field details, pesticides,
+        status,
+        location, invoice details, and more.</li>
+      </ul>
+
+      <!-- Bhumeet Drone Service Providers API's -->
+      <h1>Bhumeet Drone Service Providers API's</h1>
+      <h3>Near By Service Providers API</h3>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/aggregator/user/getNearbyServiceProviders"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "lat" : 20.017794806087906, 
+              "lng" : 73.75115047842343,
+              "searchByRating" : true 
+          }'</span>
+
+          <h3>Example response: </h3>
+        {
+          "droneServiceProviders": [
+            {
+              "id": "",
+              "name": "",
+              "logo_url": null,
+              "phone": "",
+              "location_id": "",
+              "location_address": "",
+              "location_name": "",
+              "enabled_services": [""],
+              "avg_rating": "",
+              "distance": 0
+            }
+          ]
+        }
+          </code>
+        </pre>
+      </div>
+      <p>
+        The POST request to /aggregator/user/getNearbyServiceProviders endpoint is used to retrieve nearby service
+        providers based on the provided latitude and longitude coordinates. The request body should contain the lat and
+        lng parameters, representing the latitude and longitude respectively. Additionally, the searchByRating parameter
+        is used to specify whether to search by rating or nearby.
+      </p>
+
+      <p>
+        The response for this request is a JSON schema representing an array of droneServiceProviders. Each
+        droneServiceProvider object contains the following properties:
+      </p>
+      <ul>
+        <li>id (string): The unique identifier of the service provider.</li>
+        <li> name (string): The name of the service provider.</li>
+        <li> logo_url (string): The URL of the service provider's logo.</li>
+        <li> phone (string): The contact phone number of the service provider.</li>
+        <li> location_id (string): The identifier of the location.</li>
+        <li> location_address (string): The address of the location.</li>
+        <li> location_name (string): The name of the location.</li>
+        <li> enabled_services (array of strings): The list of services enabled by the service provider.</li>
+        <li> avg_rating (string): The average rating of the service provider.</li>
+        <li> distance (number): The distance of the service provider from the provided coordinates.</li>
+      </ul>
+      <p>
+        The response may contain an array of droneServiceProviders, where each object represents a service provider with
+        the specified properties.
+      </p>
+
+      <h1>Bhumeet User Details</h1>
+      <h2>User Details</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user"</span>
+            
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 2851dc99-3878-4cf3-ba03-ad2436e37a98'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">'{
+              "mobile_number" : 7719002728
+          }'</span>
+
+          <p>Response :</p>
+          <span class="s1">
+            {
+              "user": {
+                "id": "",
+                "name": "",
+                "mobile_number": "",
+                "email": "",
+                "dsp_id": "",
+                "date_created": "",
+                "address": "",
+                "date_of_birth": "",
+                "occupation": ""
+              }
+            }
+          </span>           
+          </code>
+        </pre>
+      </div>
+      <p>This endpoint retrieves user information.</p>
+      <h3>Request</h3>
+      <ul>
+        <li>Method: GET</li>
+        <li> URL: ${BASE-URL}/user</li>
+        <li> Headers: N/A</li>
+        <li> Body:
+          <ul>
+            <li> mobile_number (text, required): The mobile number of the user.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Update User Details</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user"</span>
+            <!-- <span class="nt">--header</span> <span class="s1">'dsp-id: 2851dc99-3878-4cf3-ba03-ad2436e37a98'</span> -->
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">'{
+                "user": {
+                "id": "d6343ad2-406c-4a9f-b98f-5f19d41b8925",
+                "name": "AAKASH"
+                }
+              }'</span>
+
+          <p>Example Request Body :</p>
+          <span class="s1">
+            {
+              "user": {
+                  "id": "d6343ad2-406c-4a9f-b98f-5f19d41b8925",
+                  "name": "AAKASH"
+              }
+          }
+          <span class="k">### Response
+          Upon successful creation of the user, the response will include a message and the updated user details.
+          #### Response Body
+          - `message` (string): A message indicating the status of the request.
+          - `updatedUser` (object): An object containing the updated user details, including their ID, name, mobile number, email, DSP ID, date created, address, date of birth, and occupation.
+          #### Example Response
+          ```json
+        </span>
+          {
+              "message": "",
+              "updatedUser": {
+                  "id": "",
+                  "name": "",
+                  "mobile_number": "",
+                  "email": "",
+                  "dsp_id": "",
+                  "date_created": "",
+                  "address": "",
+                  "date_of_birth": "",
+                  "occupation": ""
+              }
+          }
+          </span>           
+          </code>
+        </pre>
+      </div>
+      <p>
+        This endpoint allows you to create a new user by sending a POST request to the specified URL. The request should
+        include a JSON object with the user's details, such as their ID and optional fields like name, mobile number,
+        email, address, date of birth, and occupation.
+      </p>
+      <h3>Request Body </h3>
+      <ul>
+        <li>id (string, required): The unique identifier for the user.</li>
+        <li>name (string, optional): The name of the user.</li>
+        <li>mobile_number (string, optional): The mobile number of the user.</li>
+        <li>email (string, optional): The email address of the user.</li>
+        <li>address (string, optional): The address of the user.</li>
+        <li>date_of_birth (string, optional): The date of birth of the user.</li>
+        <li>occupation (string, optional): The occupation of the user.</li>
+      </ul>
+
+      <!-- Bhumeet Verification API's -->
+      <h1>Bhumeet - Verify User Store</h1>
+      <h2>Verify User Store</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/bes/verify"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "bhumeetEnabledStoreCode" : "LNFOCMGR"
+              }'</span>
+
+          <p>Example Response :</p>
+          <span class="s1">
+            {
+              "message": "",
+              "bhumeetEnabledStore": {
+                  "id": "",
+                  "store_name": "",
+                  "store_code": "",
+                  "owner_name": ""
+              }
+            }
+          </span>           
+          </code>
+        </pre>
+      </div>
+
+      <p>This endpoint is used to verify a user store by sending a POST request to the specified URL.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li>
+          bhumeetEnabledStoreCode (string) - Pass the store code which will be extracted from the barcode.
+        </li>
+      </ul>
+
+      <h3>Response</h3>
+      <ul>
+        <li>Status 404: Indicates that the store code provided is invalid.</li>
+        <li>Status 202: Indicates that the store account is not active.</li>
+        <li>
+          Status 200: Returns a JSON object with the following fields:
+          <ul>
+            <li>message (string) - A message related to the request.</li>
+            <li>bhumeetEnabledStore (object) - An object containing the details of the verified store, including:
+              <ul>
+                <li>id (string) - The ID of the store.</li>
+                <li>store_name (string) - The name of the store.</li>
+                <li>store_code (string) - The code of the store.</li>
+                <li>owner_name (string) - The name of the store owner.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h1>Bhumeet Coupons</h1>
+      <h2>Verified Coupons</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/coupons/getVerifiedCoupons"</span>
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "locationId" : "f454e2a5-d8f4-4a35-a6da-e7636af88894",
+              "couponCode" : "QHNCJP4R"
+              }'</span>
+
+          <p>Example Response :</p>
+          <span class="s1">
+            {
+              "message": "Coupon is valid",
+              "coupons": {
+                  "id": "84478651-e710-46a7-b85e-6d39368be6d4",
+                  "name": "demo coupon1",
+                  "is_discount_in_percentage": true,
+                  "discount_percentage": "20",
+                  "max_discount_value": "1000",
+                  "discount_cost": null,
+                  "min_order_value": "5000",
+                  "consumed_amount": "0",
+                  "redeemed_count": "0",
+                  "max_redemption_count": "100",
+                  "number_of_use_per_user": "10",
+                  "coupon_type": "DSP",
+                  "coupon_code": "QHNCJP4R",
+                  "expiry_date": "2024-10-25T18:29:59.999Z",
+                  "from_date": "2024-10-13T18:30:00.000Z"
+              }
+           }
+          </span>           
+          </code>
+        </pre>
+      </div>
+
+      <p> This endpoint allows you to verify a coupon by providing the location ID and the coupon code.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li>locationId (string) - The ID of the location where the coupon is being verified.</li>
+        <li>couponCode (string) - The code of the coupon being verified.</li>
+      </ul>
+
+      <h3>Response</h3>
+      <ul>
+        <li> message (string) - A message indicating the status of the coupon verification.</li>
+        <li>coupons (object) - Details of the verified coupon, including its ID, name, discount information, usage
+          limits,
+          type, code, expiry date, and start date.</li>
+      </ul>
+
+      <h2>Add User Coupons </h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/coupons"</span>
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "locationId" : "94db6771-b171-4929-aefe-32e56ca8e09f",
+              "requestAmount" :250
+          }'</span>         
+          </code>
+        </pre>
+      </div>
+
+      <p> This endpoint allows the user to add coupons for a specific location.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li> locationId (string): The unique identifier for the location.</li>
+        <li>requestAmount (number): The requested amount for the coupon. </li>
+      </ul>
+      <h3>Response</h3>
+      <p> The response will include an array of coupons for different users at the specified location. Each coupon
+        object
+        contains the following properties:</p>
+      <ul>
+        <li>id (string): The unique identifier for the coupon.</li>
+        <li>name (string): The name of the coupon.</li>
+        <li>is_discount_in_percentage (boolean): Indicates if the discount is in percentage.</li>
+        <li>discount_percentage (number): The percentage of discount.</li>
+        <li>max_discount_value (string): The maximum discount value.</li>
+        <li>discount_cost (string): The discounted cost.</li>
+        <li>min_order_value (string): The minimum order value for the coupon.</li>
+        <li>consumed_amount (string): The amount consumed using the coupon.</li>
+        <li>max_consumption_amount (string): The maximum consumption amount for the coupon.</li>
+        <li>number_of_use_per_user (string): The number of times the coupon can be used per user.</li>
+        <li>coupon_type (string): The type of coupon.</li>
+        <li>coupon_code (string): The code for the coupon.</li>
+        <li>expiry_date (string): The expiry date of the coupon.</li>
+      </ul>
+
+
+      <!-- Bhumeet - User Location API's -->
+      <h1>Bhumeet - User Location API's</h1>
+      <h2>Save Location</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/locations"</span>
+            <!-- <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span> -->
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "name" : "Example 10",
+              "address" : "Test add1",
+              "latitude" : 19.11111,
+              "longitude" : 20.111111
+          }'</span>         
+          </code>
+        </pre>
+      </div>
+
+      <p>This endpoint allows the user to create a new location for a user. The HTTP POST request should be sent to
+        ${BASE-URL}/user/locations.
+      </p>
+      <p>
+        The request body should include the name, address, latitude, and longitude of the location. Upon successful
+        creation, the response will include the details of the newly created location.
+      </p>
+
+      <h2>Get User Location</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/locations/${user-id}"</span>
+            <!-- <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span> -->
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">'{
+              "name" : "Example 10",
+              "address" : "Test add1",
+              "latitude" : 19.11111,
+              "longitude" : 20.111111
+          }'</span>         
+          </code>
+        </pre>
+      </div>
+
+      <p> This endpoint retrieves the location details for a specific user.</p>
+      <h3> Request</h3>
+      <ul>
+        <li>Method: GET</li>
+        <li> URL: {BASE-URL}/user/locations/${user-id}</li>
+        <li> Headers:
+          <ul>
+            <li>(optional) Add any required headers here</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3> Response </h3>
+      <p>Upon a successful request, the server will respond with the following details:</p>
+      <ul>
+        <li>name (string): The name of the location.</li>
+        <li>address (string): The address of the location.</li>
+        <li>latitude (number): The latitude coordinate of the location.</li>
+        <li>longitude (number): The longitude coordinate of the location.</li>
+      </ul>
+
+
+      <h2>Get Locations</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/locations"</span>
+            <!-- <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span> -->
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+        </pre>
+      </div>
+
+      <p>This endpoint retrieve all locations of the user.</p>
+      <h3>Request Body</h3>
+      <p> This request does not require a request body.</p>
+      <h3> Request Parameters</h3>
+      <p> This request does not require any parameters.</p>
+
+      <h2>Update Location</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/locations"</span>
+            <!-- <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span> -->
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> PUT
+            <span class="nt">--data </span> <span class="s1">'{
+              "id": "421a93f8-976f-452b-9d59-c03f60dee5cb",
+              "name": "Example100",
+              "address": "Test add",
+              "latitude": "19.1111",
+              "longitude": "20.1111"
+            }'</span>         
+          </code>
+        </pre>
+      </div>
+
+      <p>This endpoint allows users to update the location details for a specific user. The HTTP PUT request is made to
+        the
+        specified URL with the user's location details in the request body.</p>
+      <h3> Request Body</h3>
+      <ul>
+        <li> id (string): The unique identifier for the location.</li>
+        <li>name (string): The name of the location.</li>
+        <li>address (string): The address of the location.</li>
+        <li>latitude (string): The latitude coordinate of the location.</li>
+        <li>longitude (string): The longitude coordinate of the location.</li>
+      </ul>
+
+      <h3>Response</h3>
+      <p> The response for this request is documented as a JSON schema.</p>
+      <p><code>{ "type": "object",
+      "properties": {
+      "status": { "type": "string" },
+      "message": { "type": "string" }
+      }
+      }
+    </code></p>
+
+      <h2>Delete User Location</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/locations/${user-id}"</span>
+            <!-- <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span> -->
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> DELETE
+            <span class="nt">--data </span> <span class="s1">'{
+              "name" : "Example 10",
+              "address" : "Test add1",
+              "latitude" : 19.11111,
+              "longitude" : 20.111111
+          }'</span>         
+          </code>
+        </pre>
+      </div>
+
+      <p>This endpoint is used to delete a specific user location.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li>name (string, required): The name of the location.</li>
+        <li> address (string, required): The address of the location.</li>
+        <li> latitude (number, required): The latitude of the location.</li>
+        <li> longitude (number, required): The longitude of the location.</li>
+      </ul>
+      <h3>Response</h3>
+      <p>
+        The response will not contain a message body. A successful deletion will return a 204 No Content status code.
+      </p>
+
+      <h1>Bhumeet User - DSP Ratings</h1>
+      <h2>DSP Ratings</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/dspRatings"</span>
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "requestId": "2851dc99-3878-4cf3-ba03-ad2436e37a98",
+              "requestType": "Spraying service",
+              "rating": 4,
+              "comment": "Lorem...." 
+          }'</span>         
+          </code>
+          <h3>Example Response : </h3>
+          {
+            "user": {
+              "id": "",
+              "name": "",
+              "email": "",
+              "phone": "",
+              "address": "",
+              "aadhar_number": "",
+              "pan_number": "",
+              "is_admin": true,
+              "location_id": null,
+              "dsp_id": "",
+              "date_created": "",
+              "aadhar_url": null,
+              "pan_url": null,
+              "is_active": true,
+              "is_pdrl_admin": true,
+              "dsp": {
+                "id": "",
+                "name": "",
+                "logo_url": "",
+                "owner_id": "",
+                "date_created": "",
+                "is_verified": true,
+                "is_active": true,
+                "registration_number": null,
+                "address": "",
+                "information": null,
+                "blob_container": "",
+                "dsp_id": ""
+              },
+              "token": ""
+            }
+          }
+        </pre>
+      </div>
+
+      <p> This endpoint is used to submit ratings for a specific service provided by a DSP (Delivery Service Provider).
+      </p>
+      <h3> Request Body</h3>
+      <ul>
+        <li> requestId (string) - The unique identifier for the request.</li>
+        <li>requestType (string) - The type of service for which the rating is being submitted.</li>
+        <li>rating (number) - The numerical rating given for the service.</li>
+        <li>comment (string, optional) - An optional comment or feedback for the service.</li>
+      </ul>
+      <h3> Response </h3>
+      <p>
+        The response will include the user details and information about the DSP (Delivery Service Provider) involved
+        in the service. The response will be in the form of a JSON schema.
+      </p>
+
+
+      <h1>Bhumeet User - Spraying Request API's </h1>
+      <h2>Get Spraying Service Request</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/sprayingServiceRequest/${request-id}?needDSPDetails=true"</span>
+            <!-- <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span> -->
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>         
+        </pre>
+      </div>
+
+      <p>This endpoint retrieves the details of a spraying service request including the DSP (Drone Service Provider)
+        details if needed.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li>Path Parameters
+          <ul>
+            <li>{request-id} (string): The unique identifier of the spraying service request.
+            </li>
+          </ul>
+        </li>
+        <li>Query Parameters
+          <ul>
+            <li>needDSPDetails (boolean): Indicates whether the DSP details are required.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Response Body</h3>
+      <p>
+        The response contains detailed information about the spraying service request, including the request ID, time,
+        user ID, field details, location, DSP details, invoice details, drone details, status history, and more.
+      </p>
+
+      <h2>Get Spraying Requests</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/sprayingServiceRequests"</span>
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          <h3>Example Response : </h3>
+          {
+            "requests": [
+                {
+                    "id": "",
+                    "time": "",
+                    "req_number": "",
+                    "user_id": "",
+                    "field_id": null,
+                    "field_name": null,
+                    "crop_name": null,
+                    "crop_stage": null,
+                    "pesticides": null,
+                    "status": "",
+                    "location_id": "",
+                    "drone_id": null,
+                    "drone_pilot": null,
+                    "dsp_id": "",
+                    "date_created": "",
+                    "field_area": "",
+                    "field_address": "",
+                    "last_updated": "",
+                    "completion_2fa_otp": null,
+                    "user_name": "",
+                    "user_phone": "",
+                    "pilot_name": null,
+                    "location_name": "",
+                    "location_address": "",
+                    "location_latitude": "",
+                    "location_longitude": "",
+                    "location_isactive": true,
+                    "time_difference": "",
+                    "is_editable": true
+                }
+            ]
+         }
+        </pre>
+      </div>
+
+      <p>This endpoint retrieves a list of spraying service requests for the user.</p>
+
+      <h3>Request</h3>
+      <p>No request body is required for this endpoint.</p>
+      <h3> Response</h3>
+      <p>
+        The response will be a JSON object with a key "requests" containing an array of spraying service request
+        objects.
+        Each request object includes the following properties:
+      </p>
+      <ul>
+        <li> id (string): The unique identifier for the request.</li>
+        <li>time (string): The time of the request.</li>
+        <li>req_number (string): The request number.</li>
+        <li>user_id (string): The user ID associated with the request.</li>
+        <li>field_id (string or null): The field ID related to the request, if available.</li>
+        <li>field_name (string or null): The name of the field, if available.</li>
+        <li>crop_name (string or null): The name of the crop associated with the request, if available.</li>
+        <li>crop_stage (string or null): The stage of the crop, if available.</li>
+        <li>pesticides (string or null): Details of pesticides, if available.</li>
+        <li>status (string): The status of the request.</li>
+        <li>location_id (string): The location ID associated with the request.</li>
+        <li>drone_id (string or null): The drone ID, if available.</li>
+        <li>drone_pilot (string or null): The name of the drone pilot, if available.</li>
+        <li>dsp_id (string): The ID of the spraying service provider.</li>
+        <li>date_created (string): The date when the request was created.</li>
+        <li>field_area (string): The area of the field.</li>
+        <li>field_address (string): The address of the field.</li>
+        <li>last_updated (string): The date when the request was last updated.</li>
+        <li>completion_2fa_otp (string or null): The OTP for completion, if available.</li>
+        <li>user_name (string): The name of the user associated with the request.</li>
+        <li>user_phone (string): The phone number of the user.</li>
+        <li>pilot_name (string or null): The name of the pilot, if available.</li>
+        <li>location_name (string): The name of the location.</li>
+        <li>location_address (string): The address of the location.</li>
+        <li>location_latitude (string): The latitude of the location.</li>
+        <li>location_longitude (string): The longitude of the location.</li>
+        <li>location_isactive (boolean): Indicates if the location is active.</li>
+        <li>time_difference (string): The time difference.</li>
+        <li>is_editable (boolean): Indicates if the request is editable.</li>
+      </ul>
+
+      <h2>Delete Service Spraying Request</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/sprayingServiceRequest/${request-id}"</span>
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> DELETE
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          <h3>Example Response : </h3>
+          {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "time": {"type": "string"},
+              "req_number": {"type": "string"},
+              "user_id": {"type": "string"},
+              "field_id": {"type": "string"},
+              "field_name": {"type": "string"},
+              "crop_name": {"type": "string"},
+              "crop_stage": {"type": "string"},
+              "pesticides": {"type": "string"},
+              "status": {"type": "string"},
+              "location_id": {"type": "string"},
+              "drone_id": {"type": "string"},
+              "drone_pilot": {"type": "string"},
+              "dsp_id": {"type": "string"},
+              "date_created": {"type": "string"},
+              "field_area": {"type": "string"},
+              "field_address": {"type": "string"},
+              "amount": {"type": "string"},
+              "last_updated": {"type": "string"}
+            }
+          }
+        </pre>
+      </div>
+
+      <p>This endpoint is used to delete a specific spraying service request for a user. </p>
+      <h3>Request</h3>
+      <p>No request body is required for this endpoint. The request URL should include the ID of the spraying service
+        request to be deleted.</p>
+      <ul>
+        <li>request_id (path parameter) - The unique identifier of the spraying service request to be deleted. </li>
+      </ul>
+
+      <h3>Response</h3>
+      <p>The response will be a JSON object with the following properties:</p>
+      <ul>
+        <li>message (string) - A message indicating the result of the deletion operation.</li>
+        <li>
+          deletedRequest (object) - An object containing details of the deleted spraying service request, including
+          its ID,
+          time, request number, user ID, field ID, field name, crop name, crop stage, pesticides, status, location ID,
+          drone
+          ID, drone pilot, DSP ID, date created, field area, field address, amount, and last updated timestamp.
+        </li>
+      </ul>
+
+      <h2>Spraying Parameters Details</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/sprayingServiceRequest/parameters/details/${request-id}"</span>
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          <h3>Example Response : </h3>
+          {
+            "sprayingDetails": {
+              "id": "",
+              "rate_per_acre": "",
+              "dsp_id": "",
+              "pesticides": [],
+              "crop_types": [],
+              "crop_stages": [""],
+              "drone_capacities": [""],
+              "sgst": "",
+              "cgst": "",
+              "dsp_location_id": null,
+              "is_common_pricing_for_locations": true,
+              "min_request_acreage": "",
+              "location_crops_cost_list": [
+                {
+                  "crop_id": "",
+                  "crop_name": "",
+                  "cost": ""
+                }
+              ]
+            }
+          }
+        </pre>
+      </div>
+
+      <p> This endpoint retrieves the spraying service request parameters details for a specific ID.</p>
+      <h3>Request</h3>
+      <p>There are no request parameters for this endpoint.</p>
+      <h3>Response</h3>
+      <p>The response will be a JSON object with the following schema:
+        The sprayingDetails object contains the details of the spraying service request parameters. The id field
+        represents the unique identifier for the request. Other fields such as rate_per_acre, dsp_id, pesticides,
+        crop_types, crop_stages, drone_capacities, sgst, cgst, dsp_location_id, is_common_pricing_for_locations,
+        min_request_acreage, and location_crops_cost_list provide specific information related to the spraying service
+        request.
+      </p>
+
+      <h1>Bhumeet User - DSP Services</h1>
+      <h2>Get User DSP Services</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/dsp/services?lat=20.017794806087906&lng=73.75115047842343"</span>
+            <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          </pre>
+      </div>
+
+      <p>This endpoint retrieves a list of services for a user based on the provided latitude and longitude.</p>
+      <h3>Request</h3>
+      <ul>
+        <li> Method: GET</li>
+        <li> URL: {BASE-URL}/user/dsp/services</li>
+        <li> Query Parameters:</li>
+        <li> lat (number): The latitude of the user's location.</li>
+        <li> lng (number): The longitude of the user's location.</li>
+      </ul>
+
+      <h3> Response </h3>
+      <ul>
+        The response will include:
+        <ul>
+          <li>message (string): A message, if any.</li>
+          <li>services (array): An array of service objects with the following properties:
+            <ul>
+              <li>id (string): The ID of the service.</li>
+              <li>name (string): The name of the service.</li>
+              <li>description (string): The description of the service.</li>
+              <li>aeromegh_service_id (string): The ID of the service in the Aeromegh system.</li>
+              <li>dsp_id (string): The ID of the DSP (Delivery Service Provider).</li>
+              <li>is_active (boolean): Indicates if the service is active.</li>
+              <li>start_date (string): The start date of the service.</li>
+              <li>date_created (string): The date when the service was created.</li>
+              <li>service_type (string): The type of service.</li>
+              <li>location_id (string): The ID of the location associated with the service</li>
+            </ul>
+          </li>
+        </ul>
+      </ul>
+
+
+      <h1>Bhumeet User - Request </h1>
+      <h2>Get Request</h2>
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/user/requests?fromDate=2024-07-13T05%3A30%3A00.000Z&toDate=2024-09-13T05%3A30%3A00.000Z"</span>
+            <!-- <span class="nt">--header</span> <span class="s1">'dsp-id: 0d960976-369d-49ef-af81-e5a8ed9e538f'</span> -->
+            <span class="nt">--header</span> <span class="s1">'api-key: 86420fd19633ed191d72f6cc997be554'</span>
+            <span class="nt">--header</span> <span class="s1">'Authorization: Bearer a0bf8959-a91d-4aee-9771-b2c23bb01020'</span>            
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          <h3>Example Response : </h3>
+          
+            {
+              "requests": [
+                  {
+                      "id": "",
+                      "time": "",
+                      "req_number": "",
+                      "user_id": "",
+                      "field_id": null,
+                      "field_name": null,
+                      "crop_name": null,
+                      "crop_stage": null,
+                      "pesticides": null,
+                      "status": "",
+                      "location_id": null,
+                      "drone_id": "",
+                      "drone_pilot": "",
+                      "dsp_id": "",
+                      "date_created": "",
+                      "field_area": null,
+                      "field_address": null,
+                      "amount": null,
+                      "last_updated": "",
+                      "user_name": "",
+                      "user_phone": "",
+                      "time_difference": "",
+                      "is_editable": true,
+                      "type": ""
+                  }
+              ]
+          }          
+          </pre>
+      </div>
+
+      <p>
+        This API endpoint retrieves user requests based on the specified date range. The HTTP GET request should be made
+        to the URL ${BASE-URL}/user/requests, with the query parameters fromDate and toDate indicating
+        the start and end dates respectively.
+      </p>
+      <h3>Request</h3>
+      <ul>
+        <li>Method: GET</li>
+        <li>URL: ${BASE-URL}/user/requests </li>
+        <li>Query Parameters:
+          <ul>
+            <li> fromDate (e.g. 2024-07-13T05:30:00.000Z): The start date for filtering requests.</li>
+            <li> toDate (e.g. 2024-09-13T05:30:00.000Z): The end date for filtering requests.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Response</h3>
+      <p> The response will be a JSON object with an array of "requests" containing individual request objects. Each
+        request object includes the following fields:</p>
+      <ul>
+        <li> id: The unique identifier for the request.</li>
+        <li>time: The time of the request.</li>
+        <li>req_number: The request number.</li>
+        <li>user_id: The ID of the user associated with the request.</li>
+        <li>field_id: The ID of the field related to the request.</li>
+        <li>field_name: The name of the field.</li>
+        <li>crop_name: The name of the crop.</li>
+        <li>crop_stage: The stage of the crop.</li>
+        <li>pesticides: Information about pesticides.</li>
+        <li>status: The status of the request.</li>
+        <li>location_id: The ID of the location.</li>
+        <li>drone_id: The ID of the drone.</li>
+        <li>drone_pilot: The pilot of the drone.</li>
+        <li>dsp_id: The ID of the DSP (Data Service Provider).</li>
+        <li>date_created: The creation date of the request.</li>
+        <li>field_area: The area of the field.</li>
+        <li>field_address: The address of the field.</li>
+        <li>amount: The amount related to the request.</li>
+        <li>last_updated: The date of the last update.</li>
+        <li>user_name: The name of the user.</li>
+        <li>user_phone: The phone number of the user.</li>
+        <li>time_difference: The time difference.</li>
+        <li>is_editable: Indicates if the request is editable.</li>
+        <li>type: The type of the request.</li>
+      </ul>
+
+
+      <h1 id="bhumeet-public-api">Bhumeet Public API's</h1>
+      <h2>Get DSP active locations</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/dsp_public_apis/locations"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: A1bC2dE3fG4hI5jK'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          <h3>Response Example: </h3>
+          {
+            "locations": [
+                {
+                    "id": "9b2d07c6-a99e-4b62-85e5-5987167c9bc0",
+                    "name": "Vallam, Tamil Nadu, India",
+                    "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f"
+                },
+                {
+                    "id": "7c321d75-78b2-4b85-bd7e-3117e4d4f726",
+                    "name": "Taiwan",
+                    "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f"
+                },
+                {
+                    "id": "483911d3-7dcc-4b93-a470-efbd951f66b2",
+                    "name": "Jamaica",
+                    "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f"
+                },
+            ]
+         }       
+          </pre>
+      </div>
+
+      <p>This endpoint retrieves a list of locations.</p>
+      <h3>Request</h3>
+      <ul>
+        <li>Method: GET</li>
+        <li> URL: ${BASE_URL}/dsp_public_apis/locations</li>
+      </ul>
+
+      <h3>Request Headers</h3>
+      <p><code> api-key : A1bC2dE3fG4hI5jK</code> ( Must )</p>
+
+      <h3> Response</h3>
+      <p> The response will be a JSON object with a locations array containing objects with the following properties:
+      </p>
+      <ul>
+        <li>id (string): The ID of the location.</li>
+        <li>name (string): The name of the location.</li>
+        <li>dsp_id (string): The ID of the DSP associated with the location.</li>
+      </ul>
+
+      <!-- Get Spraying service request parameters  -->
+      <h2>Get Spraying service request parameters</h2>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/dsp_public_apis/sprayingServiceRequest/parameters?locationId=419280ae-90ca-49f2-a152-2066f8cc03c6'"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: A1bC2dE3fG4hI5jK'</span>
+            <span class="nt">--X</span> GET
+            <span class="nt">--data </span> <span class="s1">''</span>         
+          </code>
+          <h3>Response Example: </h3>
+          {
+            "parameters": {
+                "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f",
+                "pesticides": [
+                    {
+                        "id": "abbec657-c306-4f5d-a042-79541c261af8",
+                        "chemical_name": "chemical",
+                        "subsidy": 100
+                    },
+                    {
+                        "id": "5082506f-7ab7-4bd4-8bf7-1d75c9e6f1a3",
+                        "chemical_name": "agro",
+                        "subsidy": null
+                    }
+                ],
+                "drone_capacities": [
+                    "5 ltr",
+                    "6 ltr",
+                    "10 ltr"
+                ],
+                "min_request_acreage": "1",
+                "crop_stages": [
+                    "Germination",
+                    "Flowering.Reproduction",
+                    "Harvesting"
+                ],
+                "location_crops_cost_list": [
+                    {
+                        "id": "fd4933ed-e13b-4877-8699-c1e607231bad",
+                        "crop_id": "cdecfd3f-18b9-4a67-8223-3f26d15bb9e9",
+                        "crop_name": "Cotton",
+                        "cost": "1000"
+                    },
+                    {
+                        "id": "9bb95f32-d289-48e3-bcb0-a509ae749a78",
+                        "crop_id": "8d0d32ca-dc1d-47f8-92cc-698017620db7",
+                        "crop_name": "Rice",
+                        "cost": "101"
+                    },
+                    {
+                        "id": "6c923fe2-be91-4e61-814d-17d1b3692266",
+                        "crop_id": "887cd3e5-8efe-4e76-be2c-1e1b3330eaa8",
+                        "crop_name": "Sunflower",
+                        "cost": "2000"
+                    }
+                ]
+            }
+          }       
+          </pre>
+      </div>
+
+      <p> This endpoint retrieves the parameters required for a spraying service request based on the specified location
+        ID.</p>
+      <h3> Request</h3>
+      <ul>
+        <li> Method: GET</li>
+        <li>URL: ${BASE_URL}/dsp_public_apis/sprayingServiceRequest/parameters</li>
+        <li>Query Parameters:
+          <ul>
+            <li>locationId: 419280ae-90ca-49f2-a152-2066f8cc03c6 (UUID)</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3> Request Headers</h3>
+      <p><code>api-key : A1bC2dE3fG4hI5jK</p></code></p>
+
+      <h3>Query Params</h3>
+      <p><code>locationId : 419280ae-90ca-49f2-a152-2066f8cc03c6</code></p>
+
+      <h3>Response</h3>
+      <p>The response for this request is a JSON object with the following schema:</p>
+      <ul>
+        <li> dsp_id (string): The ID of the spraying service provider.</li>
+        <li>pesticides (array): An array of pesticide objects with ID, chemical name, and subsidy information.</li>
+        <li>drone_capacities (array): An array of available drone capacities.</li>
+        <li> min_request_acreage (string): The minimum acreage required for the service request.</li>
+        <li>crop_stages (array): An array of crop stages.</li>
+        <li>location_crops_cost_list (array): An array of objects containing crop ID, name, and cost information for the
+          specified location.</li>
+      </ul>
+
+      <!-- Create spraying service request -->
+      <h1>Create spraying service request</h1>
+
+      <div class="highlight">
+        <pre class="highlight shell tab-shell">
+          <code>
+            curl <span class="s2">"</span><span class="k">${</span><span class="nv">BASE_URL</span><span class="k">}</span><span class="s2">/dsp_public_apis/sprayingServiceRequest"</span>
+            <span class="nt">--header</span> <span class="s1">'api-key: A1bC2dE3fG4hI5jK'</span>
+            <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+            <span class="nt">--X</span> POST
+            <span class="nt">--data </span> <span class="s1">'{
+              "request": {
+                  "crop_name": "Cotton",
+                  "field_lat": 19.993742,
+                  "field_lng": 73.751426,
+                  "field_address": "Trambakeshwar Road, Parijat Nagar, Nashik, Maharashtra, India",
+                  "field_area": 2, 
+                  "field_name": "Parijat Nagar",
+                  "location_id": "419280ae-90ca-49f2-a152-2066f8cc03c6",
+                  "pesticides": "Karate",
+                  "price_by": "tank", 
+                  "time": "2024-12-02T13:30:00Z"
+              },
+              "mobile_number": 7719002728, 
+              "name": "Aakash" 
+          }'
+            </span>         
+          </code>
+          <h3>Response Example: </h3>
+          {
+            "message": "Request created successfully.",
+            "createdRequest": {
+                "id": "abb24487-4999-45b8-98f3-0664c11c53a1",
+                "time": "2024-12-02T13:30:00.000Z",
+                "req_number": "3243344070",
+                "user_id": "9b356e4a-2f8c-40fa-9acd-63fcd75aa7aa",
+                "field_name": "Parijat Nagar",
+                "crop_name": "Cotton",
+                "pesticides": "Karate",
+                "status": "Placed",
+                "location_id": "419280ae-90ca-49f2-a152-2066f8cc03c6",
+                "dsp_id": "0d960976-369d-49ef-af81-e5a8ed9e538f",
+                "date_created": "2024-12-03T05:00:52.155Z",
+                "field_area": "2",
+                "field_address": "Trambakeshwar Road, Parijat Nagar, Nashik, Maharashtra, India",
+                "field_lat": "19.993742",
+                "field_lng": "73.751426",
+                "price_by": "tank"
+            }
+          } 
+          </pre>
+      </div>
+
+      <p>This endpoint allows you to submit a request for spraying services. The request should be sent as an HTTP POST
+        to
+        the specified URL. The request body should include the details of the spraying service request such as crop
+        name,
+        field location, area, pesticides, price calculation method, and time. Additionally, the customer's mobile number
+        and name should be provided in the request body.</p>
+      <h3>Request Body</h3>
+      <ul>
+        <li> crop_name (string): The name of the crop.</li>
+        <li>field_lat (number): The latitude of the field location.</li>
+        <li>field_lng (number): The longitude of the field location.</li>
+        <li>field_address (string): The address of the field location.</li>
+        <li>field_area (number): The area of the field in square kilometers if the price is calculated by acre, or the
+          number</li>
+        <li>of tanks if the price is calculated by tank.</li>
+        <li>field_name (string): The name of the field.</li>
+        <li>location_id (string): The ID of the location.</li>
+        <li>pesticides (string): The type of pesticides to be used.</li>
+        <li>price_by (string): The method of price calculation, which can be 'tank' or 'acre'.</li>
+        <li>time (string): The date and time of the spraying service.</li>
+        <li>mobile_number (number): Customer's mobile number.</li>
+        <li>name (string): Customer's name.</li>
+      </ul>
+
+      <h3> Request Headers</h3>
+      <p><code>api-key : A1bC2dE3fG4hI5jK</code></p>
+
+      <h3>Response</h3>
+      <ul>
+        <li>message (string): A message related to the request.</li>
+        <li>createdRequest (object): An object containing details of the created request, including ID, time, request
+          number,user ID, field details, crop name, pesticides, status, location ID, DSP ID, date created, field area,
+          field address, field latitude, field longitude, and price calculation method. </li>
+      </ul>
 
   </div>
   <div class="dark-box">
